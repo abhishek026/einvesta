@@ -16,18 +16,21 @@ body {
   
   .login-image {
     flex: 1;
-    background: url('https://www.indonez.com/html-demo/cirro/img/blockit/in-signin-image.jpg') no-repeat center center/cover;
+    background: url('../../../assets/images/investa2.png') no-repeat center center/cover;
   }
   
   .login-form {
-    flex: 1;
-    display: flex;
+   // flex: 1;
+   display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
-    background: #ffffff;
+    //padding: 40px;
+    background: #ffffffbc;
+    flex: 0 0 auto;
+    width: 37.66666667%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
   }
   
   .brand {
@@ -92,10 +95,10 @@ body {
   }
   
   .btn {
-    width: 100%;
+    width: 125%;
     max-width: 400px;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #1b518b;
     border: none;
     color: white;
     font-size: 16px;
