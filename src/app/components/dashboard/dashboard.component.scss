@@ -1,0 +1,135 @@
+.dashboard {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding: 20px;
+    background: #f4f5f7;
+    min-height: 100vh;
+  }
+  
+  /* Header Section */
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #1e90ff;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Main Content */
+  .main-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Account Overview */
+  .account-overview {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .account-overview h2 {
+    margin-bottom: 20px;
+  }
+  
+  .overview-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .detail-item {
+    text-align: center;
+  }
+  
+  .detail-item span {
+    display: block;
+    font-size: 1rem;
+    color: #888;
+  }
+  
+  .detail-item h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .positive {
+    color: #28a745;
+  }
+  
+  .negative {
+    color: #dc3545;
+  }
+  
+  /* Portfolio Summary */
+  .portfolio-summary {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .portfolio-items {
+    margin-top: 20px;
+  }
+  
+  .portfolio-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Live Market Updates */
+  .market-updates {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .market-ticker {
+    margin-top: 20px;
+  }
+  
+  .market-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Quick Actions */
+  .quick-actions {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quick-actions button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .quick-actions button:hover {
+    background-color: #0056b3;
+  }
+  

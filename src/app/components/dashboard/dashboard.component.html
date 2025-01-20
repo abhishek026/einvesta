@@ -1,1 +1,72 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+    <!-- Header -->
+    <div class="header">
+      <h1>Welcome Back, {{ userName }}!</h1>
+      <p>Your investment journey starts here. Stay updated and in control.</p>
+    </div>
+  
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Account Overview -->
+      <div class="account-overview">
+        <h2>Account Overview</h2>
+        <div class="overview-details">
+          <div class="detail-item">
+            <span>Total Balance</span>
+            <h3>$45,720.00</h3>
+          </div>
+          <div class="detail-item">
+            <span>Invested Amount</span>
+            <h3>$30,000.00</h3>
+          </div>
+          <div class="detail-item">
+            <span>Profit/Loss</span>
+            <h3 class="positive">+ $15,720.00</h3>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Portfolio Summary -->
+      <div class="portfolio-summary">
+        <h2>Portfolio Summary</h2>
+        <div class="portfolio-items">
+          <div *ngFor="let stock of portfolio" class="portfolio-item">
+            <span class="stock-name">{{ stock.name }}</span>
+            <span class="stock-price">{{ stock.price }}</span>
+            <span
+              [class.positive]="stock.change > 0"
+              [class.negative]="stock.change < 0"
+            >
+              {{ stock.change }}%
+            </span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Live Market Updates -->
+      <div class="market-updates">
+        <h2>Live Market Updates</h2>
+        <div class="market-ticker">
+          <div *ngFor="let stock of liveStocks" class="market-item">
+            <span class="stock-name">{{ stock.name }}</span>
+            <span class="stock-price">{{ stock.price }}</span>
+            <span
+              [class.positive]="stock.change > 0"
+              [class.negative]="stock.change < 0"
+            >
+              {{ stock.change }}%
+            </span>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <h2>Quick Actions</h2>
+        <button (click)="buyStock()">Buy Stocks</button>
+        <button (click)="sellStock()">Sell Stocks</button>
+        <button (click)="viewReports()">View Reports</button>
+      </div>
+    </div>
+  </div>
+  

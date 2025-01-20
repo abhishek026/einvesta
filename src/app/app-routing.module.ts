@@ -4,24 +4,41 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { StrategybuilderComponent } from './components/strategybuilder/strategybuilder.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path:'',
-    component: LoginComponent
-  },
-  {
     path:'home',
-    component: HomeComponent
+    component: HomeComponent,
+    //canActivate: [AuthGuard]
   },
   {
     path:'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+   // canActivate: [AuthGuard]
   },
   {
     path:'strategy',
-    component: StrategybuilderComponent
-  }
+    component: StrategybuilderComponent,
+    //canActivate: [AuthGuard]
+  },
+  { 
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full' 
+  },
+  { 
+  path: 'login',
+  component: LoginComponent
+ },
+  { 
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+   },
+  { path: '**',
+   redirectTo: '/login'
+   }
 ];
 
 @NgModule({

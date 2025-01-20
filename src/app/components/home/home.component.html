@@ -1,1 +1,40 @@
-<p>home works!</p>
+<div class="dashboard">
+    <div class="header">
+      <h1>Good Afternoon, Admin</h1>
+    </div>
+  
+    <div class="content">
+      <div class="time-date">
+        <div class="time">
+          <i class="icon clock-icon"></i>
+          <span>{{ currentTime }}</span>
+        </div>
+        <div class="date">
+          <i class="icon calendar-icon"></i>
+          <span>{{ currentDate }}</span>
+        </div>
+      </div>
+  
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <h2>{{ currentDay }}</h2>
+          <span>{{ currentMonthYear }}</span>
+        </div>
+        <div class="calendar">
+          <div class="weekdays">
+            <span *ngFor="let day of weekdays">{{ day }}</span>
+          </div>
+          <div class="dates">
+            <span
+              *ngFor="let date of dates"
+              [class.today]="date.isToday"
+              [class.disabled]="!date.isCurrentMonth"
+            >
+              {{ date.day }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
