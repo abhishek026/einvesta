@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StrategybuilderComponent } from './components/strategybuilder/strategybuilder.component';
 import { OrderhistoryComponent } from './components/orderhistory/orderhistory.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OrderhistoryComponent } from './components/orderhistory/orderhistory.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
