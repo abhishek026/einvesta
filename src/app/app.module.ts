@@ -10,6 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StrategybuilderComponent } from './components/strategybuilder/strategybuilder.component';
 import { OrderhistoryComponent } from './components/orderhistory/orderhistory.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     DashboardComponent,
     StrategybuilderComponent,
-    OrderhistoryComponent
+    OrderhistoryComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
