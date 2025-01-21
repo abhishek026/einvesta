@@ -17,3 +17,11 @@
     background-color: #f0ad4e !important;  /* Custom background color for warning */
   }
   
+input[type="checkbox"],
+input[type="radio"],
+input[type="button"]{
+    cursor: pointer;
+  }
+  body{
+    background: #ececf1;
+  }

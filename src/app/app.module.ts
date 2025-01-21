@@ -12,6 +12,8 @@ import { OrderhistoryComponent } from './components/orderhistory/orderhistory.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoaderComponent } from './components/core/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // Required for animations
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
       progressBar: true,      // Show progress bar
       preventDuplicates: true // Prevent duplicate toasts
     }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

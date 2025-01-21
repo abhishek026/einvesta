@@ -1,97 +1,13 @@
-.dashboard {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .header h1 {
-    font-size: 2rem;
-    color: #1e90ff;
-    margin-bottom: 20px;
-  }
-  
-  .content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-  }
-  
-  .time-date {
-    flex: 1;
-    text-align: left;
-  }
-  
-  .time, .date {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
-  }
-  
-  .time .icon, .date .icon {
-    font-size: 1.5rem;
-    color: #1e90ff;
-  }
-  
-  .calendar-container {
-    flex: 1;
-    max-width: 400px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .calendar-header {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .calendar {
-    display: grid;
-    grid-template-rows: auto 1fr;
-  }
-  
-  .weekdays, .dates {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    text-align: center;
-  }
-  
-  .weekdays span {
-    font-weight: bold;
-  }
-  
-  .dates span {
-    padding: 10px;
-    border-radius: 50%;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  .dates span.today {
-    background: #1e90ff;
-    color: #fff;
-  }
-  
-  .dates span.disabled {
-    color: #ccc;
-  }
-  
-  .dates span:hover {
-    background: #1e90ff;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .content {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-  
+.content {
+  transition: width 0.3s ease;
+  width: calc(100% - 250px); /* Default width when sidebar is expanded */
+}
+
+.content.sidebar-collapsed {
+  width: calc(100% - 0%);
+}
+
+.content.sidebar-expanded {
+  width: calc(100% - 12%);
+  margin-left: 12%;
+}
