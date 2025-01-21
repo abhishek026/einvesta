@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,34 +6,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
+  @Input() isExpanded: boolean = false;
+  @Output() toggleSidebar = new EventEmitter<void>();
+
 
   menuOpen = false;
   isProfileVisible = false;
   isNotificationVisible = false;
   contentWrapperMid = false;
-  
+
   constructor() { }
 
   menuItems = [
-    { name: 'Dashboard', tooltip: 'Dashboard', icon: 'fa fa-dashboard', active: false },
-    { name: 'People', tooltip: 'People', icon: 'fa fa-users', active: false },
     {
-      name: 'Programs',
+      name: 'Strategy',
       tooltip: 'Programs',
       icon: 'fa fa-table',
       active: false,
       submenu: ['Program No 1', 'Program No 2', 'Program No 3', 'Program No 4'],
     },
-    { name: 'Companies', tooltip: 'Companies', icon: 'fa fa-building', active: false },
-    { name: 'Documents', tooltip: 'Documents', icon: 'fa fa-file', active: false },
-    { name: 'MailBox', tooltip: 'MailBox', icon: 'fa fa-envelope', active: false },
-    { name: 'Reports', tooltip: 'Reports', icon: 'fa fa-th', active: false },
-    { name: 'Settings', tooltip: 'Settings', icon: 'fa fa-gear', active: false },
+    { name: 'Order History', tooltip: 'Companies', icon: 'fa fa-building', active: false },
+
   ];
-  
+
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
+    this.toggleSidebar.emit();
+
   }
   toggleMenuItem(item: any): void {
     item.active = !item.active;

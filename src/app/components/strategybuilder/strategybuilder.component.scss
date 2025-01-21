@@ -12,9 +12,11 @@ body {
 	font-size: 13px;
 }
 .name{
-    color: #69247C;
-    font-weight: 600;
-    background: #69247c38;
+  font-weight: 600;
+  background: #69247C;
+  color: #FFF;
+  border-radius: 5px;
+  padding: 2px 8px;
 }
 a:hover {
 	text-decoration: none;
@@ -32,7 +34,7 @@ figure {
 		content: " ";
 		display: table;
 	}
-	
+
 	&:after {
 		clear: both;
 	}
@@ -43,7 +45,7 @@ figure {
 	border: 1px solid $light-bg;
 	overflow-x: auto;
 	width: 100%;
-	
+
 	&-inner {
 		border-radius: 4px;
 	}
@@ -52,7 +54,7 @@ figure {
         padding: 16px 0;
 
         label{
-            color: #738297;
+            color: #FFF;
             font-size: 14px;
             font-weight: 600;
             line-height: 18px;
@@ -66,16 +68,17 @@ figure {
         }
         .sp1{
             color: green;
-            font-weight: 600; 
+            font-weight: 600;
         }
         .sp2,.sp3{
             color: #FFF;
             font-weight: 600;
          }
-       
+
         .sp4{
             color: blue;
             font-weight: 600;
+            cursor: pointer;
         }
     }
 .projects-header {
@@ -86,16 +89,16 @@ figure {
 	.title {
 		display: inline-block;
 	}
-	
+
 	.count {
 		color: #738297;
 	}
-	
 
-	
+
+
 	.title {
 		font-size: 21px;
-		
+
 		+ .count {
 			margin-left: 5px;
 		}
@@ -105,55 +108,28 @@ figure {
         font-weight: 400;
     }
     .info_btn{
-        border: 1px solid #738297;
+  border:1px solid #0074c3;
+      color: #0074c3;
+      font-weight: 600;
         border-radius: 8px;
         font-size: 12px;
-        padding: 1px 10px;
+        padding: 4px 16px;
         margin-right: 10px;
         cursor: pointer;
+        background: #FFF;
+        img{
+          width: 18px;
+        }
     }
     h6{
         padding-top: 16px;
+        span{
+          font-weight: 500;
+        }
     }
 }
 
-.projects-table {
-	background: #273142;
-	width: 100%;
-	
-	td,
-	th {
-		color: white;
-		padding: 10px 22px;
-		vertical-align: middle;
-	}
-	
-	td p {
-		font-size: 12px;
-		
-		&:last-of-type {
-            font-size: 13px;
-            font-weight: 600;
-            color: #FFF;
-		}
-	}
-	
-	th {
-		background-color: $light-bg;
-	}
-	
-	tr {
-		&:hover {
-			background-color: lighten($dark-text, 5%);
-		}
-		
-		&:not(:last-of-type) {
-			border-bottom: 1px solid $light-bg;
-		}
-	}
-	
-	
-}
+
 // selectric plugin styling
 .selectric {
 	background-color: transparent;
@@ -179,13 +155,13 @@ figure {
 	padding: 10px;
 	position: relative;
 	text-align: center;
-	
+
 	canvas {
 		height: 400px;
 		margin: 20px 0;
 		width: 100%;
 	}
-	
+
 	.actions {
 		margin: 15px;
 		position: absolute;
@@ -199,7 +175,7 @@ figure {
 			margin: 5px;
 			padding: 4px;
 		}
-		
+
 		.btn-link {
 			color: white;
 
@@ -208,7 +184,7 @@ figure {
 			}
 		}
 	}
-	
+
 	.title {
 		font-size: 18px;
 		margin: 0;
@@ -217,7 +193,7 @@ figure {
 			margin-top: 10px;
 		}
 	}
-	
+
 	.tagline {
 		font-size: 12px;
 	}
@@ -276,4 +252,191 @@ figure {
 /* Checkbox focus effect */
 .custom-checkbox input:focus + .checkbox-box {
     border-color: #0d6efd;
+}
+.show_all_btn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #2c3034;
+  border:1px solid #0074c3;
+  color: #0074c3;
+  padding: 5px 10px;
+  border-radius: 50px;
+  display: inline-flex;
+  font-weight: 700;
+}
+.background-blue{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #2c3034;
+  border:1px solid #0074c3;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 50px;
+  display: inline-flex;
+  cursor: pointer;
+}
+.chips_sec{
+  padding: 0px 20px 16px 20px;
+}
+// new tabl
+
+.table-wrapper {
+  background: #fff;
+  margin: 30px 0;
+border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+padding-bottom: 15px;
+background: #435d7d;
+color: #fff;
+padding: 16px 30px;
+margin: -20px -25px 10px;
+border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+margin: 5px 0 0;
+font-size: 24px;
+}
+.table-title .btn-group {
+float: right;
+}
+.table-title .btn {
+color: #fff;
+float: right;
+font-size: 13px;
+border: none;
+min-width: 50px;
+border-radius: 2px;
+border: none;
+outline: none !important;
+margin-left: 10px;
+}
+.table-title .btn i {
+float: left;
+font-size: 21px;
+margin-right: 5px;
+}
+.table-title .btn span {
+float: left;
+margin-top: 2px;
+}
+table.table tr th, table.table tr td {
+  border-color: #e9e9e9;
+padding: 12px 15px;
+vertical-align: middle;
+background-color: #e9ecef;
+
+}
+table.table tr th{
+  font-size: 14px;
+  font-weight: 600;
+}
+table.table tr td {
+  font-size: 14px;
+  font-weight: 600;
+
+}
+
+table.table th i {
+  font-size: 13px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+table.table td:last-child i {
+opacity: 0.9;
+font-size: 22px;
+  margin: 0 5px;
+}
+table.table td a {
+font-weight: bold;
+color: #566787;
+display: inline-block;
+text-decoration: none;
+outline: none !important;
+}
+table.table td a:hover {
+color: #2196F3;
+}
+table.table td a.edit {
+  color: #FFC107;
+}
+table.table td a.delete {
+  color: #F44336;
+}
+table.table td i {
+  font-size: 19px;
+}
+table.table .avatar {
+border-radius: 50%;
+vertical-align: middle;
+margin-right: 10px;
+}
+.pagination {
+  float: right;
+  margin: 0 0 5px;
+}
+.pagination li a {
+  border: none;
+  font-size: 13px;
+  min-width: 30px;
+  min-height: 30px;
+  color: #999;
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 2px !important;
+  text-align: center;
+  padding: 0 6px;
+}
+.pagination li a:hover {
+  color: #666;
+}
+.pagination li a.page-link{
+  background: transparent;
+}
+.pagination li.active a, .pagination li.active a.page-link {
+  background: #03A9F4;
+}
+.pagination li.active a:hover {
+  background: #0397d6;
+}
+.pagination li.disabled i {
+  color: #ccc;
+}
+.pagination li i {
+  font-size: 16px;
+  padding-top: 6px
+}
+.hint-text {
+  float: left;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.div_b{
+  background: #03a9f4;
+  height: 19px;
+  width: 19px;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+.div_s{
+  background: #ff000038;
+  height: 19px;
+  width: 19px;
+  color: red;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: 700;
+  margin-right: 10px;
 }

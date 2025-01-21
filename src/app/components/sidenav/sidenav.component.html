@@ -1,8 +1,8 @@
-<section class="skin-blue-black">
+<section class="skin-blue-black sidenav" [ngClass]="{ 'expanded': isExpanded, 'collapsed': !isExpanded }">
     <div class="wrapper">
       <header class="main-header col-lg-12">
         <span class="logo-mid">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1818275/profile/profile-80.jpg?1520571742" /> 
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1818275/profile/profile-80.jpg?1520571742" />
         </span>
         <div class="fa fa-bars" id="menu_bar" (click)="toggleMenu()"></div>
         <div class="user-profile">
@@ -12,7 +12,6 @@
           <div class="mini-user fa fa-user-circle"></div>
         </div>
       </header>
-      <!-- Sidebar Menu -->
       <div class="leftMenu" [class.openMenu]="menuOpen">
         <ul class="leftMenuList">
           <li
@@ -21,53 +20,14 @@
             [class.active]="item.active"
             (click)="toggleMenuItem(item)"
           >
-            <a href="#">
+            <a>
               <i [class]="item.icon" aria-hidden="true"></i>
               <span>{{ item.name }}</span>
               <p>{{ item.tooltip }}</p>
             </a>
-            <ul *ngIf="item.submenu" class="dropdownlist">
-              <li *ngFor="let subItem of item.submenu">
-                <a href="#"><span>{{ subItem }}</span></a>
-              </li>
-            </ul>
+
           </li>
         </ul>
       </div>
-      <!-- Main Content -->
-      <div class="content-wrapper" [class.content-wrapper-mid]="contentWrapperMid">
-        <section class="content-header">
-          <h1>Dashboard <small>Control panel</small></h1>
-         
-        </section>
-        <section class="content"></section>
-        <div class="notification-hover" *ngIf="isNotificationVisible">
-          <span>Layout Option <i>02 new</i></span>
-          <li>
-            <p>Profile Visitors<i class="bg-red">06</i></p>
-          </li>
-          <li>
-            <p>Uploads<i class="bg-green">+76</i></p>
-          </li>
-          <li>
-            <p>Matches<i class="bg-orange">+56</i></p>
-          </li>
-          <li>
-            <p>Favourites<i class="bg-purple">+32</i></p>
-          </li>
-          <li>
-            <p>Blocked<i class="bg-grey">+23</i></p>
-          </li>
-        </div>
-        <div class="profile-hover" *ngIf="isProfileVisible">
-          <div class="user-profile-icon fa fa-user-circle"></div>
-          <div class="user-profile">
-            <span>Andrew Smith</span>
-            <span>Accountant</span>
-            <h1>LogOut</h1>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
-  

@@ -1,1 +1,10 @@
-<app-sidenav></app-sidenav>
+<app-sidenav [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidenav>
+
+<div class="content" [ngClass]="{ 'sidebar-expanded': sidebarExpanded, 'sidebar-collapsed': !sidebarExpanded }">
+  <div class="contentData scroll" id="contentId">
+    <!-- Example: Router Outlet -->
+    <router-outlet></router-outlet>
+    <app-strategybuilder></app-strategybuilder>
+    <app-orderhistory></app-orderhistory>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.content {
+  transition: width 0.3s ease;
+  width: calc(100% - 250px); /* Default width when sidebar is expanded */
+}
+
+.content.sidebar-collapsed {
+  width: calc(100% - 0%);
+}
+
+.content.sidebar-expanded {
+  width: calc(100% - 250px); /* Adjust for expanded sidebar */
+}
