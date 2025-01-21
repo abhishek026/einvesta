@@ -357,3 +357,34 @@ select{
     justify-content: end;
   }
 }
+.bottom_sec{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #FFF;
+  padding: 16px 16px;
+.clear_btn{
+  border: 1px solid #e8e8e8;
+  height: 35px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #FFF;
+  width: 110px;
+  border-radius: 4px;
+}
+.done_btn{
+  background-color: #4f52ff;
+  width: 110px;
+border: 1px solid #4f52ff;
+border-radius: 4px;
+  color: #FFF;
+  height: 35px;
+  font-size: 12px;
+  font-weight: 600;
+}
+span{
+  color: #2F0F5D;
+    font-weight: 600;
+    font-size: 14px;
+}
+}
