@@ -33,6 +33,13 @@ export class SidenavComponent implements OnInit {
       icon: 'fa fa-building',
       active: false
      },
+     {
+      name: 'Strategy Home',
+      path:'/strategy-home',
+      tooltip: 'Companies',
+      icon: 'fa fa-building',
+      active: false
+     },
 
   ];
 

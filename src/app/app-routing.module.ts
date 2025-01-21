@@ -7,6 +7,7 @@ import { StrategybuilderComponent } from './components/strategybuilder/strategyb
 import { AuthGuard } from './guards/auth.guard';
 import { OrderhistoryComponent } from './components/orderhistory/orderhistory.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { StrategyHomeComponent } from './components/strategy-home/strategy-home.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'order-history',
     component: OrderhistoryComponent
+  },
+  {
+    path:'strategy-home',
+    component:StrategyHomeComponent
   }
 ]
   }

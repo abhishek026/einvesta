@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoaderComponent } from './components/core/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // Required for animations
 import { FormsModule } from '@angular/forms';
+import { StrategyHomeComponent } from './components/strategy-home/strategy-home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     StrategybuilderComponent,
     OrderhistoryComponent,
-    LoaderComponent
+    LoaderComponent,
+    StrategyHomeComponent
   ],
   imports: [
     BrowserModule,

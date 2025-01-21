@@ -1,0 +1,445 @@
+
+    <div class="container-fluid outer-div">
+        <div class="row">
+            <!-- First Half -->
+            <div class="col-md-6 ps-1 pe-1">
+                <div class="row m-0 half-section">
+                    <div class="col-md-12 p-0">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="straddles-tab" data-bs-toggle="tab" data-bs-target="#straddles" type="button" role="tab" aria-controls="straddles" aria-selected="true">Straddles</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="strangles-tab" data-bs-toggle="tab" data-bs-target="#strangles" type="button" role="tab" aria-controls="strangles" aria-selected="false">Strangles</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="strikes-tab" data-bs-toggle="tab" data-bs-target="#strikes" type="button" role="tab" aria-controls="strikes" aria-selected="false">Strikes</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features" type="button" role="tab" aria-controls="features" aria-selected="false">Features</button>
+                    </li>
+                    <li class="nav-item setting" role="presentation">
+                        <i class="las la-cog me-3"></i>
+                    </li>
+                </ul>
+                <div class="tab-content p-3" id="myTabContent">
+                    <div class="tab-pane fade show active" id="straddles" role="tabpanel" aria-labelledby="straddles-tab">
+                        <div class="row m-0">
+                            <div class="col-md-3 pb-3">
+                                <div class="pills_sec">
+                                    <select name="" id="" class="w-100">
+                                        <option value="">23 Jan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pb-3">
+                                <section class="form__container">
+                                    <input type="radio" id="choco" name="flavor" value="choco" class="toggle-button">
+                                    <label for="choco">LTP
+                                    </label>
+                                    <input type="radio" id="vanilla" name="flavor" value="vanilla" class="toggle-button">
+                                    <label for="vanilla">OL
+                                    </label>
+                                    <input type="radio" id="blend" name="flavor" value="blend" class="toggle-button">
+                                    <label for="blend">Greeks</label>
+                                </section>
+                            </div>
+                        </div>
+                       
+                        
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span>Call LTP</span>
+                                            <span>Call Ol</span>
+                                        </div>
+                                    </th>
+                                    <th class="text-center">Strike</th>
+                                    <th class="text-center">IV</th>
+                                    <th>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <span>Put OL</span>
+                                            <span>Put LTp</span>
+                                        </div>
+                                    </th>
+                                    <th class="text-center">Delta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                                <tr>
+                                    <td class="yellow-td">23 Jan</td>
+                                    <td class="yellow-td">99.5</td>
+                                    <td class="grey-td"><div>21500</div></td>
+                                    <td class="grey-td text-center">24.2</td>
+                                    <td>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="sp1">11.344</span>
+                                            <span class="sp2">11.344</span>
+
+                                        </div>
+                                    </td>
+                                    <td class="text-center">0.01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="strangles" role="tabpanel" aria-labelledby="strangles-tab">
+                        <p>Strangles content here.</p>
+                    </div>
+                    <div class="tab-pane fade" id="strikes" role="tabpanel" aria-labelledby="strikes-tab">
+                        <p>Strikes content here.</p>
+                    </div>
+                    <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
+                        <p>Features content here.</p>
+                    </div>
+                </div>
+                    </div>
+                </div>
+               
+            </div>
+
+            <!-- Second Half -->
+            <div class="col-md-6 ps-1 pe-1">
+                <div class="row m-0 half-section p-3">
+                    <div class="col-md-12 p-0">
+                        <div class="top_sec d-flex align-items-center justify-content-between ">
+                            <h6>Editor</h6>
+                            <h5><i class="las la-angle-double-left me-1"></i>Collapse</h5>
+                        </div>
+                        <table class="table borderless-table">
+                            <thead>
+                                <tr>
+                                    <th>B/S</th>
+                                    <th>Expiry</th>
+                                    <th>Strike</th>
+                                    <th>Type</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="display: flex
+                                    ;
+                                        align-items: center;
+                                        height: 54px;">
+                                            <div class="div_b">B</div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <select name="" id="" class="input-group-text">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width: 140px;">
+                                            <span class="input-group-text" id="basic-addon2">-</span>
+                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <select name="" id="" class="input-group-text">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width:40px;">
+                                            <span class="input-group-text" id="basic-addon2">CE</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <select name="" id="" class="input-group-text">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="input-group" style="width:40px;">
+                                            <span class="input-group-text" id="basic-addon2">CE</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <i class="las la-bars"></i>
+                                            <i class="las la-trash-alt"></i>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="display: flex
+                                    ;
+                                        align-items: center;
+                                        height: 54px;">
+                                            <div class="div_s">S</div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <select name="" id="" class="input-group-text">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width: 140px;">
+                                            <span class="input-group-text" id="basic-addon2">-</span>
+                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <select name="" id="" class="input-group-text">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width:40px;">
+                                            <span class="input-group-text" id="basic-addon2">CE</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <select name="" id="" class="input-group-text">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="input-group" style="width:40px;">
+                                            <span class="input-group-text" id="basic-addon2">CE</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <i class="las la-bars"></i>
+                                            <i class="las la-trash-alt"></i>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="display: flex
+                                    ;
+                                        align-items: center;
+                                        height: 54px;">
+                                            <div class="div_b">B</div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <select name="" id="" class="input-group-text">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width: 140px;">
+                                            <span class="input-group-text" id="basic-addon2">-</span>
+                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <select name="" id="" class="input-group-text">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group" style="width:40px;">
+                                            <span class="input-group-text" id="basic-addon2">CE</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-group">
+                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <select name="" id="" class="input-group-text">
+                                                <option value=""></option>
+                                            </select>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <div class="input-group" style="width:40px;">
+                                            <span class="input-group-text" id="basic-addon2">CE</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <i class="las la-bars"></i>
+                                            <i class="las la-trash-alt"></i>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="d-flex justify-content-left">
+                                            <h6 class="d-flex align-items-center me-3">Multiplayer</h6>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                                <select name="" id="" class="input-group-text">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td colspan="4">
+                                        <div class="d-flex justify-content-between align-items-center pt-2">
+                                            <h6 class="m-0">Price <b>Pay 389.9</b></h6>
+                                            <h6 class="m-0">Premium <b>Pay 389.9</b></h6>
+                                        </div>
+                                    </td>
+                                </tr>
+                              
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>

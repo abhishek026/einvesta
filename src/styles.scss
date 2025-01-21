@@ -19,7 +19,9 @@
   
 input[type="checkbox"],
 input[type="radio"],
-input[type="button"]{
+input[type="button"],
+input[type="radio"],
+select{
     cursor: pointer;
   }
   body{
