@@ -22,10 +22,17 @@ export class SidenavComponent implements OnInit {
       name: 'Strategy',
       tooltip: 'Programs',
       icon: 'fa fa-table',
+      path:'/strategy',
       active: false,
       submenu: ['Program No 1', 'Program No 2', 'Program No 3', 'Program No 4'],
     },
-    { name: 'Order History', tooltip: 'Companies', icon: 'fa fa-building', active: false },
+    {
+      name: 'Order History',
+      path:'/order-history',
+      tooltip: 'Companies',
+      icon: 'fa fa-building',
+      active: false
+     },
 
   ];
 

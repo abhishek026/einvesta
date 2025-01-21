@@ -19,6 +19,7 @@
             class="tooltip_nav"
             [class.active]="item.active"
             (click)="toggleMenuItem(item)"
+            [routerLink]="item.path"
           >
             <a>
               <i [class]="item.icon" aria-hidden="true"></i>

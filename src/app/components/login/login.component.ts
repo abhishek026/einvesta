@@ -18,9 +18,8 @@ export class LoginComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    debugger
 //this.loaderService.showLoader();
-this.toastService.showSuccess("I am Abhishek Kumar","Success!")
+//this.toastService.showSuccess("I am Abhishek Kumar","Success!")
 }
   onSubmit() {
     if (this.loginForm.valid) {

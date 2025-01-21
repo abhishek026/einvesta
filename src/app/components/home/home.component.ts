@@ -10,7 +10,7 @@ import { ToastService } from 'src/app/services/toast.service';
 export class HomeComponent implements OnInit {
   sidebarExpanded: boolean = false;
   ngOnInit(): void {
-    this.toastService.showSuccess("I am Abhishek Kumar","Success!");
+   // this.toastService.showSuccess("I am Abhishek Kumar","Success!");
   }
   constructor(private loaderService:LoaderService,private toastService: ToastService) {
   }
