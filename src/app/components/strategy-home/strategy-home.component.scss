@@ -263,7 +263,8 @@ select{
   margin: 0px 6px;
   cursor: pointer;
 }
-.top_sec{
+.top_sec1{
+  border-bottom: 1px solid #e8e8e8;
   h6{
     color: #252F4A;
   font-weight: 600;
@@ -274,5 +275,85 @@ select{
     color: #4f52ff;
     font-size: 16px;
     font-weight: 600;
+  }
+}
+.top_sec1{
+  border-bottom: 1px solid #e8e8e8;
+  h6{
+    color: #252F4A;
+  font-weight: 600;
+  font-size: 18px;
+  }
+
+  h5{
+    color: #4f52ff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+.top_sec1{
+  border-bottom: 1px solid #e8e8e8;
+  h6{
+    color: #252F4A;
+  font-weight: 600;
+  font-size: 18px;
+  }
+
+  h5{
+    color: #4f52ff;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+.top_sec2{
+  padding: 10px 0;
+  h6{
+    color: #252F4A;
+  font-weight: 600;
+  font-size: 14px;
+  }
+
+  h5{
+    color: #4f52ff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+.top_sec3{
+  padding: 10px 0;
+
+  h6{
+    color: #252F4A;
+  font-weight: 600;
+  font-size: 14px;
+  }
+
+  h5{
+    color: #4f52ff;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+.background-sky.active{
+  background-color: #4f52ff !important;
+  color: #FFF !important;
+}
+.background-sky{
+  width: 100%;
+  padding: 5px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  background: #9acbd070;
+  color: #23486A;
+}
+.card_sec{
+  .card{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
   }
 }
