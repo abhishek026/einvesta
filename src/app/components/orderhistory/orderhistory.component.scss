@@ -50,10 +50,14 @@ background-color: #e9ecef;
 table.table tr th{
   font-size: 14px;
   font-weight: 600;
+
+  color: #252F4A;
+  font-size: 16px;
 }
 table.table tr td {
-  font-size: 14px;
+  color: #252F4A;
   font-weight: 600;
+  font-size: 14px;
 
 }
 table.table-striped tbody tr:nth-of-type(odd) {

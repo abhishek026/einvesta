@@ -153,18 +153,15 @@ figure {
     border-color: #0d6efd;
 }
 .show_all_btn{
-      display: flex;
+  display: flex;
       justify-content: center;
       width: 100%;
-      color: #FFF;
+      color: #fff;
       padding: 5px 10px;
       border-radius: 6px;
-      font-weight: 700;
-      border: transparent;
-      font-size: 12px;
+      border: 1px solid #5ba6ff;
       line-height: 30px;
       height: 40px;
-
       background-color: #5ba6ff;
       font-weight: 600;
       font-size: 12px;
@@ -176,8 +173,9 @@ figure {
   padding: 5px 10px;
   border-radius: 50px;
   cursor: pointer;
-  color: #fff;
-  background-color: #5ba6ff;
+  color: #5ba6ff;
+  background-color: #fff;
+  border: 1px solid #5ba6ff;
   font-weight: 600;
   font-size: 12px;
   text-align: center;
@@ -230,13 +228,15 @@ table{
   th{
     background: #FFF;
     color: #252F4A;
+    font-size: 16px;
   }
   th,td{
     background:#FFF;
   }
   td{
-    color:#252F4A;
-    font-weight:600;
+    color: #252F4A;
+    font-weight: 600;
+    font-size: 14px;
   }
   tr{
     border-bottom-width: 1px;
