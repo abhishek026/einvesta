@@ -1,6 +1,7 @@
 .content {
   transition: width 0.3s ease;
   width: calc(100% - 250px); /* Default width when sidebar is expanded */
+  padding-top: 50px;
 }
 
 .content.sidebar-collapsed {
