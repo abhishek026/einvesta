@@ -769,5 +769,6 @@ html {
   }
 
   .sidenav.expanded {
-    width: 250px; /* Expanded width */
+    width: calc(100% - 12%);
+    margin-left: 12%;
   }

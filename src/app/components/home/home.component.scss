@@ -8,5 +8,6 @@
 }
 
 .content.sidebar-expanded {
-  width: calc(100% - 250px); /* Adjust for expanded sidebar */
+  width: calc(100% - 12%);
+  margin-left: 12%;
 }
