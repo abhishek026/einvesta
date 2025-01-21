@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ToastrModule } from 'ngx-toastr';  // Import ToastrModule from ngx-toastr
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -11,7 +11,7 @@ import { StrategybuilderComponent } from './components/strategybuilder/strategyb
 import { OrderhistoryComponent } from './components/orderhistory/orderhistory.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoaderComponent } from './components/core/loader/loader.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // Required for animations
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,15 @@ import { LoaderComponent } from './components/core/loader/loader.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({    // Configure the ToastrModule
+      timeOut: 3000,          // Duration of toast in milliseconds
+      positionClass: 'toast-top-right',  // Positioning the toast
+      closeButton: true,      // Show close button
+      progressBar: true,      // Show progress bar
+      preventDuplicates: true // Prevent duplicate toasts
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

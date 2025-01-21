@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoaderService } from 'src/app/services/loader.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-home',
@@ -15,8 +17,11 @@ export class HomeComponent implements OnInit {
   dates: { day: number; isToday: boolean; isCurrentMonth: boolean }[] = [];
 
   ngOnInit(): void {
+    this.toastService.showSuccess("I am Abhishek Kumar","Success!")
     this.updateTimeAndDate();
     this.generateCalendar();
+  }
+  constructor(private loaderService:LoaderService,private toastService: ToastService) {
   }
 
   updateTimeAndDate() {
