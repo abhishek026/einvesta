@@ -29,7 +29,7 @@ figure {
   h6{
     padding-top: 16px;
     padding-top: 16px;
-    color: #B5B5C3;
+    color: #6c757d;
     font-weight: 500;
     font-size: 16px;
     span{
@@ -46,9 +46,10 @@ figure {
         text-align:center;
       }
       .large{
-        color: #373b45;
+        color: #5ba6ff;
         font-size: 20px;
-        text-align:center;
+        text-align: center;
+        font-weight: 700;
 
       }
       .border-right{
@@ -146,27 +147,34 @@ figure {
     border-color: #0d6efd;
 }
 .show_all_btn{
-  display: flex;
+      display: flex;
       justify-content: center;
       width: 100%;
       color: #FFF;
       padding: 5px 10px;
-      border-radius: 10px;
+      border-radius: 6px;
       font-weight: 700;
-      background: #f1416c;
       border: transparent;
+      font-size: 12px;
+      line-height: 30px;
+      height: 40px;
+
+      background-color: #5ba6ff;
+      font-weight: 600;
+      font-size: 12px;
+      text-align: center;
 }
 .background-blue{
-  display: flex;
-      justify-content: center;
-      width: 100%;
-      background: #2c3034;
-      padding: 5px 10px;
-      border-radius: 50px;
-      cursor: pointer;
-      color: #ffc700;
-      background-color: #fff8dd;
-      font-weight: 600;
+  width: 100%;
+  background: #2c3034;
+  padding: 5px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #5ba6ff;
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
 }
 .chips_sec{
   padding: 0px 20px 16px 20px;
@@ -215,7 +223,7 @@ table{
   border-collapse: separate;
   th{
     background: #FFF;
-    color: #c6c6cf;
+    color: #252F4A;
   }
   th,td{
     background:#FFF;
