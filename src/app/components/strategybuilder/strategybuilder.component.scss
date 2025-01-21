@@ -120,6 +120,7 @@ figure {
     height: 20px;
     border: 2px solid #ccc;
     border-radius: 4px;
+    // background-color: #0d6efd;
     background-color: #fff;
     transition: 0.3s;
 	// background: #646cff;
@@ -127,13 +128,18 @@ figure {
 }
 
 /* Checkmark style */
+.custom-checkbox input:checked + .checkbox-box{
+  background-color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
 .custom-checkbox input:checked + .checkbox-box::after {
     content: '\2713'; /* Checkmark symbol */
     position: absolute;
-    top: -3px;
+    top: -4px;
     left: 3px;
     font-size: 16px;
-    color: #646cff;
+    color: #FFF;
+    font-weight: 700;
 
 }
 
