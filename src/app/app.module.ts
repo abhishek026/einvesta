@@ -10,7 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { StrategybuilderComponent } from './components/strategybuilder/strategybuilder.component';
 import { OrderhistoryComponent } from './components/orderhistory/orderhistory.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoaderComponent } from './components/loader/loader.component';
+import { LoaderComponent } from './components/core/loader/loader.component';
 
 @NgModule({
   declarations: [
