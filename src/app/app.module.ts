@@ -25,7 +25,7 @@ import { StrategyHomeComponent } from './components/strategy-home/strategy-home.
     StrategybuilderComponent,
     OrderhistoryComponent,
     LoaderComponent,
-    StrategyHomeComponent
+    StrategyHomeComponent,
   ],
   imports: [
     BrowserModule,
