@@ -1,14 +1,68 @@
 .content {
   transition: width 0.3s ease;
-  width: calc(100% - 250px); /* Default width when sidebar is expanded */
-  padding-top: 50px;
+  // width: calc(100% - 250px); /* Default width when sidebar is expanded */
+  padding: 50px 0px 10px 50px;
 }
 
-.content.sidebar-collapsed {
-  width: calc(100% - 0%);
-}
+// .content.sidebar-collapsed {
+//   width: calc(100% - 0%);
+// }
 
 .content.sidebar-expanded {
-  width: calc(100% - 12%);
-  margin-left: 12%;
+  margin-left: 13%;
+  width: 87%;
+  padding: 50px 16px;
+}
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: #007bff;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content {
+  // margin-left: 3.7%;
+  transition: 0.3s;
+
+  &.sidebarExpanded {
+    margin-left: 15%;
+  }
+
+  .top-bar {
+    // height: auto;
+    width: 100%;
+  }
+}
+
+.contentData {
+  // background-color: #fff;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #f9f9f9;
+
+}
+
+/* Responsive CSS by Vishakha */
+
+@media only screen and (max-width: 860px) {
+
+
+
+  .content.sidebarExpanded,
+  .content {
+    margin-left: 50px;
+  }
+}
+  @media only screen and (max-width: 860px) {
+
+
+    .content.sidebarExpanded,
+    .content {
+      margin-left: 50px;
+    }
+  }
+*{
+  overflow: hidden;
 }
