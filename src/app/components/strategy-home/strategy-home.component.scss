@@ -4,8 +4,10 @@
 
 .nav-tabs .nav-link {
   color: #252F4A;
-  font-weight: 600;
-
+    font-size: 14px;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
 }
 
 .nav-tabs .nav-item.show .nav-link {
@@ -20,7 +22,10 @@
   border-right: 0;
   border-bottom: 3px solid #4f52ff !important;
   color: #4f52ff;
-  font-weight: 700;
+  font-size: 14px;
+  line-height: 1rem;
+  letter-spacing: 0.01563rem;
+  font-weight: 500;
 }
 
 .nav-tabs .nav-link:focus,
@@ -83,8 +88,8 @@
     .input-group-text {
       border: 0;
       background: transparent;
-      color: #2F0F5D;
-      font-weight: 600;
+      color: rgb(52, 64, 84);
+      font-weight: 400;
       font-size: 14px
     }
 
@@ -98,6 +103,10 @@
         background: none;
         height: 100%;
       }
+      .dropdown-menu{
+      
+      
+    }
     }
 
     .la-angle-down:before {
@@ -111,66 +120,6 @@
 .input-group {
   display: flex;
   flex-wrap: nowrap;
-}
-
-table {
-  border-collapse: separate;
-  border: 1px solid #e8e8e8;
-
-  th,
-  td {
-    background: #FFF;
-    // border-bottom: 0;
-  }
-
-  th {
-    color: #252F4A;
-    font-size: 14px;
-  }
-
-  td {
-    color: #2F0F5D;
-    font-weight: 600;
-    font-size: 14px;
-  }
-}
-
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 1px dashed #dee2e6;
-}
-
-.yellow-td {
-  background: #f4d7933d !important;
-}
-
-.grey-td {
-  background: #a5bfcc2e !important;
-
-  div {
-    background: #A5BFCC;
-    border-radius: 6px;
-    text-align: center;
-  }
-}
-
-.sp1 {
-  background: #98EECC;
-  width: 100px;
-  border-radius: 10px;
-  padding: 1px 10px;
-
-}
-
-table {
-  border-collapse: collapse;
 }
 
 .setting {
@@ -191,7 +140,7 @@ table {
   border: 1px solid #e8e8e8;
   width: fit-content;
   border-radius: 20px;
-  height: 35px;
+  height: 32px;
   font-size: 14px;
 
   .toggle-button {
@@ -201,12 +150,15 @@ table {
   .toggle-button+label {
     display: inline-block;
     padding: 0.1rem 1rem;
-    margin: 2px 5px;
+    margin: 5px 5px;
     border: 0.125rem solid transparent;
     border-radius: 4rem;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-
+    font-size: 12px;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
   }
 
   .toggle-button:checked+label {
@@ -233,15 +185,29 @@ table {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 }
-
-select {
+  .dropdown > button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #FFF;
+  }
+select ,.dropdown>button{
   border: 1px solid #e8e8e8;
   border-radius: 8px;
-  height: 35px;
+  height: 32px;
   padding: 2px 6px;
-  color: #252F4A;
-  font-weight: 600;
-  font-size: 14px;
+
+
+  text-align: center;
+  color: rgb(52, 64, 84);
+  white-space: inherit;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1rem;
+  letter-spacing: 0.01563rem;
+  font-weight: 500;
 }
 
 .div_b {
@@ -282,7 +248,7 @@ select {
 
 .la-bars:before,
 .la-trash-alt:before {
-  font-size: 25px;
+  font-size: 18px;
   margin: 0px 6px;
   cursor: pointer;
 }
@@ -291,15 +257,27 @@ select {
   border-bottom: 1px solid #e8e8e8;
 
   h6 {
-    color: #252F4A;
-    font-weight: 600;
-    font-size: 18px;
+    font-family: Roboto;
+    text-align: inherit;
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
   }
 
   h5 {
-    color: #4f52ff;
-    font-size: 16px;
-    font-weight: 600;
+    cursor: pointer;
+    font-weight: 500;
+    height: 2rem;
+    padding: 0px 1rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.0125rem;
+    color: rgb(0, 108, 230);
   }
 }
 
@@ -307,15 +285,27 @@ select {
   border-bottom: 1px solid #e8e8e8;
 
   h6 {
-    color: #252F4A;
-    font-weight: 600;
-    font-size: 18px;
+    font-family: Roboto;
+    text-align: inherit;
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 700;
   }
 
   h5 {
-    color: #4f52ff;
-    font-size: 16px;
-    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.015625rem;
+    font-weight: 500;
+    padding: 0px;
+    height: auto;
+    color: rgb(0, 108, 230);
   }
 }
 
@@ -355,15 +345,35 @@ select {
   padding: 10px 0;
 
   h6 {
-    color: #252F4A;
-    font-weight: 600;
-    font-size: 14px;
+    font-family: Roboto;
+    text-align: inherit;
+    color: rgb(111, 119, 134);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.0125rem;
+    font-weight: 400;
   }
 
   h5 {
-    color: #4f52ff;
-    font-size: 14px;
-    font-weight: 600;
+    display: inline-flex
+    ;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        letter-spacing: 0.015625rem;
+        font-weight: 500;
+        padding: 0px;
+        height: auto;
+        color: rgb(0, 108, 230);
   }
 }
 
@@ -527,4 +537,149 @@ border: 1px solid #0d6efd;
   font-size: 12px;
   font-weight: 600;
 }
+}
+.table_outer{
+  scroll-behavior: smooth;
+    white-space: nowrap;
+    overflow: auto;
+    height: calc(100vh - 200px);
+    
+table {
+  border-collapse: separate;
+  border: 1px solid #e8e8e8;
+
+  th,
+  td {
+    background: #FFF;
+    // border-bottom: 0;
+  }
+
+  th {
+    font-family: Roboto;
+    text-align: center;
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.625rem;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
+  }
+
+  td {
+    font-family: Roboto;
+    text-align: center;
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.625rem;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
+  }
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border: 1px solid #dee2e6;
+}
+
+.yellow-td {
+  background: #f4d7933d !important;
+}
+
+.grey-td {
+  background: #a5bfcc2e !important;
+
+  div {
+    background: #A5BFCC;
+    border-radius: 6px;
+    text-align: center;
+  }
+}
+
+.sp1 {
+  background: #98EECC;
+  width: 100px;
+  border-radius: 10px;
+  padding: 1px 10px;
+
+}
+
+table {
+  border-collapse: collapse;
+}
+
+}
+.table_outer::-webkit-scrollbar{
+  width:6px;
+  border-radius: 50%;
+}
+.table_outer::-webkit-scrollbar-thumb {
+  background-color: #a1a8b5; /* Color of the scrollbar handle */
+  border-radius: 4px; /* Rounded corners for the handle */
+}
+
+.table_outer::-webkit-scrollbar-thumb:hover {
+  background-color: #a1a8b5; /* Color when hovering over the handle */
+}
+
+.table_outer::-webkit-scrollbar-track {
+  background: #a1a8b5; /* Color of the scrollbar track */
+  border-radius: 4px; /* Rounded corners for the track */
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  color: #4f52ff;
+  background-color: rgb(0 108 230 / 19%) !important;
+  font-weight: 600;
+}
+.dropdown-item{
+  font-size: 12px;
+  line-height: 1rem;
+  letter-spacing: 0.01563rem;
+  font-weight: 500;
+  color: rgb(52, 64, 84);
+}
+.editor_tbl{
+  table{
+    th{
+      font-family: Roboto;
+      text-align: center;
+      color: rgb(111, 119, 134);
+      white-space: inherit;
+      font-style: normal;
+      text-decoration: none;
+      font-size: 0.75rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.0125rem;
+      font-weight: 400;
+    }
+    .input-group{
+      display: inline-flex
+      ;
+          -webkit-box-align: center;
+          align-items: center;
+          border-radius: 0.25rem;
+          overflow: hidden;
+          height: 1.5rem;
+          font-size: 0.75rem;
+          line-height: 1.25rem;
+          letter-spacing: 0.0125rem;
+          border: 1px solid rgb(216, 220, 227);
+          color: rgb(52, 64, 84);
+    }
+  }
+}
+.dropdown-toggle{
+  b{
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 }

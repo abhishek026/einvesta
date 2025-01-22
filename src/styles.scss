@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
 
+* {
+  font-family: "Roboto", serif;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 @import "~ngx-toastr/toastr.css";  /* Import toastr styles */
 .toast-success {
    // background-color: #7637e4 !important;  /* Custom background color for success */
