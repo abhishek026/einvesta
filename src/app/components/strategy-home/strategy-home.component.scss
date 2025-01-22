@@ -72,21 +72,40 @@
 .half-section {
   height: 100vh;
   overflow-y: auto;
-  .input-group{
+
+  .input-group {
     border: 1px solid #e8e8e8;
     border-radius: 8px;
     width: 100px;
-    select,input,.input-group-text{
+
+    select,
+    input,
+    .input-group-text {
       border: 0;
       background: transparent;
       color: #2F0F5D;
-    font-weight: 600;
-    font-size: 14px
+      font-weight: 600;
+      font-size: 14px
     }
-    select{
+
+    select,
+    .dropdown {
       border-left: 1px solid #e8e8e8 !important;
     }
-    
+
+    .dropdown {
+      button {
+        border: none;
+        background: none;
+        height: 100%;
+      }
+    }
+
+    .la-angle-down:before {
+      content: "\f107";
+      padding-top: 8px;
+      padding-left: 4px;
+    }
   }
 }
 
@@ -175,6 +194,7 @@ table {
   border-radius: 20px;
   height: 35px;
   font-size: 14px;
+
   .toggle-button {
     display: none;
   }
@@ -182,7 +202,7 @@ table {
   .toggle-button+label {
     display: inline-block;
     padding: 0.1rem 1rem;
-    margin:2px 5px;
+    margin: 2px 5px;
     border: 0.125rem solid transparent;
     border-radius: 4rem;
     cursor: pointer;
@@ -214,7 +234,8 @@ table {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 }
-select{
+
+select {
   border: 1px solid #e8e8e8;
   border-radius: 8px;
   height: 35px;
@@ -224,7 +245,7 @@ select{
   font-size: 14px;
 }
 
-.div_b{
+.div_b {
   background: #03a9f4;
   height: 19px;
   width: 19px;
@@ -237,7 +258,8 @@ select{
   font-weight: 700;
   margin-right: 10px;
 }
-.div_s{
+
+.div_s {
   background: #ff000038;
   height: 19px;
   width: 19px;
@@ -250,95 +272,108 @@ select{
   font-weight: 700;
   margin-right: 10px;
 }
-.form-control:focus{
+
+.form-control:focus {
   color: #212529;
   background-color: #fff;
   border-color: #e8e8e8;
   outline: 0;
   box-shadow: none;
 }
+
 .la-bars:before,
-.la-trash-alt:before{
+.la-trash-alt:before {
   font-size: 25px;
   margin: 0px 6px;
   cursor: pointer;
 }
-.top_sec1{
+
+.top_sec1 {
   border-bottom: 1px solid #e8e8e8;
-  h6{
+
+  h6 {
     color: #252F4A;
-  font-weight: 600;
-  font-size: 18px;
+    font-weight: 600;
+    font-size: 18px;
   }
 
-  h5{
+  h5 {
     color: #4f52ff;
     font-size: 16px;
     font-weight: 600;
   }
 }
-.top_sec1{
+
+.top_sec1 {
   border-bottom: 1px solid #e8e8e8;
-  h6{
+
+  h6 {
     color: #252F4A;
-  font-weight: 600;
-  font-size: 18px;
+    font-weight: 600;
+    font-size: 18px;
   }
 
-  h5{
+  h5 {
     color: #4f52ff;
     font-size: 16px;
     font-weight: 600;
   }
 }
-.top_sec1{
+
+.top_sec1 {
   border-bottom: 1px solid #e8e8e8;
-  h6{
+
+  h6 {
     color: #252F4A;
-  font-weight: 600;
-  font-size: 18px;
+    font-weight: 600;
+    font-size: 18px;
   }
 
-  h5{
+  h5 {
     color: #4f52ff;
     font-size: 16px;
     font-weight: 600;
   }
 }
-.top_sec2{
+
+.top_sec2 {
   padding: 10px 0;
-  h6{
+
+  h6 {
     color: #252F4A;
-  font-weight: 600;
-  font-size: 14px;
+    font-weight: 600;
+    font-size: 14px;
   }
 
-  h5{
+  h5 {
     color: #4f52ff;
     font-size: 14px;
     font-weight: 600;
   }
 }
-.top_sec3{
+
+.top_sec3 {
   padding: 10px 0;
 
-  h6{
+  h6 {
     color: #252F4A;
-  font-weight: 600;
-  font-size: 14px;
+    font-weight: 600;
+    font-size: 14px;
   }
 
-  h5{
+  h5 {
     color: #4f52ff;
     font-size: 14px;
     font-weight: 600;
   }
 }
-.background-sky.active{
+
+.background-sky.active {
   background-color: #4f52ff !important;
   color: #FFF !important;
 }
-.background-sky{
+
+.background-sky {
   width: 100%;
   padding: 5px 10px;
   border-radius: 50px;
@@ -349,42 +384,51 @@ select{
   background: #9acbd070;
   color: #23486A;
 }
-.card_sec{
-  .card{
+
+.card_sec {
+  .card {
     height: 150px;
     display: flex;
     align-items: center;
     justify-content: end;
   }
 }
-.bottom_sec{
+
+.bottom_sec {
   position: fixed;
   bottom: 0;
   width: 100%;
   background: #FFF;
   padding: 16px 16px;
-.clear_btn{
-  border: 1px solid #e8e8e8;
-  height: 35px;
-  font-size: 12px;
-  font-weight: 600;
-  background: #FFF;
-  width: 110px;
-  border-radius: 4px;
-}
-.done_btn{
-  background-color: #4f52ff;
-  width: 110px;
-border: 1px solid #4f52ff;
-border-radius: 4px;
-  color: #FFF;
-  height: 35px;
-  font-size: 12px;
-  font-weight: 600;
-}
-span{
-  color: #2F0F5D;
+
+  .clear_btn {
+    border: 1px solid #e8e8e8;
+    height: 35px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #FFF;
+    width: 110px;
+    border-radius: 4px;
+  }
+
+  .done_btn {
+    background-color: #4f52ff;
+    width: 110px;
+    border: 1px solid #4f52ff;
+    border-radius: 4px;
+    color: #FFF;
+    height: 35px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  span {
+    color: #2F0F5D;
     font-weight: 600;
     font-size: 14px;
+  }
 }
+
+.dropdown-toggle::after {
+  display: none;
 }
