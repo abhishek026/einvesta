@@ -489,7 +489,13 @@ border: 1px solid #0d6efd;
   border-color: #0d6efd;
 }
 #strategy-popup{
-  
+  .modal-header{
+    height: 40px;
+  }
+  .modal-body{
+    height: calc(100vh - 190px);
+    overflow-y: auto;
+  }
 .clear_btn {
   border: 1px solid #e8e8e8;
   height: 35px;
@@ -501,11 +507,11 @@ border: 1px solid #0d6efd;
 }
 
 .add_btn {
-  background-color: #4f52ff;
+  background-color: #FFF;
   width: 110px;
   border: 1px solid #4f52ff;
   border-radius: 4px;
-  color: #FFF;
+  color: #4f52ff;
   height: 35px;
   font-size: 12px;
   font-weight: 600;
