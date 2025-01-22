@@ -27,8 +27,11 @@
                         <div class="row m-0">
                             <div class="col-md-3 pb-3">
                                 <div class="pills_sec">
-                                    <select name="" id="" class="w-100">
-                                        <option value="">23 Jan</option>
+                                    <select id="dateDropdown" [(ngModel)]="selectedDate" (change)="onDateChange($event)" class="w-100">
+                                        <option value="">Date</option>
+                                        <option *ngFor="let date of dateList" [value]="date.key">
+                                            {{ date.displayValue }}
+                                          </option>                    
                                     </select>
                                 </div>
                             </div>

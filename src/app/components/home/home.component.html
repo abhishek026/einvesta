@@ -1,5 +1,4 @@
 <app-sidenav [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidenav>
-
 <div class="content" [ngClass]="{ 'sidebar-expanded': sidebarExpanded, 'sidebar-collapsed': !sidebarExpanded }">
   <div class="contentData scroll" id="contentId">
     <router-outlet></router-outlet>
