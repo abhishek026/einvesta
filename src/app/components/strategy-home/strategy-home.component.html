@@ -178,20 +178,20 @@
                                         ;
                                             align-items: center;
                                             height: 54px;">
-                                        <div class="div_b">B</div>
+                                        <div class="div_b">{{data.inst_type}}</div>
                                     </td>
                                     <td>
                                         <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <span class="input-group-text" id="basic-addon2">{{data.expiry_value}}</span>
                                             <div class="dropdown">
                                                 <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="las la-angle-down"></i>
                                                 </button>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
+                                                    <!-- <li><a class="dropdown-item">Action</a></li>
                                                     <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
+                                                    <li><a class="dropdown-item">Something else here</a></li> -->
                                                 </ul>
                                             </div>
                                         </div>
@@ -199,28 +199,28 @@
                                     <td>
                                         <div class="input-group" >
                                             <span class="input-group-text" id="basic-addon2">-</span>
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <span class="input-group-text" id="basic-addon2">{{data.strike}}</span>
                                             <div class="dropdown">
                                                 <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
                                                     <b>+</b>
                                                 </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                     <li><a class="dropdown-item">Action</a></li>
                                                     <li><a class="dropdown-item">Another action</a></li>
                                                     <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
+                                                </ul> -->
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                            <span class="input-group-text border-0" id="basic-addon2">{{data.inst_type}}</span>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                            <span class="input-group-text" id="basic-addon2">{{data.lot_size}}</span>
                                             <div class="dropdown">
                                                 <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -237,7 +237,7 @@
 
                                     <td>
                                         <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                            <span class="input-group-text border-0" id="basic-addon2">{{data.strike}}</span>
                                         </div>
                                     </td>
                                     <td>
