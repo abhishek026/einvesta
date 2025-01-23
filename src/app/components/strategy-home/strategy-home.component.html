@@ -87,7 +87,7 @@
                                 <table class="table">
                                     <thead class="table-light">
                                         <tr>
-                                            <th>Date</th>
+                                            <th>Lot</th>
                                             <th>
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <span>Call LTP</span>
@@ -99,365 +99,30 @@
                                             <th>
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <span>Put OL</span>
-                                                    <span>Put LTp</span>
+                                                    <span>Lot</span>
                                                 </div>
                                             </th>
-                                            <th class="text-center">Delta</th>
+                                            <th class="text-center">Lot</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
+                                        <tr *ngFor="let data of orderDataList">
+                                            <td class="yellow-td">{{data.lot_size}}</td>
+                                            <td class="yellow-td" (click)="selectTrade(data)">{{data.inst_type}}</td>
                                             <td class="grey-td">
-                                                <div>21500</div>
+                                                <div>{{data.strike}}</div>
                                             </td>
-                                            <td class="grey-td text-center">24.2</td>
+                                            <td class="grey-td text-center">{{data.exchange}}</td>
                                             <td>
                                                 <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
+                                                    <span class="sp1">{{data.inst_type}}</span>
+                                                    <span class="sp2">{{data.lot_size}}</span>
 
                                                 </div>
                                             </td>
-                                            <td class="text-center">0.01</td>
+                                            <td class="text-center">{{data.lot_size}}</td>
                                         </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="yellow-td">23 Jan</td>
-                                            <td class="yellow-td">99.5</td>
-                                            <td class="grey-td">
-                                                <div>21500</div>
-                                            </td>
-                                            <td class="grey-td text-center">24.2</td>
-                                            <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">11.344</span>
-                                                    <span class="sp2">11.344</span>
-
-                                                </div>
-                                            </td>
-                                            <td class="text-center">0.01</td>
-                                        </tr>
+                            
                                     </tbody>
                                 </table>
                             </div>
@@ -508,7 +173,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let data of selectedTrades">
                                     <td style="display: flex
                                         ;
                                             align-items: center;
@@ -583,7 +248,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
+                                <!-- <tr>
                                     <td style="display: flex
                                         ;
                                             align-items: center;
@@ -986,7 +651,7 @@
                                         </div>
                                     </td>
                                 </tr>
-
+ -->
 
                             </tbody>
                         </table>

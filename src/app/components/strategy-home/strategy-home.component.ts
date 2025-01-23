@@ -17,6 +17,8 @@ export class StrategyHomeComponent implements OnInit {
   orderDataList: any=[];
   brokerList: any=[];
   selected_broker: any;
+  tradeMap: Map<string, any> = new Map<string, any>();
+  selectedTrades:any=[];
   constructor(
     private http: HttpService,
     private loader: LoaderService,
@@ -60,5 +62,13 @@ export class StrategyHomeComponent implements OnInit {
   onBrokerChange(broker:any){
     this.selected_broker=broker
 
+  }
+  selectTrade(data:any){
+    if (this.tradeMap.has(data.trading_symbol)) {
+      this.tradeMap.set(data.trading_symbol, { ...this.tradeMap.get(data.trading_symbol), ...data });
+    } else {
+      this.tradeMap.set(data.trading_symbol, data);
+    }
+    this.selectedTrades=Array.from(this.tradeMap.values());
   }
 }
