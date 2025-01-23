@@ -3,62 +3,43 @@
   padding: 50px 0px 10px 50px;
   background: #f8f9fa;
 }
-
 .content.sidebar-expanded {
-  margin-left: 13%;
-  width: 87%;
-  padding: 50px 16px;
+  margin-left: 170px;
+    width: auto;
+    padding: 50px 0px 10px 0px;
 }
 .scroll::-webkit-scrollbar-thumb:hover {
   background: #007bff;
 }
-
 .scroll::-webkit-scrollbar {
   width: 8px;
 }
-
 .content {
-  // margin-left: 3.7%;
   transition: 0.3s;
-
   &.sidebarExpanded {
     margin-left: 15%;
   }
-
   .top-bar {
-    // height: auto;
     width: 100%;
   }
 }
-
 .contentData {
-  // background-color: #fff;
-  height: calc(100vh - 50px);
-  overflow-y: auto;
-  overflow-x: hidden;
-  // background: #f9f9f9;
-
+  // height: calc(100vh - 50px);
+  // overflow-y: auto;
+  // overflow-x: hidden;
 }
 
 /* Responsive CSS by Vishakha */
 
 @media only screen and (max-width: 860px) {
-
-
-
   .content.sidebarExpanded,
   .content {
     margin-left: 50px;
   }
 }
   @media only screen and (max-width: 860px) {
-
-
     .content.sidebarExpanded,
     .content {
       margin-left: 50px;
     }
   }
-*{
-  overflow: hidden;
-}

@@ -44,47 +44,14 @@ figure {
       white-space: inherit;
       font-style: normal;
       text-decoration: none;
-      font-size: 0.875rem;
+      font-size: 14px;
       line-height: 1.25rem;
       letter-spacing: 0.01563rem;
-      font-weight: 400;
+      font-weight: 500;
     }
 }
 }
-   .panel-container{
-    background: #FFF;
-    padding: 16px;
-    border-radius: 10px;
-      .text-muted{
-        text-transform: uppercase;
-        text-align:center;
-
-        color: rgb(111, 119, 134);
-        white-space: inherit;
-        font-style: normal;
-        text-decoration: none;
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-        letter-spacing: 0.0125rem;
-        font-weight: 400;
-      }
-      .large{
-        font-family: Roboto;
-        text-align: center;
-        color: rgb(52, 64, 84);
-        white-space: inherit;
-        font-style: normal;
-        text-decoration: none;
-        font-size: 0.75rem;
-        line-height: 1.25rem;
-        letter-spacing: 0.0125rem;
-        font-weight: 400;
-
-      }
-      .border-right{
-        border-right: 1px solid #dadbda;
-      }
-   }
+  
 .projects-header {
 	
 	.count {
@@ -97,7 +64,7 @@ figure {
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 18px;
     line-height: 1.25rem;
     letter-spacing: 0.01563rem;
     font-weight: 500;
@@ -124,11 +91,9 @@ figure {
           width: 18px;
         }
     }
+   
   
 }
-
-
-
 .danger-item {
 	border-left: 4px solid #A84D43;
 }
@@ -397,4 +362,68 @@ thead,
 tr {
   border: 1px solid #dee2e6;
 }
+}
+.shadow {
+  box-shadow: 0px 3px 3px -1px rgba(10, 22, 70, .1), 0px 0px 1px 0px rgba(10, 22, 70, .06) !important;
+
+}
+.info_cart{
+  .icon{
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon-shape1{
+  background: rgb(255 87 154);
+
+  }
+  .icon-shape2{
+    background:#5c60f5;
+  
+    }
+    .icon-shape3{
+      background:#00d4ff;
+    
+      }
+      .icon-shape4{
+        background:#ff8c00;
+      
+        }
+        .card-body{
+          flex: 1 1 auto;
+          padding: 1.5rem 1.5rem;
+          color: #525f7f;
+        }
+        span.h6{
+          text-transform: uppercase;
+          text-align: left;
+          color: rgb(111, 119, 134);
+          white-space: inherit;
+          font-style: normal;
+          text-decoration: none;
+          font-size: 14px;
+          line-height: 1rem;
+          letter-spacing: 0.01563rem;
+          font-weight: 500;
+      
+        }
+        span.h3{
+          color: rgb(52, 64, 84);
+          white-space: inherit;
+          font-style: normal;
+          text-decoration: none;
+          font-size: 16px;
+          line-height: 1rem;
+          letter-spacing: 0.01563rem;
+          font-weight: 500;
+      
+        }
+        .view_margin:hover{
+          color: rgb(0, 108, 230);
+          cursor: pointer;
+        }
 }
