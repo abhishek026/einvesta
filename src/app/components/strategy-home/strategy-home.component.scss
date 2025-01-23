@@ -126,7 +126,7 @@
 
 .half-section {
   background: #FFF;
-  border-radius: 20px;
+  border-radius: 6px
 }
 
 .form__container {
@@ -446,14 +446,12 @@ select ,.dropdown>button{
   position: absolute;
   left: 0;
   top: -15px;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border: 2px solid #ccc;
   border-radius: 4px;
-  // background-color: #0d6efd;
   background-color: #fff;
   transition: 0.3s;
-// background: #646cff;
 
 }
 
@@ -463,10 +461,10 @@ background-color: #0d6efd;
 border: 1px solid #0d6efd;
 }
 .custom-checkbox input:checked + .checkbox-box::after {
-  content: '\2713'; /* Checkmark symbol */
+  content: '\2713';
   position: absolute;
-  top: -4px;
-  left: 3px;
+  top: -2px;
+  left: 1px;
   font-size: 16px;
   color: #FFF;
   font-weight: 700;
@@ -638,7 +636,13 @@ table {
   color: rgb(52, 64, 84);
 }
 .editor_tbl1,.editor_tbl2{
+  tbody, td, tfoot, th, thead, tr {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0;
+}
   table{
+
     th{
       font-family: Roboto;
       text-align: center;
@@ -662,6 +666,7 @@ table {
           letter-spacing: 0.0125rem;
           border: 1px solid rgb(216, 220, 227);
           color: rgb(52, 64, 84);
+          width: auto;
     }
     h6{
       font-family: Roboto;
