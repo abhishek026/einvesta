@@ -52,7 +52,7 @@ export class StrategyHomeComponent implements OnInit {
     this.loader.showLoader();
     this.http.get(API_ENDPOINTS.STRAGEGY.GET_BY_DATE(selectedDate)).subscribe((res:any) => {
       this.tradeList=res;
-      this.orderDataList = res.orderDataList;
+      this.orderDataList = res.order_data_list;
       this.brokerList=res.brokers;
      // this.loader.hideLoader();
     })

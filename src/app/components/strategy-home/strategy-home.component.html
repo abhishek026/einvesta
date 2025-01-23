@@ -54,12 +54,12 @@
                                         <div class="dropdown">
                                             <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                                {{selected_broker?.brokerName || 'Select Broker' }}
+                                                {{selected_broker?.broker_name || 'Select Broker' }}
                                                 <i class="las la-angle-down"></i>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li *ngFor="let broker of brokerList" (click)="onBrokerChange(broker)"><a
-                                                        class="dropdown-item"> {{ broker.brokerName }}</a></li>
+                                                        class="dropdown-item"> {{ broker.broker_name }}</a></li>
                                             </ul>
                                         </div>
 
