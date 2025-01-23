@@ -12,9 +12,11 @@ import { API_ENDPOINTS } from 'src/app/utils/api-constants';
 export class StrategyHomeComponent implements OnInit {
   dateList: { key: string; displayValue: string }[] = [];
   selectedDate: string = '';
+  displayDate:string='Select Date';
   tradeList: any;
   orderDataList: any=[];
   brokerList: any=[];
+  selected_broker: any;
   constructor(
     private http: HttpService,
     private loader: LoaderService,
@@ -37,7 +39,9 @@ export class StrategyHomeComponent implements OnInit {
       displayValue: res[key],
     }));
   }
-  onDateChange(event: any) {
+  onDateChange(obj: any) {
+    this.selectedDate=obj.key;
+    this.displayDate=obj.displayValue;
     if (this.selectedDate == '') {
       this.toaster.showError('Please Select Validate Date!!', "Error!");
       return;
@@ -50,7 +54,11 @@ export class StrategyHomeComponent implements OnInit {
       this.tradeList=res;
       this.orderDataList = res.orderDataList;
       this.brokerList=res.brokers;
-      this.loader.hideLoader();
+     // this.loader.hideLoader();
     })
+  }
+  onBrokerChange(broker:any){
+    this.selected_broker=broker
+
   }
 }

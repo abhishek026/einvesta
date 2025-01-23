@@ -3,7 +3,7 @@
         <div class="col-md-6 ps-1 pe-1">
             <div class="row m-0 half-section">
                 <div class="col-md-12 p-0">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="straddles-tab" data-bs-toggle="tab"
                                 data-bs-target="#straddles" type="button" role="tab" aria-controls="straddles"
@@ -26,7 +26,7 @@
                         <li class="nav-item setting" role="presentation">
                             <i class="las la-cog me-3"></i>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="tab-content p-3" id="myTabContent">
                         <div class="tab-pane fade show active" id="straddles" role="tabpanel"
                             aria-labelledby="straddles-tab">
@@ -34,22 +34,38 @@
                                 <div class="col-md-3 pb-3">
                                     <div class="pills_sec">
 
-                                        <div class="dropdown" [(ngModel)]="selectedDate"
-                                            (change)="onDateChange($event)">
+                                        <div class="dropdown">
                                             <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                                23 Jan<i class="las la-angle-down"></i>
+                                                {{displayDate || 'Date' }}
+                                                <i class="las la-angle-down"></i>
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><a class="dropdown-item">Date</a></li>
-                                                <li *ngFor="let date of dateList" [value]="date.key"><a
+                                                <li *ngFor="let date of dateList" (click)="onDateChange(date)"><a
                                                         class="dropdown-item"> {{ date.displayValue }}</a></li>
                                             </ul>
                                         </div>
 
                                     </div>
                                 </div>
-                                <div class="col-md-6 pb-3">
+                                <div class="col-md-3 pb-3">
+                                    <div class="pills_sec">
+
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                {{selected_broker?.brokerName || 'Select Broker' }}
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li *ngFor="let broker of brokerList" (click)="onBrokerChange(broker)"><a
+                                                        class="dropdown-item"> {{ broker.brokerName }}</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-6 pb-3">
                                     <section class="form__container">
                                         <input type="radio" id="choco" name="flavor" value="choco"
                                             class="toggle-button">
@@ -63,7 +79,7 @@
                                             class="toggle-button">
                                         <label for="blend">Greeks</label>
                                     </section>
-                                </div>
+                                </div> -->
                             </div>
 
 
@@ -266,6 +282,182 @@
                                             </td>
                                             <td class="text-center">0.01</td>
                                         </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="yellow-td">23 Jan</td>
+                                            <td class="yellow-td">99.5</td>
+                                            <td class="grey-td">
+                                                <div>21500</div>
+                                            </td>
+                                            <td class="grey-td text-center">24.2</td>
+                                            <td>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">11.344</span>
+                                                    <span class="sp2">11.344</span>
+
+                                                </div>
+                                            </td>
+                                            <td class="text-center">0.01</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -289,10 +481,10 @@
         <div class="col-md-6 ps-1 pe-1">
             <div class="row m-0 half-section p-3">
                 <div class="col-md-12 p-0">
-                    <div class="top_sec1 d-flex align-items-center justify-content-between ">
+                    <!-- <div class="top_sec1 d-flex align-items-center justify-content-between ">
                         <h6>Editor</h6>
                         <h5><i class="las la-angle-double-left me-1"></i>Collapse</h5>
-                    </div>
+                    </div> -->
                     <div class="top_sec2 d-flex align-items-center justify-content-between ">
                         <h6>New Trade</h6>
                         <h5>Clear All</h5>
@@ -800,8 +992,8 @@
                         </table>
                     </div>
 
-                    <hr>
-                    <h6 class="note">Please Click on ready-made strategy to load it</h6>
+                    <!-- <hr> -->
+                    <!-- <h6 class="note">Please Click on ready-made strategy to load it</h6>
                     <div class="row m-0">
                         <div class="col-md-2 ps-1 pe-1 mb-2 d-flex align-items-center">
                             <div class="basic-chip background-sky active">Bullish</div>
@@ -878,7 +1070,7 @@
                                 <h6 class="text-center">Bull Put Spread</h6>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -886,6 +1078,7 @@
         </div>
     </div>
 <div class="row m-0 bottom_sec">
+    <hr>
     <div class="col-md-12 d-flex align-items-center justify-content-between">
         <span>3 Legs Selected</span>
         <div class="d-flex align-items-center justify-content-end">
