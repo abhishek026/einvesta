@@ -15,10 +15,8 @@ figure {
 	margin: 0;
 	padding: 0;
 }
-.projects {
-  background: #FFF;
-  border-radius: 20px;
-  height: 100%;
+.projects-inner {
+
 	.count,
 	.title {
 		display: inline-block;
@@ -29,27 +27,58 @@ figure {
   h6{
     padding-top: 16px;
     padding-top: 16px;
-    color: #6c757d;
-    font-weight: 500;
-    font-size: 16px;
+    font-family: Roboto;
+    text-align: inherit;
+    color: rgb(111, 119, 134);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 400;
     span{
-      font-weight: 500;
+      font-family: Roboto;
+      text-align: inherit;
+      color: rgb(52, 64, 84);
+      white-space: inherit;
+      font-style: normal;
+      text-decoration: none;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.01563rem;
+      font-weight: 400;
     }
 }
 }
    .panel-container{
+    background: #FFF;
+    padding: 16px;
+    border-radius: 10px;
       .text-muted{
         text-transform: uppercase;
-        font-weight: bold;
-        font-size: 16px;
-        color: #c5c7cc;
         text-align:center;
+
+        color: rgb(111, 119, 134);
+        white-space: inherit;
+        font-style: normal;
+        text-decoration: none;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        letter-spacing: 0.0125rem;
+        font-weight: 400;
       }
       .large{
-        color: #5ba6ff;
-        font-size: 20px;
+        font-family: Roboto;
         text-align: center;
-        font-weight: 700;
+        color: rgb(52, 64, 84);
+        white-space: inherit;
+        font-style: normal;
+        text-decoration: none;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        letter-spacing: 0.0125rem;
+        font-weight: 400;
 
       }
       .border-right{
@@ -57,13 +86,21 @@ figure {
       }
    }
 .projects-header {
-	color: white;
-	padding: 22px;
+	
 	.count {
 		color: #738297;
 	}
 	.title {
-		font-size: 21px;
+		font-family: Roboto;
+    text-align: inherit;
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
 
 		+ .count {
 			margin-left: 5px;
@@ -116,8 +153,8 @@ figure {
     position: absolute;
     left: 0;
     top: -15px;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border: 2px solid #ccc;
     border-radius: 4px;
     // background-color: #0d6efd;
@@ -135,9 +172,9 @@ figure {
 .custom-checkbox input:checked + .checkbox-box::after {
     content: '\2713'; /* Checkmark symbol */
     position: absolute;
-    top: -4px;
+    top: 0px;
     left: 3px;
-    font-size: 16px;
+    font-size: 12px;
     color: #FFF;
     font-weight: 700;
 
@@ -154,18 +191,20 @@ figure {
 }
 .show_all_btn{
   display: flex;
-      justify-content: center;
-      width: 100%;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 6px;
-      border: 1px solid #5ba6ff;
-      line-height: 30px;
-      height: 40px;
-      background-color: #5ba6ff;
-      font-weight: 600;
-      font-size: 12px;
-      text-align: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid  rgb(0, 108, 230);;
+  line-height: 30px;
+  height: 40px;
+  border-radius: 6px;
+  font-size: 12px;
+  text-align: center;
+  font-family: Roboto;
+  background: rgb(0, 108, 230);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+
 }
 .background-blue{
   width: 100%;
@@ -173,10 +212,15 @@ figure {
   border-radius: 50px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 12px;
   text-align: center;
-  background: #9acbd070;
-  color: #23486A;
+  border-radius: 16px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  font-family: Roboto;
+  background: rgb(229, 239, 251);
+  color: rgb(52, 64, 84);
+  font-weight: 400;
 
 }
 .chips_sec{
@@ -225,17 +269,28 @@ figure {
 table{
   border-collapse: separate;
   th{
-    background: #FFF;
-    color: #252F4A;
-    font-size: 16px;
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
   }
   th,td{
     background:#FFF;
   }
   td{
-    color: #252F4A;
-    font-weight: 600;
-    font-size: 14px;
+
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
   }
   tr{
     border-bottom-width: 1px;
@@ -282,4 +337,64 @@ tbody, td, tfoot, th, thead, tr{
   border-left: 0;
   border-right: 0;
   border-bottom: 1px dashed #dee2e6;
+}
+
+.table_outer::-webkit-scrollbar{
+  width:6px;
+  border-radius: 50%;
+}
+.table_outer::-webkit-scrollbar-thumb {
+  background-color: #a1a8b5; /* Color of the scrollbar handle */
+  border-radius: 4px; /* Rounded corners for the handle */
+}
+
+.table_outer::-webkit-scrollbar-thumb:hover {
+  background-color: #a1a8b5; /* Color when hovering over the handle */
+}
+
+.table_outer::-webkit-scrollbar-track {
+  background: #a1a8b5; /* Color of the scrollbar track */
+  border-radius: 4px; /* Rounded corners for the track */
+}
+
+.table_outer{
+  scroll-behavior: smooth;
+    white-space: nowrap;
+    overflow: auto;
+    height: calc(100vh - 200px);
+    
+table {
+  border-collapse:collapse;
+  border: 1px solid #e8e8e8;
+  thead{
+    position: sticky;
+    top: 0;
+  }
+  th,
+  td {
+    background: #FFF;
+    // border-bottom: 0;
+  }
+  .fa-trash:before{
+    content: "\f1f8";
+    color: rgb(220 53 69);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .fa-pen:before {
+    content: "\f304";
+    font-size:14px;
+    cursor: pointer;
+}
+  
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border: 1px solid #dee2e6;
+}
 }

@@ -1,6 +1,7 @@
 .content {
   transition: width 0.3s ease;
   padding: 50px 0px 10px 50px;
+  background: #f8f9fa;
 }
 
 .content.sidebar-expanded {
@@ -35,7 +36,7 @@
   height: calc(100vh - 50px);
   overflow-y: auto;
   overflow-x: hidden;
-  background: #f9f9f9;
+  // background: #f9f9f9;
 
 }
 
