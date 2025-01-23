@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: ''
+  apiBaseUrl: 'http://localhost:8086/admin-ui-connector-app'
 };
 
 /*

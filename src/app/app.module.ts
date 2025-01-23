@@ -14,6 +14,7 @@ import { LoaderComponent } from './components/core/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // Required for animations
 import { FormsModule } from '@angular/forms';
 import { StrategyHomeComponent } from './components/strategy-home/strategy-home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { StrategyHomeComponent } from './components/strategy-home/strategy-home.
       progressBar: true,      // Show progress bar
       preventDuplicates: true // Prevent duplicate toasts
     }),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,16 +28,16 @@
                             <div class="col-md-3 pb-3">
                                 <div class="pills_sec">
                                     
-                                    <div class="dropdown">
+                                    <div class="dropdown" [(ngModel)]="selectedDate" (change)="onDateChange($event)">
                                         <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             23 Jan<i class="las la-angle-down"></i>
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                          <li><a class="dropdown-item">Action</a></li>
-                                          <li><a class="dropdown-item">Another action</a></li>
-                                          <li><a class="dropdown-item">Something else here</a></li>
+                                          <li><a class="dropdown-item">Date</a></li>
+                                          <li *ngFor="let date of dateList" [value]="date.key"><a class="dropdown-item"> {{ date.displayValue }}</a></li>
                                         </ul>
                                       </div>
+                                  
                                 </div>
                             </div>
                             <div class="col-md-6 pb-3">

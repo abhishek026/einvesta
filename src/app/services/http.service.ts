@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class HttpService {
-  private apiUrl: string = environment.apiUrl; // Get the API URL from environment.ts
+//  private apiUrl: string = environment.apiUrl; // Get the API URL from environment.ts
 
   constructor(private http: HttpClient) {}
 
@@ -35,10 +35,10 @@ export class HttpService {
    * @param params - Optional URL parameters.
    */
   get<T>(endpoint: string, params?: HttpParams, token?: string): Observable<T> {
-    const url = `${this.apiUrl}/${endpoint}`;
+    //const url = `${this.apiUrl}/${endpoint}`;
     const headers = this.createHeaders(token);
 
-    return this.http.get<T>(url, { headers, params }).pipe(
+    return this.http.get<T>(endpoint, { headers, params }).pipe(
       map((response) => response),
       catchError(this.handleError)
     );
@@ -51,10 +51,10 @@ export class HttpService {
    * @param token - Optional Bearer token.
    */
   post<T>(endpoint: string, body: any, token?: string): Observable<T> {
-    const url = `${this.apiUrl}/${endpoint}`;
+    //const url = `${this.apiUrl}/${endpoint}`;
     const headers = this.createHeaders(token);
 
-    return this.http.post<T>(url, body, { headers }).pipe(
+    return this.http.post<T>(endpoint, body, { headers }).pipe(
       map((response) => response),
       catchError(this.handleError)
     );
@@ -67,10 +67,9 @@ export class HttpService {
    * @param token - Optional Bearer token.
    */
   put<T>(endpoint: string, body: any, token?: string): Observable<T> {
-    const url = `${this.apiUrl}/${endpoint}`;
     const headers = this.createHeaders(token);
 
-    return this.http.put<T>(url, body, { headers }).pipe(
+    return this.http.put<T>(endpoint, body, { headers }).pipe(
       map((response) => response),
       catchError(this.handleError)
     );
@@ -82,10 +81,9 @@ export class HttpService {
    * @param token - Optional Bearer token.
    */
   delete<T>(endpoint: string, token?: string): Observable<T> {
-    const url = `${this.apiUrl}/${endpoint}`;
     const headers = this.createHeaders(token);
 
-    return this.http.delete<T>(url, { headers }).pipe(
+    return this.http.delete<T>(endpoint, { headers }).pipe(
       map((response) => response),
       catchError(this.handleError)
     );
