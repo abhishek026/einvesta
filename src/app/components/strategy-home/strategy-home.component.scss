@@ -66,17 +66,9 @@
   }
 }
 
-.borderless-table th {
-  border: none;
-}
-
-.borderless-table td {
-  border: none;
-}
 
 .half-section {
-  height: 100vh;
-  overflow-y: auto;
+
 
   .input-group {
     border: 1px solid #e8e8e8;
@@ -264,10 +256,20 @@ select ,.dropdown>button{
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 14px;
     line-height: 1.25rem;
     letter-spacing: 0.01563rem;
     font-weight: 500;
+    span{
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      margin-left: 6px;
+      &:hover{
+        background: rgb(229, 239, 251);
+      }
+    }
+   
   }
 
   h5 {
@@ -337,8 +339,14 @@ select ,.dropdown>button{
 }
 
 .background-sky.active {
-  background-color: #4f52ff !important;
-  color: #FFF !important;
+  border-radius: 16px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  font-family: Roboto;
+  background: rgb(0, 108, 230);
+  color: rgb(255, 255, 255);
+  font-weight: 500;
 }
 
 .background-sky {
@@ -347,10 +355,15 @@ select ,.dropdown>button{
   border-radius: 50px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 12px;
   text-align: center;
-  background: #9acbd070;
-  color: #23486A;
+  border-radius: 16px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  font-family: Roboto;
+  background: rgb(229, 239, 251);
+  color: rgb(52, 64, 84);
+  font-weight: 400;
 }
 
 .card_sec {
@@ -359,6 +372,18 @@ select ,.dropdown>button{
     display: flex;
     align-items: center;
     justify-content: end;
+    h6{
+      font-family: Roboto;
+    text-align: center;
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.625rem;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 400;
+    }
   }
 }
 
@@ -458,13 +483,16 @@ border: 1px solid #0d6efd;
   border-color: #0d6efd;
 }
 #strategy-popup{
+  .modal-dialog{
+    max-width: 700px;
+  }
   .modal-header{
     height: 40px;
   }
   .modal-body{
-    height: calc(100vh - 190px);
-    overflow-y: auto;
-    overflow-x: hidden;
+    tbody, td, tfoot, th, thead, tr{
+      border-color: transparent !important;
+    }
   }
 .clear_btn {
   border: 1px solid #e8e8e8;
@@ -474,6 +502,7 @@ border: 1px solid #0d6efd;
   background: #FFF;
   width: 110px;
   border-radius: 4px;
+ 
 }
 
 .add_btn {
@@ -608,7 +637,7 @@ table {
   font-weight: 500;
   color: rgb(52, 64, 84);
 }
-.editor_tbl{
+.editor_tbl1,.editor_tbl2{
   table{
     th{
       font-family: Roboto;
@@ -658,4 +687,29 @@ table {
     font-weight: 600;
     cursor: pointer;
   }
+}
+.editor_tbl2{
+  overflow-y: auto;
+  height: calc(100vh - 300px);
+  &::-webkit-scrollbar{
+    width:6px;
+    border-radius: 50%;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #a1a8b5; /* Color of the scrollbar handle */
+    border-radius: 4px; /* Rounded corners for the handle */
+  }
+}
+.exp_label{
+  font-family: Roboto;
+  text-align: inherit;
+  color: rgb(52, 64, 84);
+  white-space: inherit;
+  font-style: normal;
+  text-decoration: none;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.0125rem;
+  font-weight: 400;
+  margin-bottom: 0;
 }
