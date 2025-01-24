@@ -30,8 +30,8 @@ export class StrategyHomeComponent implements OnInit {
   }
   getDateList() {
     this.loader.showLoader();
-    this.http.get(API_ENDPOINTS.STRAGEGY.DATE).subscribe(res => {
-      this.dateList = this.preparedDateDropDown(res);
+    this.http.get(API_ENDPOINTS.STRAGEGY.DATE).subscribe((res:any )=> {
+      this.dateList = this.preparedDateDropDown(res.result);
       this.loader.hideLoader();
     })
   }
@@ -53,9 +53,9 @@ export class StrategyHomeComponent implements OnInit {
   getTradeList(selectedDate: string) {
     this.loader.showLoader();
     this.http.get(API_ENDPOINTS.STRAGEGY.GET_BY_DATE(selectedDate)).subscribe((res:any) => {
-      this.tradeList=res;
-      this.orderDataList = res.order_data_list;
-      this.brokerList=res.brokers;
+      this.tradeList=res.result;
+      this.orderDataList = this.tradeList.order_data_list;
+      this.brokerList=this.tradeList.brokers;
      // this.loader.hideLoader();
     })
   }
