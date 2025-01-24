@@ -243,7 +243,7 @@
                                     <td>
                                         <div style="white-space: nowrap;">
                                             <!-- <i class="las la-bars"></i> -->
-                                            <i class="las la-trash-alt" (click)="deleteTrade(data)"></i>
+                                            <i class="las la-trash-alt" style="color: red;"(click)="deleteTrade(data)"></i>
 
                                         </div>
                                     </td>
@@ -747,6 +747,8 @@
         <span>3 Legs Selected</span>
         <div class="d-flex align-items-center justify-content-end">
             <button class="clear_btn me-2">Clear All</button>
+            <button class="draft me-2">Add to Drafts</button>
+            <!-- <button class="clear_btn me-2">Clear All</button> -->
             <button class="done_btn">Done</button>
 
         </div>
