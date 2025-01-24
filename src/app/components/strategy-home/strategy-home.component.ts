@@ -73,7 +73,6 @@ export class StrategyHomeComponent implements OnInit {
     this.selectedTrades=Array.from(this.tradeMap.values());
   }
   deleteTrade(data:any){
-    debugger
     if(this.tradeMap.has(data.trading_symbol)){
       this.tradeMap.delete(data.trading_symbol);
       this.selectedTrades=Array.from(this.tradeMap.values());
