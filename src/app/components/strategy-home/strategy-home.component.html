@@ -198,11 +198,11 @@
                                     </td>
                                     <td>
                                         <div class="input-group" >
-                                            <span class="input-group-text" id="basic-addon2">-</span>
+                                            <span class="input-group-text" id="basic-addon2" (click)="updateStrike(data,'Sub')">-</span>
                                             <span class="input-group-text" id="basic-addon2">{{data.strike}}</span>
                                             <div class="dropdown">
                                                 <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    data-bs-toggle="dropdown" aria-expanded="false" (click)="updateStrike(data,'Add')">
                                                     <b>+</b>
                                                 </button>
                                                 <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -215,7 +215,7 @@
                                     </td>
                                     <td>
                                         <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">{{data.inst_type}}</span>
+                                            <span class="input-group-text border-0" id="basic-addon2" style="cursor: pointer;" (click)="updateType(data)">{{data.inst_type}}</span>
                                         </div>
                                     </td>
                                     <td>

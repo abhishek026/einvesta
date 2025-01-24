@@ -76,7 +76,7 @@ export class StrategyHomeComponent implements OnInit {
     this.selectedTrades = Array.from(this.tradeMap.values());
   }
   setValueOnSelected(data: any): any {
-    data.status = 'B';
+    data.status = 'S';
     data.multiplier = 1;
   }
   deleteTrade(data: any) {
@@ -90,5 +90,19 @@ export class StrategyHomeComponent implements OnInit {
     this.selectedTrades = this.selectedTrades.map((trade:any)=> {
       return { ...trade, multiplier: multiplier }; 
     });
+  }
+  updateType(data:any){
+    if(data.inst_type=='PE'){
+      data.inst_type='CE'
+    }else{
+      data.inst_type='PE'
+    }
+  }
+  updateStrike(data:any,action:string){
+    if(action=='Add'){
+      data.strike=Number(data.strike)+50;
+    }else{
+      data.strike=Number(data.strike)-50;
+    }
   }
 }
