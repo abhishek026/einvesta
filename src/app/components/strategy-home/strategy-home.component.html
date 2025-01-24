@@ -167,7 +167,7 @@
                                     <th>Expiry</th>
                                     <th>Strike</th>
                                     <th>Type</th>
-                                    <th>Quantity</th>
+                                    <th>Qty</th>
                                     <th>Price</th>
                                     <th></th>
                                 </tr>
@@ -220,7 +220,7 @@
                                     </td>
                                     <td>
                                         <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">{{data.lot_size}}</span>
+                                            <span class="input-group-text" id="basic-addon2">{{data.lot_size*data.multiplier}}</span>
                                             <div class="dropdown">
                                                 <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -628,17 +628,15 @@
                                         <div class="d-flex align-items-center">
                                             <h6 for="Multiplier">Multiplier&nbsp;&nbsp;</h6>
                                             <div class="input-group w-auto d-flex align-items-baseline">
-                                                <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                                <span class="input-group-text" id="basic-addon2">{{selectedMultiplyer}}</span>
                                                 <div class="dropdown">
                                                     <button class="dropdown-toggle" type="button"
                                                         id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                        aria-expanded="false">
+                                                        aria-expanded="false" >
                                                         <i class="las la-angle-down"></i>
                                                     </button>
                                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                        <li><a class="dropdown-item">11</a></li>
-                                                        <li><a class="dropdown-item">12</a></li>
-                                                        <li><a class="dropdown-item">13</a></li>
+                                                        <li><a class="dropdown-item" *ngFor="let multiplyer of multiplierArr" (click)="updateQty(multiplyer)">{{multiplyer}}</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
