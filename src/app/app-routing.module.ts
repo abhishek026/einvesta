@@ -11,39 +11,48 @@ import { StrategyHomeComponent } from './components/strategy-home/strategy-home.
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full', // Ensures exact match for the empty path
+  },
+  {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent, // Login page
   },
   {
     path: '',
     component: HomeComponent,
     children: [
-  {
-    path: 'home',
-    component: HomeComponent,
-    //canActivate: [AuthGuard]
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        // canActivate: [AuthGuard]
+      },
+      {
+        path: 'strategy',
+        component: StrategybuilderComponent,
+        // canActivate: [AuthGuard]
+      },
+      {
+        path: 'order-history',
+        component: OrderhistoryComponent,
+      },
+      {
+        path: 'strategy-home',
+        component: StrategyHomeComponent,
+      },
+    ],
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
-    // canActivate: [AuthGuard]
+    path: '**',
+    redirectTo: 'login', // Redirect unknown routes to login
   },
-  {
-    path: 'strategy',
-    component: StrategybuilderComponent,
-    //canActivate: [AuthGuard]
-  },
-  {
-    path: 'order-history',
-    component: OrderhistoryComponent
-  },
-  {
-    path:'strategy-home',
-    component:StrategyHomeComponent
-  }
-]
-  }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
