@@ -68,8 +68,26 @@
 
 
 .half-section {
-  height: calc(100vh - 166px);
-
+  overflow-y: auto;
+  height: calc(100vh - 146px);
+  &::-webkit-scrollbar{
+    width:6px;
+    border-radius: 50%;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #a1a8b5; /* Color of the scrollbar handle */
+    border-radius: 4px; /* Rounded corners for the handle */
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #a1a8b5; /* Color when hovering over the handle */
+  }
+  
+  &r::-webkit-scrollbar-track {
+    background: #a1a8b5; /* Color of the scrollbar track */
+    border-radius: 4px; /* Rounded corners for the track */
+  }
+  
   .input-group {
     border: 1px solid #e8e8e8;
     border-radius: 8px;
@@ -390,13 +408,14 @@ select ,.dropdown>button{
 .bottom_sec {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  width: -webkit-fill-available;
   background: #FFF;
   padding: 16px 16px;
+  border-top: 1px solid #dee2e6;
 
   .clear_btn {
     border: 1px solid #e8e8e8;
-    height: 35px;
+    height: 30px;
     font-size: 12px;
     font-weight: 600;
     background: #FFF;
@@ -410,7 +429,7 @@ select ,.dropdown>button{
     border: 1px solid #4f52ff;
     border-radius: 4px;
     color: #FFF;
-    height: 35px;
+    height: 30px;
     font-size: 12px;
     font-weight: 600;
   }
@@ -494,7 +513,7 @@ border: 1px solid #0d6efd;
   }
 .clear_btn {
   border: 1px solid #e8e8e8;
-  height: 35px;
+  height: 30px;
   font-size: 12px;
   font-weight: 600;
   background: #FFF;
@@ -509,7 +528,7 @@ border: 1px solid #0d6efd;
   border: 1px solid #4f52ff;
   border-radius: 4px;
   color: #4f52ff;
-  height: 35px;
+  height: 30px;
   font-size: 12px;
   font-weight: 600;
 }
@@ -519,7 +538,7 @@ border: 1px solid #0d6efd;
   border: 1px solid #4f52ff;
   border-radius: 4px;
   color: #FFF;
-  height: 35px;
+  height: 30px;
   font-size: 12px;
   font-weight: 600;
 }
@@ -606,23 +625,6 @@ table {
   border-collapse: collapse;
 }
 
-}
-.table_outer::-webkit-scrollbar{
-  width:6px;
-  border-radius: 50%;
-}
-.table_outer::-webkit-scrollbar-thumb {
-  background-color: #a1a8b5; /* Color of the scrollbar handle */
-  border-radius: 4px; /* Rounded corners for the handle */
-}
-
-.table_outer::-webkit-scrollbar-thumb:hover {
-  background-color: #a1a8b5; /* Color when hovering over the handle */
-}
-
-.table_outer::-webkit-scrollbar-track {
-  background: #a1a8b5; /* Color of the scrollbar track */
-  border-radius: 4px; /* Rounded corners for the track */
 }
 .dropdown-item:focus, .dropdown-item:hover {
   color: #4f52ff;
@@ -725,7 +727,7 @@ table {
     border: 1px solid #4f52ff;
     border-radius: 4px;
     color: #4f52ff;
-    height: 35px;
+    height: 30px;
     font-size: 12px;
     font-weight: 600;
 }

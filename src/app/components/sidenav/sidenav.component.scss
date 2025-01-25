@@ -79,6 +79,12 @@ ul {
     font-size: 14px;
     float: right;
     border-left: 1px solid rgba(16, 16, 16, 0.1);
+    .dropdown::before{
+      display: none !important;
+    }
+    .dropdown-toggle::after{
+      display: none;
+    }
   }
 
   .user-profile span {
@@ -902,4 +908,26 @@ input:checked+.slider:before {
 
 .sidenav.expanded {
  width: 15%;
+}
+.user-dropdown{
+ .dropdown-menu{
+  .dropdown-item{
+    color: rgb(52, 64, 84) !important;
+    font-size: 12px;
+    font-weight: 600;
+  }
+ } 
+ .dropdown-item:focus, .dropdown-item:hover {
+  color: #1e2125 !important;
+  background-color: #e9ecef !important;
+  color: #00d4ff;
+}
+.dropdown-item{
+  .fa-bell:before,
+  i{
+        margin: 0;
+        font-size: 14px;
+        color: rgb(52, 64, 84) !important;
+  }
+}
 }
