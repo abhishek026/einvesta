@@ -1,47 +1,86 @@
 <section class="skin-blue-black sidenav" [ngClass]="{ 'expanded': isExpanded, 'collapsed': !isExpanded }">
-    <div class="wrapper">
-      <header class="main-header col-lg-12">
-        <span class="logo-mid">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1818275/profile/profile-80.jpg?1520571742" />
-        </span>
-        <div class="fa fa-bars" id="menu_bar" (click)="toggleMenu()"></div>
-        <div class="user-profile d-flex align-items-center">
+  <div class="wrapper">
+    <header class="main-header row m-0">
+      <div class="col-lg-12 d-flex align-items-center justify-content-space p-0">
+        <div class="d-flex">
+          <div class="fa fa-bars bar3" style="margin-left: 180px;" id="menu_bar" *ngIf="menuOpen && showBar3" (click)="toggleMenu()"></div>
+          <h6 [ngStyle]="{ 'margin-left': menuOpen && showBar3 ? '0px' : '66px' }">BreadCrumb Here</h6>
+        </div>
+        <input type="text" class="searchbar ms-auto" name="" id="" placeholder=" Search here...">
+        <div class="user-profile d-flex align-items-center ms-auto">
           <i class="fas fa-envelope"></i>
           <i class="fas fa-bell"></i>
-          <i class="fas fa-search"></i>
           <li class="nav-item dropdown user-dropdown mb-0">
-            <a class="nav-link dropdown-toggle p-0"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a
+              class="nav-link dropdown-toggle p-0"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               <div class="mini-user fa fa-user-circle"></div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item"> <i class="fa-solid fa-gear me-2"></i> Account Details</a></li>
-              <li><a class="dropdown-item"><i class="fas fa-check-circle me-2"></i>Verified By FAQ</a></li>
-              <li><a class="dropdown-item"><i class="fas fa-life-ring me-2"></i>Help/Support</a></li>
-              <li><a class="dropdown-item"><i class="fas fa-info-circle me-2"></i>About Us</a></li>
-              <li><a class="dropdown-item"><i class="fas fa-bell me-2"></i>What's New</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" ><i class="fas fa-sign-in-alt me-2"></i>Login</a></li>
+              <li>
+                <a class="dropdown-item">
+                  <i class="fa-solid fa-gear me-2"></i> Account Details
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item">
+                  <i class="fas fa-check-circle me-2"></i>Verified By FAQ
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item">
+                  <i class="fas fa-life-ring me-2"></i>Help/Support
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item">
+                  <i class="fas fa-info-circle me-2"></i>About Us
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item">
+                  <i class="fas fa-bell me-2"></i>What's New
+                </a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item">
+                  <i class="fas fa-sign-in-alt me-2"></i>Login
+                </a>
+              </li>
             </ul>
           </li>
         </div>
-      </header>
-      <div class="leftMenu" [class.openMenu]="menuOpen">
-        <ul class="leftMenuList">
-          <li
-            *ngFor="let item of menuItems"
-            class="tooltip_nav"
-            [class.active]="item.active"
-            (click)="toggleMenuItem(item)"
-            [routerLink]="item.path"
-          >
-            <a>
-              <i [class]="item.icon" aria-hidden="true"></i>
-              <span>{{ item.name }}</span>
-              <p>{{ item.tooltip }}</p>
-            </a>
-
-          </li>
-        </ul>
       </div>
+    </header>
+    <div class="leftMenu" [class.openMenu]="menuOpen">
+      <ul class="leftMenuList profile">
+        <li class="bar1" *ngIf="showBar1">
+          <div class="fa fa-bars" id="menu_bar" (click)="toggleMenu()"></div>
+        </li>
+        <li *ngIf="menuOpen" class="bar2">
+          <i class="mini-user fa fa-user-circle p-0" style="margin-right: 14px;"></i> User Demo
+        </li>
+      </ul>
+      <ul class="leftMenuList">
+        <li
+          *ngFor="let item of menuItems"
+          class="tooltip_nav"
+          [class.active]="item.active"
+          (click)="toggleMenuItem(item)"
+          [routerLink]="item.path"
+        >
+          <a>
+            <i [class]="item.icon" aria-hidden="true"></i>
+            <span>{{ item.name }}</span>
+            <p>{{ item.tooltip }}</p>
+          </a>
+        </li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>

@@ -42,7 +42,7 @@ ul {
   font-size: 25px;
   position: fixed;
   max-height: 100px;
-  z-index: 1060;
+  z-index: 1050;
   border-bottom: 1px solid #dee2e6;
   #icon_bar {
     cursor: pointer;
@@ -50,10 +50,44 @@ ul {
     font-size: 14px;
     float: right;
   }
-
+  .searchbar{
+    height: 30px;
+    border-radius: 20px;
+    width: 300px;
+    padding: 10px 30px 10px 10px;
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 400;
+    border: 1px solid #c6c6cf;
+    outline: none;
+    background-image: url(../../../assets/icons/search.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px) center;
+  }
+  ::placeholder{
+    color:#c6c6cf;
+  }
+  h6{
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
   #menu_bar {
     cursor: pointer;
-    padding: 12px 18px;
+    padding: 7px 0px;
 
   }
 
@@ -110,7 +144,7 @@ ul {
 .fa-bell:before,
 .fa-envelope:before {
   font-size: 22px;
-  line-height: 30px;
+  line-height: 16px;
   margin: 0px 10px;
   color: #c6c6cf;
 }
@@ -157,11 +191,10 @@ ul {
   left: 0;
   top: 0;
   width: 50px;
-  padding-top: 22px;
   transition: all ease 1s;
   overflow: hidden;
   transition: 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
-  z-index: 1050;
+  z-index: 1060;
 }
 
 .openMenu {
@@ -172,7 +205,6 @@ ul {
 }
 
 .leftMenuList {
-  margin-top: 30px;
   list-style: none;
   padding: 0;
 }
