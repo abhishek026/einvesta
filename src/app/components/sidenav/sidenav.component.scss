@@ -345,7 +345,7 @@ ul {
   border-left: 3px solid #232423;
 }
 
-.skin-blue-black .leftMenu .leftMenuList li:hover {
+.skin-blue-black .leftMenu .leftMenuList:not(.profile) li:hover {
   color: #fff;
   background: #3c3c3c;
   border-left: 3px solid #2469af;
