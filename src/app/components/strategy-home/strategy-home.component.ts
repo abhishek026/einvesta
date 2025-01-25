@@ -20,6 +20,7 @@ export class StrategyHomeComponent implements OnInit {
   tradeMap: Map<string, any> = new Map<string, any>();
   selectedTrades: any = [];
   multiplierArr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  QTYArr: number[] = [25,50,75,100,125,150,175,200,225,250,275,300,325,350,375,400,425,450,475,500];
   selectedMultiplyer:number=1;
   constructor(
     private http: HttpService,
@@ -56,7 +57,7 @@ export class StrategyHomeComponent implements OnInit {
     this.loader.showLoader();
     this.http.get(API_ENDPOINTS.STRAGEGY.GET_BY_DATE(selectedDate)).subscribe((res: any) => {
       this.tradeList = res.result;
-      this.orderDataList = this.tradeList.order_data_list;
+      this.orderDataList = this.mergeCEAndPEWithEqualStrike(this.tradeList.order_data_list);
       this.brokerList = this.tradeList.brokers;
       // this.loader.hideLoader();
     })
@@ -65,19 +66,23 @@ export class StrategyHomeComponent implements OnInit {
     this.selected_broker = broker
 
   }
-  selectTrade(data: any) {
-    debugger
-    this.setValueOnSelected(data);
-    if (this.tradeMap.has(data.trading_symbol)) {
-      this.tradeMap.set(data.trading_symbol, { ...this.tradeMap.get(data.trading_symbol), ...data });
+  selectTrade(data: any,is_pe_order:boolean,action:string) {
+    this.setValueOnSelected(data,is_pe_order,action);
+    let key_trading_symbol=this.getUniqeKey(data);
+    if (this.tradeMap.has(key_trading_symbol)) {
+      this.tradeMap.set(key_trading_symbol, { ...this.tradeMap.get(key_trading_symbol), ...data });
     } else {
-      this.tradeMap.set(data.trading_symbol, data);
+      this.tradeMap.set(key_trading_symbol, {...data});
     }
     this.selectedTrades = Array.from(this.tradeMap.values());
   }
-  setValueOnSelected(data: any): any {
-    data.status = 'S';
+  getUniqeKey(data: any): string {
+    return data.order_status=='PE'?data.pe_trading_symbol:data.ce_trading_symbol;
+  }
+  setValueOnSelected(data: any,is_pe_order:boolean,action:string): any {
+    data.action = action;
     data.multiplier = 1;
+    data.order_status=is_pe_order?'PE':'CE'
   }
   deleteTrade(data: any) {
     if (this.tradeMap.has(data.trading_symbol)) {
@@ -104,5 +109,23 @@ export class StrategyHomeComponent implements OnInit {
     }else{
       data.strike=Number(data.strike)-50;
     }
+  }
+  mergeCEAndPEWithEqualStrike(data:any){
+   return Object.values(
+    data.reduce((acc:any, item:any) => {
+      const strike = item.strike;
+      const prefix = item.inst_type.toLowerCase(); // 'ce' or 'pe'
+      if (!acc[strike]) {
+        acc[strike] = { strike }; // Initialize the object with strike
+      }
+      Object.keys(item).forEach((key) => {
+        if (key !== "strike") {
+          acc[strike][`${prefix}_${key}`] = item[key];
+        }
+      });
+  
+      return acc;
+    }, {})
+  );
   }
 }
