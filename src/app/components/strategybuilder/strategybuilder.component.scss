@@ -253,6 +253,11 @@ table{
     color:var(--text-color);
     background-color: var(--background-color);
   }
+  tbody{
+    tr{
+      background-color: var(--table-background-color);
+    }
+  }
   td{
     background-color: var(--table-background-color);
   }
