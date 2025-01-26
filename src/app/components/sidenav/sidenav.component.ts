@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -39,7 +40,10 @@ export class SidenavComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private themeService:ThemeService) {}
+  setTheme(theme: 'light' | 'dark' | 'auto') {
+    this.themeService.setTheme(theme);
+  }
 
   ngOnInit(): void {}
 

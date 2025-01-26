@@ -1,12 +1,12 @@
 .content {
   transition: width 0.3s ease;
-  padding: 50px 0px 10px 50px;
-  background: #f8f9fa;
+  padding: 40px 0px 10px 50px;
+  background: var(--background-color);
 }
 .content.sidebar-expanded {
   margin-left: 170px;
     width: auto;
-    padding: 50px 0px 10px 0px;
+    padding: 40px 0px 10px 0px;
 }
 .scroll::-webkit-scrollbar-thumb:hover {
   background: #007bff;

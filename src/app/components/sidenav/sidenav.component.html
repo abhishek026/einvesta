@@ -22,17 +22,17 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item">
+                <a class="dropdown-item" (click)="setTheme('auto')">
                   <i class="fas fa-adjust me-2"></i>Auto
                 </a>
               </li>
               <li>
-                <a class="dropdown-item">
+                <a class="dropdown-item" (click)="setTheme('light')">
                   <i class="fas fa-sun me-2" id="themeIcon"></i>Light Mode
                 </a>
               </li>
               <li>
-                <a class="dropdown-item">
+                <a class="dropdown-item" (click)="setTheme('dark')">
                   <i class="fas fa-moon me-2" id="themeIcon"></i>Dark Mode
                 </a>
               </li>
