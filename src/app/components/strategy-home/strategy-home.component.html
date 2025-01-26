@@ -122,7 +122,14 @@
                                             </td>
                                             <td class="text-center">{{data.pe_lot_size}}</td>
                                         </tr>
-                            
+                                        <tr *ngIf="orderDataList.length==0">
+                                            <td colspan="7"> 
+                                                <div class="no-data d-grid justify-content-center">
+                                                    <img src="../../../assets/images/no-data.png" alt="" class="m-auto" style="width: 60px;">
+                                                    <h6 class="text-center">Build Strategy</h6>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -621,7 +628,7 @@
                                         </div>
                                     </td>
                                 </tr>-->
-                                <tr>
+                                <tr *ngIf="selectedTrades.length==0">
                                     <td colspan="7"> 
                                         <div class="no-data d-grid justify-content-center">
                                             <img src="../../../assets/images/no-data.png" alt="" class="m-auto" style="width: 60px;">
@@ -629,8 +636,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td colspan="4">
+                                <tr *ngIf="selectedTrades.length>0">                                    <td colspan="4">
                                         <div class="d-flex align-items-center">
                                             <h6 for="Multiplier">Multiplier&nbsp;&nbsp;</h6>
                                             <div class="input-group w-auto d-flex align-items-baseline">
@@ -747,7 +753,8 @@
     </div>
 <div class="row m-0 bottom_sec">
     <div class="col-md-12 ps-0 pe-0 d-flex align-items-center justify-content-between">
-        <span>3 Legs Selected</span>
+        <!-- <span>3 Legs Selected</span> -->
+        <span></span>
         <div class="d-flex align-items-center justify-content-end">
             <button class="draft me-2">Add to Drafts</button>
             <button class="done_btn">Trade All</button>
