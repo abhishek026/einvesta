@@ -1,12 +1,12 @@
 
 .filter{
   input,select,.dropdown-toggle{
-    border: 1px solid #e8e8e8;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     height: 30px;
     padding: 2px 6px;
     text-align: left;
-    color: rgb(52, 64, 84);
+    color: var(--text-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
@@ -15,7 +15,7 @@
     letter-spacing: 0.01563rem;
     font-weight: 500;
     outline: none;
-    background: #FFF;
+    background-color: var(--table-background-color);
   }
   .go_button{
     background-color: #4f52ff;
@@ -63,10 +63,6 @@ table {
     position: sticky;
     top: 0;
   }
-  th,
-  td {
-    background: #FFF;
-  }
   .fa-trash:before{
     content: "\f1f8";
     color: rgb(220 53 69);
@@ -81,7 +77,7 @@ table {
   
 }
 th{
-  color: rgb(52, 64, 84);
+  color: var(--text-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
@@ -91,7 +87,8 @@ th{
     font-weight: 500;
 }
 td{
-  color: rgb(52, 64, 84);
+  color: var(--text-color);
+  background-color: var(--table-background-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
@@ -99,6 +96,26 @@ td{
     line-height: 1rem;
     letter-spacing: 0.01563rem;
     font-weight: 500;
+    .no-data{
+      padding: 30px 0;
+      img{
+        width: 60px;
+        margin: auto;
+      }
+      h6{
+        font-family: Roboto;
+        text-align: inherit;
+        color: rgb(52, 64, 84);
+        white-space: inherit;
+        font-style: normal;
+        text-decoration: none;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        letter-spacing: 0.0125rem;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+    }
 }
 tbody,
 td,
@@ -155,7 +172,7 @@ margin-top: 2px;
   font-size: 13px;
   min-width: 30px;
   min-height: 30px;
-  color: #999;
+  color: var(--text-color);
   margin: 0 2px;
   line-height: 30px;
   border-radius: 2px !important;
@@ -164,6 +181,9 @@ margin-top: 2px;
 }
 .pagination li a:hover {
   color: #666;
+}
+.pagination li a.page-link{
+  background: transparent;
 }
 .pagination li.active a, .pagination li.active a.page-link {
   background: #03A9F4;

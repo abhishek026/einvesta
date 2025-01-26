@@ -76,3 +76,5 @@ select{
     transition: background-color 0.3s, color 0.3s;
   }
   
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
