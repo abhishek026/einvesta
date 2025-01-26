@@ -69,7 +69,7 @@
 
 .half-section {
  // overflow-y: auto;
-  height: calc(100vh - 146px);
+  height: calc(100vh - 170px);
   &::-webkit-scrollbar{
     width:6px;
     border-radius: 50%;
@@ -671,22 +671,6 @@ table {
           color: rgb(52, 64, 84);
           width: auto;
     }
-    h6{
-      font-family: Roboto;
-      text-align: inherit;
-      color: rgb(52, 64, 84);
-      white-space: inherit;
-      font-style: normal;
-      text-decoration: none;
-      font-size: 0.75rem;
-      line-height: 1.25rem;
-      letter-spacing: 0.0125rem;
-      font-weight: 400;
-      margin-bottom: 0;
-      span{
-        font-weight: 600;
-      }
-    }
   }
 }
 .dropdown-toggle{
@@ -698,7 +682,8 @@ table {
 }
 .editor_tbl2{
   overflow-y: auto;
-  height: calc(100vh - 300px);
+  height: calc(100vh - 320px);
+  margin-bottom: 20px;
   &::-webkit-scrollbar{
     width:6px;
     border-radius: 50%;
@@ -730,4 +715,23 @@ table {
     height: 30px;
     font-size: 12px;
     font-weight: 600;
+}
+.bottom-sec{
+
+  h6{
+    font-family: Roboto;
+    text-align: inherit;
+    color: rgb(52, 64, 84);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.0125rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    span{
+      font-weight: 600;
+    }
+  }
 }

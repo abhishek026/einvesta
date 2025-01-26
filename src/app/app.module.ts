@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { FormsModule } from '@angular/forms';
 import { StrategyHomeComponent } from './components/strategy-home/strategy-home.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,15 @@ import { HttpClientModule } from '@angular/common/http';
     OrderhistoryComponent,
     LoaderComponent,
     StrategyHomeComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatSelectModule,
+    MatFormFieldModule,
     ToastrModule.forRoot({    // Configure the ToastrModule
       timeOut: 3000,          // Duration of toast in milliseconds
       positionClass: 'toast-top-right',  // Positioning the toast
