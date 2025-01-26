@@ -68,7 +68,7 @@
 
 
 .half-section {
-  overflow-y: auto;
+ // overflow-y: auto;
   height: calc(100vh - 146px);
   &::-webkit-scrollbar{
     width:6px;
