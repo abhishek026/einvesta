@@ -32,6 +32,47 @@ input[type="radio"],
 select{
     cursor: pointer;
   }
-  body{
-    background: #f8f9fa;
+  // body{
+  //   background: #f8f9fa;
+  // }
+  :root {
+    --background-color: #f8f9fa;
+    --text-color: rgb(52, 64, 84);
+    --cart-background-color:#fff;
+    --cart-label-color:rgb(111, 119, 134);
+    --cart-data-color:rgb(52, 64, 84);
+    --table-thead-bgcolor:#F1F1F2;
+    --border-color:#e8e8e8;
+    --table-background-color:#FFF;
+    --top-navbar-bg-color:#FFF;
+    --top-navbar-text-color:rgb(52, 64, 84);
+
+    --chips-bg-color: rgb(229, 239, 251);
+  --chips-color: rgb(52, 64, 84);
+
   }
+  [data-theme='dark'] {
+    --background-color: #212631;
+    --table-thead-bgcolor:#212631;
+
+    --cart-background-color:#212631ed;
+    --text-color: #ffffff;
+    --cart-label-color:#FFF;
+    --cart-data-color:#FFF;
+    --border-color:rgb(255 255 255 / 10%);
+    --table-background-color:#212631ed;
+    // --table-border-color:rgb(255 255 255 / 10%);
+    --top-navbar-bg-color:#212631;
+    --top-navbar-text-color:#FFF;
+
+    --chips-bg-color: #313540;
+    --chips-color: #FFF;
+
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  

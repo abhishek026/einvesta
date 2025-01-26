@@ -43,7 +43,7 @@ ul {
   position: fixed;
   max-height: 100px;
   z-index: 1050;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid var(--border-color);
   #icon_bar {
     cursor: pointer;
     padding: 18px 7px;
@@ -55,7 +55,7 @@ ul {
     border-radius: 20px;
     width: 300px;
     padding: 10px 30px 10px 10px;
-    color: rgb(52, 64, 84);
+    color: var(--text-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
@@ -63,17 +63,18 @@ ul {
     line-height: 1rem;
     letter-spacing: 0.01563rem;
     font-weight: 400;
-    border: 1px solid #c6c6cf;
+    border: 1px solid var(--border-color);
     outline: none;
     background-image: url(../../../assets/icons/search.png);
     background-repeat: no-repeat;
     background-position: calc(100% - 8px) center;
+    background-color: var(--top-navbar-bg-color);
   }
   ::placeholder{
     color:#c6c6cf;
   }
   h6{
-    color: rgb(52, 64, 84);
+    color: var(  --top-navbar-text-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
@@ -147,7 +148,7 @@ ul {
   font-size: 22px;
   line-height: 16px;
   margin: 0px 10px;
-  color: #c6c6cf;
+  color: var(--top-navbar-text-color);
 }
 
 .main-header #icon_bar .label {
@@ -329,15 +330,16 @@ ul {
 }
 
 .skin-blue-black .main-header {
-  background-color: #FFF;
+  background-color: var(  --top-navbar-bg-color);
 }
 
 .skin-blue-black .main-header .logo-mid {
-  background-color: #FFF;
+  background-color: var(  --top-navbar-bg-color);
 }
 
 .skin-blue-black .leftMenu {
-  background-color: #1b2433;
+  background-color:#212631;
+  border-right: 1px solid var(--border-color);
 }
 
 .skin-blue-black .leftMenu .leftMenuList li {
