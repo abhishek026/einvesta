@@ -128,4 +128,31 @@ export class StrategyHomeComponent implements OnInit {
     }, {})
   );
   }
+  dateList1 = [
+    { id: 1, displayValue: '01 Jan 2025' },
+    { id: 2, displayValue: '02 Jan 2025' },
+    { id: 3, displayValue: '03 Jan 2025' },
+    { id: 4, displayValue: '04 Jan 2025' },
+    { id: 5, displayValue: '05 Jan 2025' },
+  ];
+
+  selectedDates: any[] = [];
+
+  // Check if the date is already selected
+  isSelected(date: any): boolean {
+    return this.selectedDates.some(selected => selected.id === date.id);
+  }
+
+  // Toggle selection for a date
+  toggleSelection(date: any): void {
+    const index = this.selectedDates.findIndex(selected => selected.id === date.id);
+    if (index === -1) {
+      this.selectedDates.push(date);
+    } else {
+      this.selectedDates.splice(index, 1);
+    }
+  }
+  getValue(){
+    return this.selectedDates.map(date => date.displayValue).join(', ')
+  }
 }

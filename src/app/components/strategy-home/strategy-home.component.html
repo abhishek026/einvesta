@@ -52,6 +52,34 @@
                                     <div class="pills_sec">
 
                                         <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {{ selectedDates.length > 0 ? getValue() : 'Select Dates' }}
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="max-height: 200px; overflow-y: auto;">
+                                                <li *ngFor="let date of dateList1">
+                                                    <div class="form-check">
+                                                        <input 
+                                                            type="checkbox" 
+                                                            class="form-check-input" 
+                                                            [id]="'checkbox_' + date.id" 
+                                                            [checked]="isSelected(date)" 
+                                                            (change)="toggleSelection(date)">
+                                                        <label class="form-check-label" [for]="'checkbox_' + date.id">
+                                                            {{ date.displayValue }}
+                                                        </label>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3 pb-3">
+                                    <div class="pills_sec">
+
+                                        <div class="dropdown">
                                             <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
                                                 {{selected_broker?.broker_name || 'Select Broker' }}
