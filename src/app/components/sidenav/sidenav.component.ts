@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
@@ -18,7 +20,7 @@ export class SidenavComponent implements OnInit {
   menuItems = [
     {
       name: 'Strategy',
-      tooltip: 'Programs',
+      tooltip: 'Strategy',
       icon: 'fa fa-table',
       path: '/strategy',
       active: false,
@@ -27,20 +29,22 @@ export class SidenavComponent implements OnInit {
     {
       name: 'Order History',
       path: '/order-history',
-      tooltip: 'Companies',
+      tooltip: 'Order History',
       icon: 'fa fa-building',
       active: false,
     },
     {
-      name: 'Strategy Home',
+      name: 'Strategy Builder',
       path: '/strategy-home',
-      tooltip: 'Companies',
+      tooltip: 'Strategy Builder',
       icon: 'fa fa-building',
       active: false,
     },
   ];
 
-  constructor(private themeService:ThemeService) {}
+  constructor(private themeService:ThemeService,
+     private auth:AuthService,
+     private router:Router) {}
   setTheme(theme: 'light' | 'dark' | 'auto') {
     this.themeService.setTheme(theme);
   }
@@ -63,5 +67,9 @@ export class SidenavComponent implements OnInit {
 
   toggleMenuItem(item: any): void {
     item.active = !item.active;
+  }
+  logout(){
+    this.auth.logout();
+    this.router.navigate(['/login']); 
   }
 }

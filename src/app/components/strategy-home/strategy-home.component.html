@@ -784,7 +784,7 @@
         <!-- <span>3 Legs Selected</span> -->
         <span></span>
         <div class="d-flex align-items-center justify-content-end">
-            <button class="draft me-2">Add to Drafts</button>
+            <button class="draft me-2" data-bs-toggle="modal" data-bs-target="#add_to_draft_popup">Add to Drafts</button>
             <button class="done_btn">Trade All</button>
         </div>
     </div>
@@ -1340,3 +1340,33 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Structure -->
+<div class="modal fade" id="add_to_draft_popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header custom-modal-header"> <!-- Added custom class -->
+            <h5 class="modal-title" id="exampleModalLabel">Enter Strategy</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <form >
+            <div class="form-group">
+              <label for="strategyInput">Strategy Name</label>
+              <input type="text" class="form-control" id="strategyInput" name="strategyName" placeholder="Enter your strategy" required>
+            </div>
+          </form>
+        </div>
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" >Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

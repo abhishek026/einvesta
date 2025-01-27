@@ -735,3 +735,38 @@ table {
     }
   }
 }
+/* Custom Styles */
+.modal-header {
+  background-color: #4f52ff;
+  color: white;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-body {
+  padding: 20px;
+}
+/* Custom smaller modal */
+.modal-dialog.modal-sm {
+  max-width: 500px; /* Set your desired width */
+}
+
+/* Optional: Adjusting the height if necessary */
+.modal-content {
+  height: auto;
+}
+.custom-modal-header {
+  background-color: #4f52ff; /* Change background color */
+  color: white; /* Change text color */
+  font-size: 18px; /* Set desired font size */
+  font-weight: bold; /* Optional: Make the font bold */
+}
+
+/* Optional: Change the close button color */
+.custom-modal-header .close {
+  color: white; /* Change the color of the close button */
+  font-size: 20px; /* Adjust the size of the close button */
+}
