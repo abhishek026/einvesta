@@ -17,6 +17,7 @@ import { StrategyHomeComponent } from './components/strategy-home/strategy-home.
 import { HttpClientModule } from '@angular/common/http';
 import {MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TalbeComponent } from './components/talbe/talbe.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     OrderhistoryComponent,
     LoaderComponent,
     StrategyHomeComponent,
+    TalbeComponent,
 
   ],
   imports: [

@@ -8,6 +8,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { OrderhistoryComponent } from './components/orderhistory/orderhistory.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { StrategyHomeComponent } from './components/strategy-home/strategy-home.component';
+import { TalbeComponent } from './components/talbe/talbe.component';
 
 const routes: Routes = [
   {
@@ -34,7 +35,7 @@ const routes: Routes = [
       },
       {
         path: 'strategy',
-        component: StrategybuilderComponent,
+        component: TalbeComponent,
         // canActivate: [AuthGuard]
       },
       {

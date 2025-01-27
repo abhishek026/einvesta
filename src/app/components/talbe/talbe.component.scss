@@ -1,0 +1,43 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+  }
+  
+  .table th {
+    background-color: #f4f4f4;
+  }
+  
+  .fixed-width {
+    width: auto; /* Ensure this doesn't flex */
+    max-width: 200px; /* Set the maximum width */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Ensure content does not overflow */
+    text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+  }
+  
+  .cell-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Buttons will align within fixed width */
+  }
+  
+  button {
+    margin-right: 5px;
+    white-space: nowrap; /* Prevent buttons from wrapping */
+  }
+  
+  tr:hover td {
+    background-color: #f9f9f9;
+  }
+  
+  td:hover {
+    cursor: pointer;
+  }
+  

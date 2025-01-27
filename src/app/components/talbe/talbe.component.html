@@ -1,0 +1,55 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th style="width: 50px;">#</th>
+        <th style="width: 200px;">Name</th>
+        <th style="width: 300px;">Description</th>
+        <th style="width: 100px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items; let i = index">
+        <td>{{ i + 1 }}</td>
+  
+        <!-- Name Column -->
+        <td 
+          class="fixed-width" 
+          (mouseover)="hoveredColumn = { row: i, column: 'name' }"
+          (mouseleave)="hoveredColumn = null"
+        >
+          <div class="cell-content">
+            <span *ngIf="hoveredColumn?.row !== i || hoveredColumn?.column !== 'name'">
+              {{ item.name }}
+            </span>
+            <span *ngIf="hoveredColumn?.row === i && hoveredColumn?.column === 'name'">
+              <button (click)="onEdit(item)" class="btn btn-primary btn-sm">Edit</button>
+              <button (click)="onDelete(item)" class="btn btn-danger btn-sm">Delete</button>
+            </span>
+          </div>
+        </td>
+  
+        <!-- Description Column -->
+        <td 
+          class="fixed-width" 
+          (mouseover)="hoveredColumn = { row: i, column: 'description' }"
+          (mouseleave)="hoveredColumn = null"
+        >
+          <div class="cell-content">
+            <span *ngIf="hoveredColumn?.row !== i || hoveredColumn?.column !== 'description'">
+              {{ item.description }}
+            </span>
+            <span *ngIf="hoveredColumn?.row === i && hoveredColumn?.column === 'description'">
+              <button (click)="onView(item)" class="btn btn-info btn-sm">View</button>
+              <button (click)="onDetails(item)" class="btn btn-warning btn-sm">Details</button>
+            </span>
+          </div>
+        </td>
+  
+        <!-- Actions Column -->
+        <td class="fixed-width">
+          <!-- Optional actions for the Actions column -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
