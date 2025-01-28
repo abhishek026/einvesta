@@ -716,6 +716,16 @@ table {
     font-size: 12px;
     font-weight: 600;
 }
+.draft1{
+  background-color: #4f52ff;
+    width: 110px;
+    border: 1px solid #4f52ff;
+    border-radius: 4px;
+    color: #FFF;
+    height: 30px;
+    font-size: 12px;
+    font-weight: 600;
+}
 .bottom-sec{
 
   h6{
@@ -737,7 +747,7 @@ table {
 }
 /* Custom Styles */
 .modal-header {
-  background-color: #4f52ff;
+  //background-color: #4f52ff;
   color: white;
 }
 
@@ -759,14 +769,15 @@ table {
   height: auto;
 }
 .custom-modal-header {
-  background-color: #4f52ff; /* Change background color */
-  color: white; /* Change text color */
-  font-size: 18px; /* Set desired font size */
-  font-weight: bold; /* Optional: Make the font bold */
+  padding: 0.5rem;
 }
 
 /* Optional: Change the close button color */
 .custom-modal-header .close {
   color: white; /* Change the color of the close button */
   font-size: 20px; /* Adjust the size of the close button */
+}
+.custom-modal-title{
+  color: #4f52ff;
+  font-size: 15px;
 }

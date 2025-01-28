@@ -29,18 +29,15 @@ export class LoginComponent implements OnInit {
     //this.toastService.showSuccess("I am Abhishek Kumar","Success!")
   }
   onLogin() {
-    if (this.loginForm.valid) {
+    debugger
       const username = this.loginForm.get('username')?.value;
       const password = this.loginForm.get('password')?.value;
       if (username === 'admin' && password === 'admin') {
         this.auth.login(username,password)
-        this.router.navigate(['/strategy-home']);
-      } else {
+        this.router.navigate(['/strategy-builder']);
+      }
+       else {
         this.toastService.showError("Invalid Username and Password!!")
       }
-    }
-    else {
-      this.loginForm.markAllAsTouched();
-    }
   }
 }

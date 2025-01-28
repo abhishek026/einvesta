@@ -4,7 +4,7 @@
       <div class="col-lg-12 d-flex align-items-center justify-content-space p-0">
         <div class="d-flex">
           <div class="fa fa-bars bar3" style="margin-left: 180px;" id="menu_bar" *ngIf="menuOpen && showBar3" (click)="toggleMenu()"></div>
-          <h6 [ngStyle]="{ 'margin-left': menuOpen && showBar3 ? '0px' : '66px' }">BreadCrumb</h6>
+          <h6 [ngStyle]="{ 'margin-left': menuOpen && showBar3 ? '0px' : '66px','color': '#4f52ff'}">{{breadcrumb}}</h6>
         </div>
         <input type="text" class="searchbar ms-auto" name="" id="" placeholder=" Search here...">
         <div class="user-profile d-flex align-items-center ms-auto">

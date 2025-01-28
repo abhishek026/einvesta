@@ -187,10 +187,11 @@
                     </div> -->
                     <div class="top_sec2 d-flex align-items-center justify-content-between ">
                         <h6>New Trade</h6>
-                        <h5>Clear All</h5>
+                        <h5 *ngIf="selectedTrades.length>0">Clear All</h5>
                     </div>
                     <div class="top_sec3 d-flex align-items-center justify-content-between ">
                         <h6 *ngIf="selectedTrades.length>0">{{selectedTrades.length}} Trade Selected</h6>
+                        <h6 *ngIf="selectedTrades.length==0"></h6>
                         <h5 data-bs-toggle="modal" data-bs-target="#strategy-popup"><i
                                 class="las la-sync-alt me-2"></i>Reset Price</h5>
                     </div>
@@ -1347,25 +1348,29 @@
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header custom-modal-header"> <!-- Added custom class -->
-            <h5 class="modal-title" id="exampleModalLabel">Enter Strategy</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title custom-modal-title" id="exampleModalLabel">Template Name</h5>
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
-            </button>
+            </button> -->
           </div>
         <!-- Modal Body -->
         <div class="modal-body">
           <form >
             <div class="form-group">
-              <label for="strategyInput">Strategy Name</label>
-              <input type="text" class="form-control" id="strategyInput" name="strategyName" placeholder="Enter your strategy" required>
+              <label for="strategyInput"></label>
+              <input type="text" class="form-control" id="strategyInput" name="strategyName" placeholder="Enter your template name" required>
             </div>
           </form>
         </div>
         <!-- Modal Footer -->
-        <div class="modal-footer">
+        <div class="d-flex align-items-center justify-content-end modal-footer">
+            <button class="draft1 me-2" data-bs-toggle="modal" data-bs-target="#add_to_draft_popup">Add to Drafts</button>
+            <!-- <button class="done_btn">Trade All</button> -->
+        </div>
+        <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary" >Submit</button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

@@ -19,25 +19,27 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-group mb-3 col-md-12">
-                            <input type="text" class="form-control" placeholder="Username" required
+                        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                            <div class="input-group mb-3 col-md-12">
+                            <input type="text" class="form-control" placeholder="Username" formControlName="username" required
                                 aria-label="Recipient's username" aria-describedby="basic-addon2">
                             <span class="icon input-group-text">👤</span>
                         </div>
                         <div class="input-group mb-3 col-md-12">
                             <input type="password" class="form-control" placeholder="Password" required
-                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                aria-label="Recipient's username" aria-describedby="basic-addon2" formControlName="password">
                             <span class="icon input-group-text">🔒</span>
                         </div>
-                        <div class="col-md-12 form-options">
+                        <!-- <div class="col-md-12 form-options">
                             <label class="d-flex">
                                 <input type="checkbox"> Remember me
                             </label>
                             <a href="#">Forgot password?</a>
-                        </div>
+                        </div> -->
                         <div class="col-md-12">
-                            <button type="submit" class="btn w-100" routerLink="/strategy-home">Sign In</button>
+                            <button type="submit" class="btn w-100">Sign In</button>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>

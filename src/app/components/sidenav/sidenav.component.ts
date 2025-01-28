@@ -19,6 +19,13 @@ export class SidenavComponent implements OnInit {
   showBreadCrumb=false
   menuItems = [
     {
+      name: 'Strategy Builder',
+      path: '/strategy-builder',
+      tooltip: 'Strategy Builder',
+      icon: 'fa fa-building',
+      active: false,
+    },
+    {
       name: 'Strategy',
       tooltip: 'Strategy',
       icon: 'fa fa-table',
@@ -32,16 +39,9 @@ export class SidenavComponent implements OnInit {
       tooltip: 'Order History',
       icon: 'fa fa-building',
       active: false,
-    },
-    {
-      name: 'Strategy Builder',
-      path: '/strategy-home',
-      tooltip: 'Strategy Builder',
-      icon: 'fa fa-building',
-      active: false,
-    },
+    }
   ];
-
+  breadcrumb:string='Stratergy Builder'
   constructor(private themeService:ThemeService,
      private auth:AuthService,
      private router:Router) {}
