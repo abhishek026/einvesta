@@ -43,8 +43,9 @@ const routes: Routes = [
         component: OrderhistoryComponent,
       },
       {
-        path: 'strategy-home',
+        path: 'strategy-builder',
         component: StrategyHomeComponent,
+        canActivate: [AuthGuard]
       },
     ],
   },
