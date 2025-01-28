@@ -157,13 +157,12 @@ export class StrategyHomeComponent implements OnInit {
     return this.selectedDates.map(date => date.displayValue).join(', ')
   }
   saveIntoDraft() {
-    debugger
     if (this.validatePayload()) {
       let reqPayload = this.preparedPayload();
       this.http.post(API_ENDPOINTS.STRAGEGY.SAVE_ORDER_TEMPLATE, reqPayload).subscribe((res: any) => {
         this.toaster.showSuccess("Template Save Successfully!!");
         this.selectedTrades = [];
-        this.tradeMap= new Map<string, any>();
+        this.tradeMap = new Map<string, any>();
 
       });
     }
@@ -229,10 +228,10 @@ export class StrategyHomeComponent implements OnInit {
     ($("#add_to_draft_popup") as any).modal("hide");
 
   }
-  clearSelectedTrade(){
-    if(confirm("Do you want to clear all selected trades?")) {
-    this.selectedTrades = [];
-    this.tradeMap= new Map<string, any>();
+  clearSelectedTrade() {
+    if (confirm("Do you want to clear all selected trades?")) {
+      this.selectedTrades = [];
+      this.tradeMap = new Map<string, any>();
     }
   }
 }
