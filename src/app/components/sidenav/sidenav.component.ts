@@ -14,14 +14,21 @@ export class SidenavComponent implements OnInit {
 
   menuOpen = false; // Controls `bar1` and `bar2`
   showBar1 = true; // Controls `bar3`
-  showBar2=false;
-  showBar3=false;
-  showBreadCrumb=false
+  showBar2 = false;
+  showBar3 = false;
+  showBreadCrumb = false
   menuItems = [
     {
       name: 'Strategy Builder',
       path: '/strategy-builder',
-      tooltip: 'Strategy Builder',
+      tooltip: 'Strategy-Builder',
+      icon: 'fa fa-building',
+      active: false,
+    },
+    {
+      name: 'Template List',
+      path: '/order-history',
+      tooltip: 'Template',
       icon: 'fa fa-building',
       active: false,
     },
@@ -32,44 +39,51 @@ export class SidenavComponent implements OnInit {
       path: '/strategy',
       active: false,
       submenu: ['Program No 1', 'Program No 2', 'Program No 3', 'Program No 4'],
-    },
-    {
-      name: 'Order History',
-      path: '/order-history',
-      tooltip: 'Order History',
-      icon: 'fa fa-building',
-      active: false,
     }
   ];
-  breadcrumb:string='Stratergy Builder'
-  constructor(private themeService:ThemeService,
-     private auth:AuthService,
-     private router:Router) {}
+  breadcrumb: string = 'Stratergy Builder'
+  constructor(private themeService: ThemeService,
+    private auth: AuthService,
+    private router: Router) { }
   setTheme(theme: 'light' | 'dark' | 'auto') {
     this.themeService.setTheme(theme);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.toggleMenu();
+  }
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
     if (this.menuOpen) {
       this.showBar3 = true;
-      this.showBar1=false;
-      this.showBreadCrumb=true // Show `bar3` when `menuOpen` is true
+      this.showBar1 = false;
+      this.showBreadCrumb = true // Show `bar3` when `menuOpen` is true
     } else {
       this.showBar3 = false;
-      this.showBreadCrumb=true;
-      this.showBar1=true; // Hide `bar3` when `menuOpen` is false
+      this.showBreadCrumb = true;
+      this.showBar1 = true; // Hide `bar3` when `menuOpen` is false
     }
     this.toggleSidebar.emit();
   }
 
   toggleMenuItem(item: any): void {
-    item.active = !item.active;
+    item.active=!item.active;
+    this.menuItems = this.menuItems.map((item1) => {
+      if (item.name != item1.name) {
+        return {
+          ...item1,
+          active: false,
+        };
+      }else{
+        return {
+          ...item1
+      }
+    }
+    });
   }
-  logout(){
+  logout() {
     this.auth.logout();
-    this.router.navigate(['/login']); 
+    this.router.navigate(['/login']);
   }
 }

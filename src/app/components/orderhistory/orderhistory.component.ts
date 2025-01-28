@@ -21,9 +21,7 @@ export class OrderhistoryComponent implements OnInit {
     this.fetchAllTemplate();
   }
   fetchAllTemplate() {
-    debugger
     this.http.get(API_ENDPOINTS.TEMPLATE.GET_ALL).subscribe((res: any) => {
-      debugger
       this.templateData = res.result;
       this.templateList = this.preparedTemplateList(this.templateData);
       this.dbTemplateList=[...this.templateList];
@@ -37,17 +35,14 @@ export class OrderhistoryComponent implements OnInit {
       }));
   }
   deleteTemplate(templateName: any) {
-    debugger
     if (confirm("Do you want to delete template?")) {
       this.http.delete(API_ENDPOINTS.TEMPLATE.DELETE(templateName)).subscribe((res: any) => {
-        debugger
         this.fetchAllTemplate();
         this.toaster.showSuccess("Template Deleted Successfully!!")
       })
     }
   }
   searchTemplate(){
-    debugger
     if (this.searchValue=='') {
       this.templateList=this.dbTemplateList;
       return;

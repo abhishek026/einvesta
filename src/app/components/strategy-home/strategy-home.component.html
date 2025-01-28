@@ -48,7 +48,7 @@
 
                                     </div>
                                 </div>
-                                <div class="col-md-3 pb-3">
+                                <!-- <div class="col-md-3 pb-3">
                                     <div class="pills_sec">
 
                                         <div class="dropdown">
@@ -75,7 +75,7 @@
                                         
 
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-md-3 pb-3">
                                     <div class="pills_sec">
 
@@ -187,7 +187,7 @@
                     </div> -->
                     <div class="top_sec2 d-flex align-items-center justify-content-between ">
                         <h6>New Trade</h6>
-                        <h5 *ngIf="selectedTrades.length>0">Clear All</h5>
+                        <h5 *ngIf="selectedTrades.length>0" style="cursor:pointer" (click)="clearSelectedTrade()">Clear All</h5>
                     </div>
                     <div class="top_sec3 d-flex align-items-center justify-content-between ">
                         <h6 *ngIf="selectedTrades.length>0">{{selectedTrades.length}} Trade Selected</h6>
@@ -199,17 +199,29 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>B/S</th>
+                                    <th class="text-center" style="width: 75px;">
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkbox-box"></span>
+                                        </label>
+                                    </th>                                    <th>B/S</th>
                                     <th>Expiry</th>
                                     <th>Strike</th>
                                     <th>Type</th>
                                     <th>Qty</th>
-                                    <th>Price</th>
-                                    <th></th>
+                                    <!-- <th>Price</th> -->
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let data of selectedTrades">
+                                    
+                                    <td class="text-center" style="width: 75px;">
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkbox-box"></span>
+                                        </label>
+                                    </td>
                                     <td style="display: flex
                                         ;
                                             align-items: center;
@@ -268,12 +280,12 @@
                                             </div>
                                         </div>
                                     </td>
-
+<!-- 
                                     <td>
                                         <div class="input-group" style="width:40px;">
                                             <span class="input-group-text border-0" id="basic-addon2">{{data.strike}}</span>
                                         </div>
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <div style="white-space: nowrap;">
                                             <!-- <i class="las la-bars"></i> -->
