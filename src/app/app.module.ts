@@ -14,10 +14,11 @@ import { LoaderComponent } from './components/core/loader/loader.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // Required for animations
 import { FormsModule } from '@angular/forms';
 import { StrategyHomeComponent } from './components/strategy-home/strategy-home.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TalbeComponent } from './components/talbe/talbe.component';
+import { HttpErrorInterceptor } from './interceptors/HttpErrorInterceptor';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,11 @@ import { TalbeComponent } from './components/talbe/talbe.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpErrorInterceptor,
+    multi: true,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

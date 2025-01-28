@@ -1349,22 +1349,20 @@
         <!-- Modal Header -->
         <div class="modal-header custom-modal-header"> <!-- Added custom class -->
             <h5 class="modal-title custom-modal-title" id="exampleModalLabel">Template Name</h5>
+            <span aria-hidden="true" data-dismiss="modal" style="color:red;font-size:2rem;cursor:pointer" data-bs-toggle="modal">&times;</span>
             <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
             </button> -->
           </div>
         <!-- Modal Body -->
         <div class="modal-body">
-          <form >
             <div class="form-group">
               <label for="strategyInput"></label>
-              <input type="text" class="form-control" id="strategyInput" name="strategyName" placeholder="Enter your template name" required>
+              <input type="text" class="form-control" id="strategyInput"  [(ngModel)]="template_name" name="strategyName" placeholder="Enter Template Name" required>
             </div>
-          </form>
         </div>
         <!-- Modal Footer -->
         <div class="d-flex align-items-center justify-content-end modal-footer">
-            <button class="draft1 me-2" data-bs-toggle="modal" data-bs-target="#add_to_draft_popup">Add to Drafts</button>
+            <button class="draft1 me-2" data-bs-toggle="modal" (click)="saveIntoDraft()">Add to Drafts</button>
             <!-- <button class="done_btn">Trade All</button> -->
         </div>
         <!-- <div class="modal-footer">

@@ -252,3 +252,47 @@ margin-top: 2px;
   border-radius: 4px; 
 }
 }
+#strategy-popup{
+  .modal-dialog{
+    max-width: 700px;
+  }
+  .modal-header{
+    height: 40px;
+  }
+  .modal-body{
+    tbody, td, tfoot, th, thead, tr{
+      border-color: transparent !important;
+    }
+  }
+.clear_btn {
+  border: 1px solid #e8e8e8;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #FFF;
+  width: 110px;
+  border-radius: 4px;
+ 
+}
+
+.add_btn {
+  background-color: #FFF;
+  width: 110px;
+  border: 1px solid #4f52ff;
+  border-radius: 4px;
+  color: #4f52ff;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.trade_btn{
+  background-color: #4f52ff;
+  width: 110px;
+  border: 1px solid #4f52ff;
+  border-radius: 4px;
+  color: #FFF;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+}

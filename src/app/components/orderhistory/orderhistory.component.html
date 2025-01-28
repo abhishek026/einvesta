@@ -1,46 +1,40 @@
-  <div class="row m-0 filter mt-3 ms-3 me-3">
-    <div class="col-md-2 ps-1 pe-1 mb-1">
-      <!-- <mat-form-field appearance="fill">
-        <mat-label>Choose an option</mat-label>
-        <mat-select value="selectedOption">
-          <mat-option value="value">
-            sds
-          </mat-option>
-        </mat-select>
-      </mat-form-field> -->
-      <div class="dropdown">
-        <button class="w-100 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          select from Dropdown 
-          <i class="las la-angle-down"></i>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-2 ps-1 pe-1 mb-1">
-      <input type="text" placeholder="" class="w-100">
-    </div>
-    <div class="col-md-1 mb-1">
-      <button class="w-100 go_button">Go</button>
-    </div>
+<div class="row m-0 filter mt-3 ms-3 me-3">
+ <!--  <div class="col-md-2 ps-1 pe-1 mb-1">
+    <div class="dropdown">
+      <button class="w-100 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        select from Dropdown
+        <i class="las la-angle-down"></i>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div> 
+  </div>-->
+  <div class="col-md-2 ps-1 pe-1 mb-1">
+    <input type="text" placeholder="" [(ngModel)]="searchValue" class="w-100">
   </div>
-  <div class="table-wrapper m-3">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Instrument</th>
-          <th class="text-center">Tartget P&L</th>
-          <th class="text-center">Target Price</th>
+  <div class="col-md-1 mb-1">
+    <button class="w-100 go_button"(click)="searchTemplate()">Go</button>
+  </div>
+</div>
+<div class="table-wrapper m-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">#</th>
+        <th>Template Name</th>
+        <th class="text-center">Created Date</th>
+        <!-- <th class="text-center">Target Price</th>
           <th class="text-center">Entry Price</th>
-          <th class="text-center">LTP</th>
-          <th class="text-center">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- <tr>
+          <th class="text-center">LTP</th> -->
+        <th class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
           <td colspan="6">
             <div class="no-data d-grid justify-content-center">
               <img src="../../../assets/images/no-data.png" alt="">
@@ -48,200 +42,35 @@
             </div>
           </td>
         </tr> -->
-        <tr>
-          <td>
-            <div class="d-flex align-items-center justify-content-left">
-              <div class="div_b">B</div>
-              1 X 23 Jan 1323 Ce
-            </div>
-          </td>
-          <td class="text-center">
-            7622.5
-          </td>
-          <td class="text-center">
-            7623.23
-          </td>
-          <td class="text-center">
-            762.44
-          </td>
-          <td class="text-center">
-            763.55
-          </td>
-          <td>
-            <div class="d-flex justify-content-center">
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-trash"></i>
-                </a>
-               
-            </div>
+      <tr *ngFor="let tempData of templateList;let i=index">
+        <td class="text-center">
+          {{i+1}}
         </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="d-flex align-items-center justify-content-left">
-              <div class="div_b">B</div>
-              1 X 23 Jan 1323 Ce
-            </div>
-          </td>
-          <td class="text-center">
-            7622.5
-          </td>
-          <td class="text-center">
-            7623.23
-          </td>
-          <td class="text-center">
-            762.44
-          </td>
-          <td class="text-center">
-            763.55
-          </td>
-          <td>
-            <div class="d-flex justify-content-center">
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-trash"></i>
-                </a>
-               
-            </div>
+        <td>
+          <div class="d-flex align-items-center justify-content-left">
+            <!-- <div class="div_b">B</div> -->
+            {{tempData.template_name}}
+          </div>
         </td>
-        </tr>
-        
-        <tr>
-          <td>
-            <div class="d-flex align-items-center justify-content-left">
-              <div class="div_b">B</div>
-              1 X 23 Jan 1323 Ce
-            </div>
-          </td>
-          <td class="text-center">
-            7622.5
-          </td>
-          <td class="text-center">
-            7623.23
-          </td>
-          <td class="text-center">
-            762.44
-          </td>
-          <td class="text-center">
-            763.55
-          </td>
-          <td>
-            <div class="d-flex justify-content-center">
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-trash"></i>
-                </a>
-               
-            </div>
+        <td class="text-center">
+          {{tempData.created_date}}
         </td>
-        </tr>
-        
-        <tr>
-          <td>
-            <div class="d-flex align-items-center justify-content-left">
-              <div class="div_b">B</div>
-              1 X 23 Jan 1323 Ce
-            </div>
-          </td>
-          <td class="text-center">
-            7622.5
-          </td>
-          <td class="text-center">
-            7623.23
-          </td>
-          <td class="text-center">
-            762.44
-          </td>
-          <td class="text-center">
-            763.55
-          </td>
-          <td>
-            <div class="d-flex justify-content-center">
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-trash"></i>
-                </a>
-               
-            </div>
+        <td>
+          <div class="d-flex justify-content-center">
+            <a class="ms-2 me-2" data-bs-toggle="modal" data-bs-target="#strategy-popup">
+              <i class="fa-solid fa-pen"></i>
+            </a>
+            <a class="ms-2 me-2" (click)="deleteTemplate(tempData.template_name)">
+              <i class="fa-solid fa-trash" ></i>
+            </a>
+
+          </div>
         </td>
-        </tr>
-        
-        <tr>
-          <td>
-            <div class="d-flex align-items-center justify-content-left">
-              <div class="div_b">B</div>
-              1 X 23 Jan 1323 Ce
-            </div>
-          </td>
-          <td class="text-center">
-            7622.5
-          </td>
-          <td class="text-center">
-            7623.23
-          </td>
-          <td class="text-center">
-            762.44
-          </td>
-          <td class="text-center">
-            763.55
-          </td>
-          <td>
-            <div class="d-flex justify-content-center">
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-trash"></i>
-                </a>
-               
-            </div>
-        </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="d-flex align-items-center justify-content-left">
-              <div class="div_b">B</div>
-              1 X 23 Jan 1323 Ce
-            </div>
-          </td>
-          <td class="text-center">
-            7622.5
-          </td>
-          <td class="text-center">
-            7623.23
-          </td>
-          <td class="text-center">
-            762.44
-          </td>
-          <td class="text-center">
-            763.55
-          </td>
-          <td>
-            <div class="d-flex justify-content-center">
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-pen"></i>
-                </a>
-                <a class="ms-2 me-2">
-                    <i class="fa-solid fa-trash"></i>
-                </a>
-               
-            </div>
-        </td>
-        </tr>
-        
-      </tbody>
-    </table>
-  </div>
-  <div class="clearfix">
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- <div class="clearfix">
     <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
     <ul class="pagination">
       <li class="page-item disabled"><a href="#">Previous</a></li>
@@ -252,4 +81,552 @@
       <li class="page-item"><a href="#" class="page-link">5</a></li>
       <li class="page-item"><a href="#" class="page-link">Next</a></li>
     </ul>
-  </div>
+  </div> -->
+  <div class="modal fade" id="strategy-popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body half-section">
+                <div class="row m-0">
+                    <div class="col-md-12 p-0" style="overflow: hidden;">
+                        <div class="top_sec1 border-0 d-flex align-items-center justify-content-between ">
+                            <h6 class="mb-0 d-flex align-items-center">New Strategy <span>Insights</span></h6>
+                            <h5 class="mb-0 d-flex align-items-center p-0">Clear New Trades</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-12 p-0" style="overflow: hidden;">
+
+                        <div class="top_sec3 d-flex align-items-center justify-content-between ">
+                            <h6>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox-box"></span>
+                                </label>
+                                3 Treade Selected
+                            </h6>
+                            <h5><i class="las la-sync-alt me-2"></i>Reset Price</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="editor_tbl2">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>B/S</th>
+                                <th>Expiry</th>
+                                <th>Strike</th>
+                                <th>Type</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="display: flex
+                                    ;
+                                        align-items: center;
+                                        height: 54px;">
+                                    <div class="div_b">B</div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 sdJan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" >
+                                        <span class="input-group-text" id="basic-addon2">-</span>
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <b>+</b>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="white-space: nowrap;">
+                                        <i class="las la-bars"></i>
+                                        <i class="las la-trash-alt"></i>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex
+                                    ;
+                                        align-items: center;
+                                        height: 54px;">
+                                    <div class="div_b">B</div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" >
+                                        <span class="input-group-text" id="basic-addon2">-</span>
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <b>+</b>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="white-space: nowrap;">
+                                        <i class="las la-bars"></i>
+                                        <i class="las la-trash-alt"></i>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex
+                                    ;
+                                        align-items: center;
+                                        height: 54px;">
+                                    <div class="div_b">B</div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" >
+                                        <span class="input-group-text" id="basic-addon2">-</span>
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <b>+</b>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="white-space: nowrap;">
+                                        <i class="las la-bars"></i>
+                                        <i class="las la-trash-alt"></i>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex
+                                    ;
+                                        align-items: center;
+                                        height: 54px;">
+                                    <div class="div_b">B</div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" >
+                                        <span class="input-group-text" id="basic-addon2">-</span>
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <b>+</b>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="white-space: nowrap;">
+                                        <i class="las la-bars"></i>
+                                        <i class="las la-trash-alt"></i>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex
+                                    ;
+                                        align-items: center;
+                                        height: 54px;">
+                                    <div class="div_b">B</div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" >
+                                        <span class="input-group-text" id="basic-addon2">-</span>
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <b>+</b>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="white-space: nowrap;">
+                                        <i class="las la-bars"></i>
+                                        <i class="las la-trash-alt"></i>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="display: flex
+                                    ;
+                                        align-items: center;
+                                        height: 54px;">
+                                    <div class="div_s">S</div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" >
+                                        <span class="input-group-text" id="basic-addon2">-</span>
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <b>+</b>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item">Action</a></li>
+                                                <li><a class="dropdown-item">Another action</a></li>
+                                                <li><a class="dropdown-item">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">CE</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="white-space: nowrap;">
+                                        <i class="las la-bars"></i>
+                                        <i class="las la-trash-alt"></i>
+
+                                    </div>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bottom-sec d-flex justify-content-between">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <h6 for="Multiplier">Multiplier&nbsp;&nbsp;</h6>
+                            <div class="input-group d-flex align-items-baseline">
+                                <span class="input-group-text" id="basic-addon2">23 Jan</span>
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="las la-angle-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item">11</a></li>
+                                        <li><a class="dropdown-item">12</a></li>
+                                        <li><a class="dropdown-item">13</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="d-flex justify-content-between">
+                            <h6 class="mb-0 me-3">Price <span>Get&nbsp;232.22</span></h6>
+                            <h6 class="mb-0 me-3">Premium <span>Get&nbsp;232.22</span></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer row m-0 ps-3 pe-3 justify-content-left">
+                    <div class="col ps-1 pe-1">
+                        <button class="add_btn w-100">Add/Edit</button>
+                    </div>
+                    <div class="col ps-1 pe-1">
+                        <button class="add_btn w-100">Add to Drafts</button>
+                    </div>
+                    <div class="col ps-1 pe-1">
+                        <div class="d-flex align-items-baseline">
+                            <button class="trade_btn w-100">Trade All</button>
+                            <div class="dropdown">
+                                <button style="width: 50px;" class="clear_btn ms-2 dropdown-toggle" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="las la-ellipsis-v"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
