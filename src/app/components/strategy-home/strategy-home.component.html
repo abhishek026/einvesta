@@ -199,17 +199,29 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>B/S</th>
+                                    <th class="text-center" style="width: 75px;">
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkbox-box"></span>
+                                        </label>
+                                    </th>                                    <th>B/S</th>
                                     <th>Expiry</th>
                                     <th>Strike</th>
                                     <th>Type</th>
                                     <th>Qty</th>
-                                    <th>Price</th>
-                                    <th></th>
+                                    <!-- <th>Price</th> -->
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let data of selectedTrades">
+                                    
+                                    <td class="text-center" style="width: 75px;">
+                                        <label class="custom-checkbox">
+                                            <input type="checkbox">
+                                            <span class="checkbox-box"></span>
+                                        </label>
+                                    </td>
                                     <td style="display: flex
                                         ;
                                             align-items: center;
@@ -268,12 +280,12 @@
                                             </div>
                                         </div>
                                     </td>
-
+<!-- 
                                     <td>
                                         <div class="input-group" style="width:40px;">
                                             <span class="input-group-text border-0" id="basic-addon2">{{data.strike}}</span>
                                         </div>
-                                    </td>
+                                    </td> -->
                                     <td>
                                         <div style="white-space: nowrap;">
                                             <!-- <i class="las la-bars"></i> -->

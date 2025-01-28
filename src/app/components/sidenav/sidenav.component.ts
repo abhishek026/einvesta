@@ -21,7 +21,14 @@ export class SidenavComponent implements OnInit {
     {
       name: 'Strategy Builder',
       path: '/strategy-builder',
-      tooltip: 'Strategy Builder',
+      tooltip: 'Strategy-Builder',
+      icon: 'fa fa-building',
+      active: false,
+    },
+    {
+      name: 'Template List',
+      path: '/order-history',
+      tooltip: 'Template',
       icon: 'fa fa-building',
       active: false,
     },
@@ -32,13 +39,6 @@ export class SidenavComponent implements OnInit {
       path: '/strategy',
       active: false,
       submenu: ['Program No 1', 'Program No 2', 'Program No 3', 'Program No 4'],
-    },
-    {
-      name: 'Order History',
-      path: '/order-history',
-      tooltip: 'Order History',
-      icon: 'fa fa-building',
-      active: false,
     }
   ];
   breadcrumb:string='Stratergy Builder'
@@ -49,7 +49,9 @@ export class SidenavComponent implements OnInit {
     this.themeService.setTheme(theme);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.toggleMenu();
+  }
 
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;

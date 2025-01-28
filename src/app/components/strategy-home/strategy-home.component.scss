@@ -224,8 +224,8 @@ select ,.dropdown>button{
 
 .div_b {
   background: #03a9f4;
-  height: 19px;
-  width: 19px;
+  height: 21px;
+  width: 21px;
   color: #FFF;
   display: flex;
   align-items: center;
@@ -234,12 +234,13 @@ select ,.dropdown>button{
   border-radius: 5px;
   font-weight: 700;
   margin-right: 10px;
+  margin-bottom: 13px;
 }
 
 .div_s {
   background: #ff000038;
-  height: 19px;
-  width: 19px;
+  height: 21px;
+  width: 21px;
   color: red;
   display: flex;
   align-items: center;
@@ -248,6 +249,7 @@ select ,.dropdown>button{
   border-radius: 5px;
   font-weight: 700;
   margin-right: 10px;
+  margin-bottom: 13px;
 }
 
 .form-control:focus {
@@ -465,9 +467,9 @@ select ,.dropdown>button{
 .custom-checkbox .checkbox-box {
   position: absolute;
   left: 0;
-  top: -15px;
-  width: 16px;
-  height: 16px;
+  top: -11px;
+  width: 19px;
+  height: 19px;
   border: 2px solid #ccc;
   border-radius: 4px;
   background-color: #fff;
@@ -477,8 +479,8 @@ select ,.dropdown>button{
 
 /* Checkmark style */
 .custom-checkbox input:checked + .checkbox-box{
-background-color: #0d6efd;
-border: 1px solid #0d6efd;
+background-color: #5d9bf6;
+border: 1px solid #5d9bf6;
 }
 .custom-checkbox input:checked + .checkbox-box::after {
   content: '\2713';
