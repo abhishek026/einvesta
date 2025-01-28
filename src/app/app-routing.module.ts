@@ -35,7 +35,7 @@ const routes: Routes = [
       },
       {
         path: 'strategy',
-        component: TalbeComponent,
+        component: StrategybuilderComponent,
         // canActivate: [AuthGuard]
       },
       {

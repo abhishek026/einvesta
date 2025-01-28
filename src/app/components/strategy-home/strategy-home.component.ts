@@ -3,7 +3,7 @@ import { HttpService } from 'src/app/services/http.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { API_ENDPOINTS } from 'src/app/utils/api-constants';
-
+declare var $: any;
 @Component({
   selector: 'app-strategy-home',
   templateUrl: './strategy-home.component.html',
@@ -22,7 +22,7 @@ export class StrategyHomeComponent implements OnInit {
   multiplierArr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   QTYArr: number[] = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500];
   selectedMultiplyer: number = 1;
-  template_name:string=''
+  template_name: string = ''
   constructor(
     private http: HttpService,
     private loader: LoaderService,
@@ -160,15 +160,18 @@ export class StrategyHomeComponent implements OnInit {
     debugger
     if (this.validatePayload()) {
       let reqPayload = this.preparedPayload();
-      this.http.post(API_ENDPOINTS.STRAGEGY.SAVE_ORDER_TEMPLATE,reqPayload).subscribe((res:any)=>{
-       this.toaster.showSuccess("Template Save Successfully!!")
+      this.http.post(API_ENDPOINTS.STRAGEGY.SAVE_ORDER_TEMPLATE, reqPayload).subscribe((res: any) => {
+        this.toaster.showSuccess("Template Save Successfully!!");
+        this.selectedTrades = [];
+        this.tradeMap= new Map<string, any>();
+
       });
     }
   }
   preparedPayload() {
     const prepareOrders = (data: any[]): any[] => {
-      return data.map((item:any) => {
-        if (item.order_status=='PE') {
+      return data.map((item: any) => {
+        if (item.order_status == 'PE') {
           return {
             exchange_token: item.pe_exchange_token,
             instrument_token: item.pe_instrument_token,
@@ -188,7 +191,7 @@ export class StrategyHomeComponent implements OnInit {
             template_name: this.template_name,
             active: true,
           };
-        } else if (item.order_status=='CE') {
+        } else if (item.order_status == 'CE') {
           return {
             exchange_token: item.ce_exchange_token,
             instrument_token: item.ce_instrument_token,
@@ -218,5 +221,12 @@ export class StrategyHomeComponent implements OnInit {
 
   validatePayload() {
     return true;
+  }
+  openPopUp() {
+    ($("#add_to_draft_popup") as any).modal("show");
+  }
+  closePopUp() {
+    ($("#add_to_draft_popup") as any).modal("hide");
+
   }
 }
