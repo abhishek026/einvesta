@@ -47,7 +47,7 @@ select{
     --table-background-color:#FFF;
     --top-navbar-bg-color:#FFF;
     --top-navbar-text-color:rgb(52, 64, 84);
-
+    --delete-btn-color:#000;
     --chips-bg-color: rgb(229, 239, 251);
   --chips-color: rgb(52, 64, 84);
 
@@ -55,7 +55,7 @@ select{
   [data-theme='dark'] {
     --background-color: #212631;
     --table-thead-bgcolor:#212631;
-
+    --delete-btn-color:#FFF;
     --cart-background-color:#212631ed;
     --text-color: #ffffff;
     --cart-label-color:#FFF;
