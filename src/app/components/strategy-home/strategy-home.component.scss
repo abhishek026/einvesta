@@ -1,5 +1,10 @@
 .outer-div {
   margin: 16px;
+  .half-section {
+    background: #FFF;
+    background-color: var(--table-background-color);
+    border-radius: 6px
+  }
 }
 
 .nav-tabs .nav-link {
@@ -70,23 +75,7 @@
 .half-section {
  // overflow-y: auto;
   height: calc(100vh - 136px);
-  &::-webkit-scrollbar{
-    width:6px;
-    border-radius: 50%;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #a1a8b5; /* Color of the scrollbar handle */
-    border-radius: 4px; /* Rounded corners for the handle */
-  }
-  
-  &::-webkit-scrollbar-thumb:hover {
-    background-color: #a1a8b5; /* Color when hovering over the handle */
-  }
-  
-  &r::-webkit-scrollbar-track {
-    background: #a1a8b5; /* Color of the scrollbar track */
-    border-radius: 4px; /* Rounded corners for the track */
-  }
+ 
   
   .input-group {
     border: 1px solid #e8e8e8;
@@ -96,8 +85,8 @@
     input,
     .input-group-text {
       border: 0;
-      background: transparent;
-      color: rgb(52, 64, 84);
+      color: var(--text-color);
+      background-color: var(--table-background-color);
       font-weight: 400;
       font-size: 12px;
       line-height: 10px;
@@ -142,11 +131,7 @@
   font-size: 25px;
 }
 
-.half-section {
-  background: #FFF;
-  background-color: var(--table-background-color);
-  border-radius: 6px
-}
+
 
 .form__container {
   border: 1px solid #e8e8e8;
@@ -212,7 +197,8 @@ select ,.dropdown>button{
 
 
   text-align: center;
-  color: rgb(52, 64, 84);
+  color: var(--text-color);
+
   white-space: inherit;
   font-style: normal;
   text-decoration: none;
@@ -271,7 +257,7 @@ select ,.dropdown>button{
   h6 {
     font-family: Roboto;
     text-align: inherit;
-    color: rgb(52, 64, 84);
+    color: var(--text-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
@@ -299,8 +285,11 @@ select ,.dropdown>button{
     font-size: 0.75rem;
     line-height: 1.25rem;
     letter-spacing: 0.0125rem;
+    color: var(--text-color);
+    &:hover{
     color: rgb(0, 108, 230);
   }
+}
 }
 
 
@@ -309,13 +298,13 @@ select ,.dropdown>button{
   padding: 10px 0;
 
   h6 {
-    color: #252F4A;
+    color: var(--text-color);
     font-weight: 600;
     font-size: 14px;
   }
 
   h5 {
-    color: #4f52ff;
+    color: var(--text-color);
     font-size: 14px;
     font-weight: 600;
   }
@@ -327,7 +316,7 @@ select ,.dropdown>button{
   h6 {
     font-family: Roboto;
     text-align: inherit;
-    color: rgb(111, 119, 134);
+    color: var(--text-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
@@ -338,8 +327,7 @@ select ,.dropdown>button{
   }
 
   h5 {
-    display: inline-flex
-    ;
+    display: inline-flex;
         -webkit-box-pack: center;
         justify-content: center;
         -webkit-box-align: center;
@@ -353,7 +341,7 @@ select ,.dropdown>button{
         font-weight: 500;
         padding: 0px;
         height: auto;
-        color: rgb(0, 108, 230);
+        color: var(--text-color);
   }
 }
 
@@ -410,7 +398,7 @@ select ,.dropdown>button{
   position: fixed;
   bottom: 0;
   width: -webkit-fill-available;
-  background: #FFF;
+  background: var(--table-background-color);
   padding: 16px 16px;
   border-top: 1px solid var(--border-color);
 
@@ -503,14 +491,21 @@ border: 1px solid #0d6efd;
 #strategy-popup{
   .modal-dialog{
     max-width: 700px;
+    .modal-content{
+      background: var(--background-color);
+    }
   }
   .modal-header{
     height: 40px;
   }
   .modal-body{
+    background-color: var(--table-background-color);
     tbody, td, tfoot, th, thead, tr{
       border-color: transparent !important;
     }
+  }
+  .la-ellipsis-v:before{
+    color: rgb(52, 64, 84);
   }
 .clear_btn {
   border: 1px solid #e8e8e8;
@@ -542,6 +537,14 @@ border: 1px solid #0d6efd;
   height: 30px;
   font-size: 12px;
   font-weight: 600;
+}
+th{
+  color: var(--text-color);
+    background-color: var(--background-color);
+}
+td{
+  color: var(--text-color);
+  background-color: var(--table-background-color);
 }
 }
 .table_outer{
@@ -656,7 +659,15 @@ table {
   font-weight: 500;
   color: rgb(52, 64, 84);
 }
+.editor_tbl1{
+  height: calc(100vh - 272px);
+  h6{
+    color: var(--text-color);
+  }
+}
 .editor_tbl1,.editor_tbl2{
+  background-color: var(--table-background-color);
+
   tbody, td, tfoot, th, thead, tr {
     border-color: transparent;
     border-style: solid;
@@ -702,14 +713,6 @@ table {
   overflow-y: auto;
   height: calc(100vh - 320px);
   margin-bottom: 20px;
-  &::-webkit-scrollbar{
-    width:6px;
-    border-radius: 50%;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #a1a8b5; /* Color of the scrollbar handle */
-    border-radius: 4px; /* Rounded corners for the handle */
-  }
 }
 .exp_label{
   font-family: Roboto;
@@ -749,7 +752,7 @@ table {
   h6{
     font-family: Roboto;
     text-align: inherit;
-    color: rgb(52, 64, 84);
+    color: var(--text-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
