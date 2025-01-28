@@ -229,4 +229,10 @@ export class StrategyHomeComponent implements OnInit {
     ($("#add_to_draft_popup") as any).modal("hide");
 
   }
+  clearSelectedTrade(){
+    if(confirm("Do you want to clear all selected trades?")) {
+    this.selectedTrades = [];
+    this.tradeMap= new Map<string, any>();
+    }
+  }
 }

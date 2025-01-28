@@ -48,7 +48,7 @@
 
                                     </div>
                                 </div>
-                                <div class="col-md-3 pb-3">
+                                <!-- <div class="col-md-3 pb-3">
                                     <div class="pills_sec">
 
                                         <div class="dropdown">
@@ -75,7 +75,7 @@
                                         
 
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-md-3 pb-3">
                                     <div class="pills_sec">
 
@@ -187,7 +187,7 @@
                     </div> -->
                     <div class="top_sec2 d-flex align-items-center justify-content-between ">
                         <h6>New Trade</h6>
-                        <h5 *ngIf="selectedTrades.length>0">Clear All</h5>
+                        <h5 *ngIf="selectedTrades.length>0" style="cursor:pointer" (click)="clearSelectedTrade()">Clear All</h5>
                     </div>
                     <div class="top_sec3 d-flex align-items-center justify-content-between ">
                         <h6 *ngIf="selectedTrades.length>0">{{selectedTrades.length}} Trade Selected</h6>
