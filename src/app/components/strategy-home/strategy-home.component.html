@@ -134,19 +134,42 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                      
+                                        <tr class="no-data">
+                                            <td colspan="7">
+                                                <div class="pt-5 mt-5 d-grid justify-content-center">
+                                                    <img src="../../../assets/images/no-data.png" alt="" class="m-auto pt-5" style="width: 60px;">
+                                                    <h6 class="text-center">Build Strategy</h6>
+                                                </div>
+                                            </td>
+                                        </tr>
                                         <tr *ngFor="let data of orderDataList">
                                             <td class="yellow-td">{{data.ce_lot_size}}</td>
-                                            <td class="yellow-td" (click)="selectTrade(data,false,'B')">{{data.ce_inst_type}}</td>
+                                            <td class="yellow-td" (click)="selectTrade(data,false,'B')">
+                                                <div class="d-flex align-items-center justify-content-between"> {{data.ce_inst_type}}
+                                                    <div class="table__button-group">
+                                                        <button>B</button>
+                                                        <button>S</button>
+                                                    </div>
+                                                </div> 
+                                                </td>
                                             <td class="grey-td">
                                                 <div>{{data.strike}}</div>
                                             </td>
                                             <td class="grey-td text-center">{{data.ce_exchange}}</td>
                                             <td>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1"(click)="selectTrade(data,true,'S')">{{data.pe_inst_type}}</span>
-                                                    <span class="sp2">{{data.pe_lot_size}}</span>
 
+                                                <div class="d-flex align-items-center justify-content-between"> qwwq
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <span class="sp1"(click)="selectTrade(data,true,'S')">{{data.pe_inst_type}}</span>
+                                                        <span class="sp2">{{data.pe_lot_size}}</span>
+                                                    </div>
+                                                    <div class="table__button-group">
+                                                        <button>B</button>
+                                                        <button>S</button>
+                                                    </div>
                                                 </div>
+                  
                                             </td>
                                             <td class="text-center">{{data.pe_lot_size}}</td>
                                         </tr>
