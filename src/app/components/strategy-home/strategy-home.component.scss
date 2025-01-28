@@ -69,7 +69,7 @@
 
 .half-section {
  // overflow-y: auto;
-  height: calc(100vh - 170px);
+  height: calc(100vh - 136px);
   &::-webkit-scrollbar{
     width:6px;
     border-radius: 50%;
@@ -144,6 +144,7 @@
 
 .half-section {
   background: #FFF;
+  background-color: var(--table-background-color);
   border-radius: 6px
 }
 
@@ -411,7 +412,7 @@ select ,.dropdown>button{
   width: -webkit-fill-available;
   background: #FFF;
   padding: 16px 16px;
-  border-top: 1px solid #dee2e6;
+  border-top: 1px solid var(--border-color);
 
   .clear_btn {
     border: 1px solid #e8e8e8;
@@ -547,7 +548,10 @@ border: 1px solid #0d6efd;
   scroll-behavior: smooth;
     white-space: nowrap;
     overflow: auto;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 216px);
+    background-color: var(--table-background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
     
 table {
   border-collapse: separate;
@@ -560,13 +564,19 @@ table {
   th,
   td {
     background: #FFF;
-    // border-bottom: 0;
+    background-color: var(--table-background-color);
+    
   }
+  .no-data{
+    h6{
+    color: var(--text-color);
 
+    }
+  }
   th {
     font-family: Roboto;
     text-align: center;
-    color: rgb(52, 64, 84);
+    color: var(--text-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
@@ -590,15 +600,22 @@ table {
   }
 }
 
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
-  border: 1px solid #dee2e6;
-}
 
+
+
+thead,
+tr ,th{
+  border: 1px solid var(--border-color);
+}
+tbody{
+  border: 1px solid transparent;
+  tr{
+    border-bottom: 1px solid var(--border-color);
+  }
+  tr.no-data{
+    border-bottom: 1px solid transparent;
+  }
+}
 .yellow-td {
   background: #f4d7933d !important;
 }
@@ -649,7 +666,7 @@ table {
     th{
       font-family: Roboto;
       text-align: center;
-      color: rgb(111, 119, 134);
+      color: var(--text-color);
       white-space: inherit;
       font-style: normal;
       text-decoration: none;
