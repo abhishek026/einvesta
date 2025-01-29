@@ -680,6 +680,7 @@ table {
 }
 .editor_tbl1{
   height: calc(100vh - 272px);
+  overflow-y: auto;
   h6{
     color: var(--text-color);
   }
