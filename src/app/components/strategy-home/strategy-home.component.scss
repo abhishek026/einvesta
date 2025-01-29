@@ -93,7 +93,6 @@ tr:hover>td .table__button-group {
 
 
 .half-section {
-  // overflow-y: auto;
   height: calc(100vh - 136px);
 
 
@@ -731,13 +730,6 @@ select,
   color: rgb(52, 64, 84);
 }
 
-// .editor_tbl1{
-//   height: calc(100vh - 272px);
-//   overflow-y: auto;
-//   h6{
-//     color: var(--text-color);
-//   }
-// }
 .editor_tbl1 {
   scroll-behavior: smooth;
   white-space: nowrap;
@@ -826,16 +818,6 @@ select,
 .editor_tbl2 {
   background-color: var(--table-background-color);
 
-  tbody,
-  td,
-  tfoot,
-  th,
-  thead,
-  tr {
-    // border-color: transparent;
-    // border-style: solid;
-    // border-width: 0;
-  }
 
   table {
 
@@ -979,4 +961,35 @@ select,
 .custom-modal-title {
   color: #4f52ff;
   font-size: 15px;
+}
+
+#add_to_draft_popup {
+  .modal-dialog {
+    .modal-content{
+      background-color: var(--background-color);
+    .modal-header {
+      .modal-title {
+        font-family: Roboto;
+        text-align: inherit;
+        color: var(--text-color);
+        white-space: inherit;
+        font-style: normal;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 1.25rem;
+        letter-spacing: 0.01563rem;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
+    .modal-body{
+      input{
+        color: var(--text-color);
+        background-color: var(--table-background-color);
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+  }
+}
 }
