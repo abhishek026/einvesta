@@ -224,7 +224,8 @@
                                 <tr>
                                     <th class="text-center" style="width: 75px;">
                                         <label class="custom-checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox"  [(ngModel)]="selectAll"
+                                            (change)="toggleSelectAll()">
                                             <span class="checkbox-box"></span>
                                         </label>
                                     </th>                                    <th>B/S</th>
@@ -241,7 +242,8 @@
                                     
                                     <td class="text-center" style="width: 75px;">
                                         <label class="custom-checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" [(ngModel)]="data.selected"
+                                            (change)="toggleItemSelection()">
                                             <span class="checkbox-box"></span>
                                         </label>
                                     </td>

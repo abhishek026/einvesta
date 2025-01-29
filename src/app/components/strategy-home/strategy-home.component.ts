@@ -24,6 +24,7 @@ export class StrategyHomeComponent implements OnInit {
   selectedMultiplyer: number = 1;
   template_name: string = ''
   resultDdata:any;
+  selectAll: boolean = false;
   constructor(
     private http: HttpService,
     private loader: LoaderService,
@@ -3235,7 +3236,6 @@ export class StrategyHomeComponent implements OnInit {
     this.loader.showLoader();
     this.http.get(API_ENDPOINTS.STRAGEGY.GET_BY_DATE(selectedDate)).subscribe((res: any) => {
       this.tradeList = res.result;
-      debugger
       this.orderDataList = this.mergeCEAndPEWithEqualStrike(this.tradeList.order_data_list);
       this.brokerList = this.tradeList.brokers;
       // this.loader.hideLoader();
@@ -3254,6 +3254,7 @@ export class StrategyHomeComponent implements OnInit {
       this.tradeMap.set(key_trading_symbol, { ...data });
     }
     this.selectedTrades = Array.from(this.tradeMap.values());
+    this.toggleItemSelection();
   }
   getUniqeKey(data: any): string {
     return data.order_status == 'PE' ? data.pe_trading_symbol : data.ce_trading_symbol;
@@ -3261,6 +3262,7 @@ export class StrategyHomeComponent implements OnInit {
   setValueOnSelected(data: any, is_pe_order: boolean, action: string): any {
     data.action = action;
     data.multiplier = 1;
+    data.selected=true;
     data.order_status = is_pe_order ? 'PE' : 'CE'
   }
   deleteTrade(data: any) {
@@ -3411,5 +3413,13 @@ export class StrategyHomeComponent implements OnInit {
       this.selectedTrades = [];
       this.tradeMap = new Map<string, any>();
     }
+  }
+  toggleSelectAll() {
+    //this.selectAll = !this.selectAll; // Toggle the selectAll flag
+    this.selectedTrades.forEach((item:any) => (item.selected = this.selectAll));
+  }
+
+  toggleItemSelection() {
+    this.selectAll = this.selectedTrades.every((item:any) => item.selected);
   }
 }
