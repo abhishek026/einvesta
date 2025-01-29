@@ -3340,7 +3340,7 @@ export class StrategyHomeComponent implements OnInit {
     if (this.validatePayload()) {
       let reqPayload = this.preparedPayload();
       this.http.post(API_ENDPOINTS.STRAGEGY.SAVE_ORDER_TEMPLATE, reqPayload).subscribe((res: any) => {
-        this.toaster.showSuccess("Template Save Successfully!!");
+        this.toaster.showSuccess("The template has been saved successfully.");
         this.selectedTrades = [];
         this.tradeMap = new Map<string, any>();
 

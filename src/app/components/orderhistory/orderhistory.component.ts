@@ -46,7 +46,7 @@ export class OrderhistoryComponent implements OnInit {
     if (confirm("Do you want to delete template?")) {
       this.http.delete(API_ENDPOINTS.TEMPLATE.DELETE(templateName)).subscribe((res: any) => {
         this.fetchAllTemplate();
-        this.toaster.showSuccess("Template Deleted Successfully!!")
+        this.toaster.showSuccess("The template has been deleted successfully.")
       })
     }
   }
