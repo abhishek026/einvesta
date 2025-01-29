@@ -135,14 +135,14 @@
                                     </thead>
                                     <tbody>
                                       
-                                        <tr class="no-data">
+                                        <!-- <tr class="no-data">
                                             <td colspan="7">
                                                 <div class="pt-5 mt-5 d-grid justify-content-center">
                                                     <img src="../../../assets/images/no-data.png" alt="" class="m-auto pt-5" style="width: 60px;">
                                                     <h6 class="text-center">Build Strategy</h6>
                                                 </div>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                         <tr *ngFor="let data of orderDataList">
                                             <td class="yellow-td">{{data.ce_lot_size}}</td>
                                             <td class="yellow-td" (click)="selectTrade(data,false,'B')">
