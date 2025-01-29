@@ -145,11 +145,11 @@
                                         </tr> -->
                                         <tr *ngFor="let data of orderDataList">
                                             <td class="yellow-td">{{data.ce_lot_size}}</td>
-                                            <td class="yellow-td" (click)="selectTrade(data,false,'B')">
+                                            <td class="yellow-td" >
                                                 <div class="d-flex align-items-center justify-content-between"> {{data.ce_inst_type}}
                                                     <div class="table__button-group">
-                                                        <button>B</button>
-                                                        <button>S</button>
+                                                        <button (click)="selectTrade(data,false,'B')">B</button>
+                                                        <button (click)="selectTrade(data,false,'S')">S</button>
                                                     </div>
                                                 </div> 
                                                 </td>
@@ -161,12 +161,12 @@
 
                                                 <div class="d-flex align-items-center justify-content-between"> qwwq
                                                     <div class="d-flex justify-content-between align-items-center">
-                                                        <span class="sp1"(click)="selectTrade(data,true,'S')">{{data.pe_inst_type}}</span>
+                                                        <span class="sp1">{{data.pe_inst_type}}</span>
                                                         <span class="sp2">{{data.pe_lot_size}}</span>
                                                     </div>
                                                     <div class="table__button-group">
-                                                        <button>B</button>
-                                                        <button>S</button>
+                                                        <button (click)="selectTrade(data,true,'B')">B</button>
+                                                        <button (click)="selectTrade(data,true,'S')">S</button>
                                                     </div>
                                                 </div>
                   
