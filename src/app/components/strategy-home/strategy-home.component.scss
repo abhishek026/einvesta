@@ -203,10 +203,11 @@ tr:hover > td .table__button-group{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background: #FFF;
+    color: var(--text-color);
+    background-color: var(--background-color);
   }
 select ,.dropdown>button{
-  border: 1px solid #e8e8e8;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   height: 32px;
   padding: 2px 6px;
@@ -214,7 +215,7 @@ select ,.dropdown>button{
 
   text-align: center;
   color: var(--text-color);
-
+  background-color: var(--background-color);
   white-space: inherit;
   font-style: normal;
   text-decoration: none;
@@ -236,7 +237,6 @@ select ,.dropdown>button{
   border-radius: 5px;
   font-weight: 700;
   margin-right: 10px;
-  margin-bottom: 13px;
 }
 
 .div_s {
@@ -251,7 +251,6 @@ select ,.dropdown>button{
   border-radius: 5px;
   font-weight: 700;
   margin-right: 10px;
-  margin-bottom: 13px;
 }
 
 .form-control:focus {
@@ -490,8 +489,8 @@ border: 1px solid #5d9bf6;
 .custom-checkbox input:checked + .checkbox-box::after {
   content: '\2713';
   position: absolute;
-  top: -2px;
-  left: 1px;
+  top: 0px;
+  left: 2px;
   font-size: 16px;
   color: #FFF;
   font-weight: 700;
@@ -612,7 +611,7 @@ table {
   td {
     font-family: Roboto;
     text-align: center;
-    color: rgb(52, 64, 84);
+    color:var(--text-color);
     white-space: inherit;
     font-style: normal;
     text-decoration: none;
@@ -641,10 +640,12 @@ tbody{
 }
 .yellow-td {
   background: #f4d7933d !important;
+  color: var(--text-color);
 }
 
 .grey-td {
   background: #a5bfcc2e !important;
+  color: var(--text-color);
 
   div {
     background: #A5BFCC;
@@ -658,6 +659,7 @@ tbody{
   width: 100px;
   border-radius: 10px;
   padding: 1px 10px;
+  color: var(--text-color);
 
 }
 
@@ -678,42 +680,91 @@ table {
   font-weight: 500;
   color: rgb(52, 64, 84);
 }
+// .editor_tbl1{
+//   height: calc(100vh - 272px);
+//   overflow-y: auto;
+//   h6{
+//     color: var(--text-color);
+//   }
+// }
 .editor_tbl1{
-  height: calc(100vh - 272px);
   scroll-behavior: smooth;
-  white-space: nowrap;
-  overflow: auto;
-  height: calc(100vh - 216px);
-  background-color: var(--table-background-color);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-  thead{
+    white-space: nowrap;
+    overflow-y: auto;
+    height: calc(100vh - 264px);
+    background-color: var(--table-background-color);
+    color: var(--text-color);
     border: 1px solid var(--border-color);
-    th{
-      font-family: Roboto;
-      text-align: center;
-      color: var(--text-color);
-      background-color: var(--background-color);
-      white-space: inherit;
-      font-style: normal;
-      text-decoration: none;
-      font-size: 0.625rem;
-      line-height: 1rem;
-      letter-spacing: 0.01563rem;
-      font-weight: 500;
+table {
+  border-collapse: separate;
+  border: 1px solid #e8e8e8;
+  thead{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  th,
+  td {
+    background: #FFF;
+    background-color: var(--table-background-color);
+  }
+  .no-data{
+    h6{
+    color: var(--text-color);
+
     }
   }
-  h6{
+  th {
+    font-family: Roboto;
+    text-align: center;
     color: var(--text-color);
+    background-color: var(--background-color);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.625rem;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
+  }
+  td {
+    font-family: Roboto;
+    text-align: center;
+    color:var(--text-color);
+    white-space: inherit;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 0.625rem;
+    line-height: 1rem;
+    letter-spacing: 0.01563rem;
+    font-weight: 500;
   }
 }
-.editor_tbl1,.editor_tbl2{
+thead,
+tr ,th{
+  border: 1px solid var(--border-color);
+}
+tbody{
+  border: 1px solid transparent;
+  tr{
+    border-bottom: 1px solid var(--border-color);
+  }
+  tr.no-data{
+    border-bottom: 1px solid transparent;
+  }
+}
+table {
+  border-collapse: collapse;
+}
+
+}
+.editor_tbl2{
   background-color: var(--table-background-color);
 
   tbody, td, tfoot, th, thead, tr {
-    border-color: transparent;
-    border-style: solid;
-    border-width: 0;
+    // border-color: transparent;
+    // border-style: solid;
+    // border-width: 0;
 }
   table{
 
@@ -810,7 +861,6 @@ table {
 }
 /* Custom Styles */
 .modal-header {
-  //background-color: #4f52ff;
   color: white;
 }
 

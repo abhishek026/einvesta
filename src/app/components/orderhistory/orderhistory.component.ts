@@ -13,7 +13,7 @@ export class OrderhistoryComponent implements OnInit {
   templateList: any = [];
   dbTemplateList: any = [];
   templateData: any;
-  searchValue:string='';
+  searchValue: string = '';
   constructor(private http: HttpService,
     private toaster: ToastService) { }
 
@@ -21,10 +21,18 @@ export class OrderhistoryComponent implements OnInit {
     this.fetchAllTemplate();
   }
   fetchAllTemplate() {
+    this.templateList = [{
+      "template_name": "Test",
+      "created_date": '26-Jan-2025 3:14 AM'
+    },
+    {
+      "template_name": "Test1",
+      "created_date": '26-Jan-2025 3:14 AM'
+    }]
     this.http.get(API_ENDPOINTS.TEMPLATE.GET_ALL).subscribe((res: any) => {
       this.templateData = res.result;
       this.templateList = this.preparedTemplateList(this.templateData);
-      this.dbTemplateList=[...this.templateList];
+      this.dbTemplateList = [...this.templateList];
     })
   }
   preparedTemplateList(res: any): { template_name: string; created_date: string; }[] {
@@ -38,17 +46,17 @@ export class OrderhistoryComponent implements OnInit {
     if (confirm("Do you want to delete template?")) {
       this.http.delete(API_ENDPOINTS.TEMPLATE.DELETE(templateName)).subscribe((res: any) => {
         this.fetchAllTemplate();
-        this.toaster.showSuccess("Template Deleted Successfully!!")
+        this.toaster.showSuccess("The template has been deleted successfully.")
       })
     }
   }
-  searchTemplate(){
-    if (this.searchValue=='') {
-      this.templateList=this.dbTemplateList;
+  searchTemplate() {
+    if (this.searchValue == '') {
+      this.templateList = this.dbTemplateList;
       return;
-    }  
-    this.templateList=this.dbTemplateList;
-    this.templateList=this.templateList.filter((template:any) =>
+    }
+    this.templateList = this.dbTemplateList;
+    this.templateList = this.templateList.filter((template: any) =>
       template.template_name.toLowerCase().includes(this.searchValue.toLowerCase())
     );
   }

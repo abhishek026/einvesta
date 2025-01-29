@@ -12,8 +12,8 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
-        this.toaster.showError('An error occurred while processing the request.')
-        return throwError(() => new Error('An error occurred while processing the request.'));
+        this.toaster.showError('An unexpected error occurred while processing your request. Please try again later.')
+        return throwError(() => new Error('An unexpected error occurred while processing your request. Please try again later.'));
       })
     );
   }
