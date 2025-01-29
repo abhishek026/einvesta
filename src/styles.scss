@@ -12,19 +12,19 @@
 .toast-success {
    // background-color: #7637e4 !important;  /* Custom background color for success */
   }
-  
+
   .toast-error {
     background-color: #d9534f !important;  /* Custom background color for error */
   }
-  
+
   .toast-info {
     background-color: #5bc0de !important;  /* Custom background color for info */
   }
-  
+
   .toast-warning {
     background-color: #f0ad4e !important;  /* Custom background color for warning */
   }
-  
+
 input[type="checkbox"],
 input[type="radio"],
 input[type="button"],
@@ -70,13 +70,13 @@ select{
     --chips-color: #FFF;
 
   }
-  
+
   body {
     background-color: var(--background-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
   }
-  
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -96,6 +96,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 ::-webkit-scrollbar-track {
-  background: #a1a8b5; /* Color of the scrollbar track */
+  background: #e8e8e8; /* Color of the scrollbar track */
   border-radius: 4px; /* Rounded corners for the track */
 }

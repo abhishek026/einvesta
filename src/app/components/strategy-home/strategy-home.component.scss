@@ -91,8 +91,8 @@ tr:hover > td .table__button-group{
 .half-section {
  // overflow-y: auto;
   height: calc(100vh - 136px);
- 
-  
+
+
   .input-group {
     border: 1px solid #e8e8e8;
     border-radius: 8px;
@@ -120,8 +120,8 @@ tr:hover > td .table__button-group{
         height: 100%;
       }
       .dropdown-menu{
-      
-      
+
+
     }
     }
 
@@ -293,7 +293,7 @@ select ,.dropdown>button{
         background: rgb(229, 239, 251);
       }
     }
-   
+
   }
 
   h5 {
@@ -534,7 +534,7 @@ border: 1px solid #5d9bf6;
   background: #FFF;
   width: 110px;
   border-radius: 4px;
- 
+
 }
 
 .add_btn {
@@ -574,7 +574,7 @@ td{
     background-color: var(--table-background-color);
     color: var(--text-color);
     border: 1px solid var(--border-color);
-    
+
 table {
   border-collapse: separate;
   border: 1px solid #e8e8e8;
@@ -587,7 +587,7 @@ table {
   td {
     background: #FFF;
     background-color: var(--table-background-color);
-    
+
   }
   .no-data{
     h6{
@@ -680,6 +680,29 @@ table {
 }
 .editor_tbl1{
   height: calc(100vh - 272px);
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  overflow: auto;
+  height: calc(100vh - 216px);
+  background-color: var(--table-background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  thead{
+    border: 1px solid var(--border-color);
+    th{
+      font-family: Roboto;
+      text-align: center;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      white-space: inherit;
+      font-style: normal;
+      text-decoration: none;
+      font-size: 0.625rem;
+      line-height: 1rem;
+      letter-spacing: 0.01563rem;
+      font-weight: 500;
+    }
+  }
   h6{
     color: var(--text-color);
   }
