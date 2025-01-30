@@ -43,10 +43,13 @@
         </td>
         <td>
           <div class="d-flex justify-content-center">
-            <a class="ms-2 me-2" data-bs-toggle="modal" data-bs-target="#strategy-popup" (click)="viewTemplateData(tempData.template_name)">
+            <a class="ms-2 me-2" data-bs-toggle="modal" style="cursor:pointer;" data-bs-target="#strategy-popup" (click)="viewTemplateData(tempData.template_name)" title="View">
+                <i class="fa-solid fa-eye"></i>
+            </a>
+            <a class="ms-2 me-2" title="Edit">
               <i class="fa-solid fa-pen"></i>
             </a>
-            <a class="ms-2 me-2" (click)="deleteTemplate(tempData.template_name)">
+            <a class="ms-2 me-2" title="Delete" (click)="deleteTemplate(tempData.template_name)">
               <i class="fa-solid fa-trash" ></i>
             </a>
 

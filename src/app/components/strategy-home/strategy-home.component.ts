@@ -3238,7 +3238,7 @@ export class StrategyHomeComponent implements OnInit {
             this.tradeList = res.result;
             this.orderDataList = this.mergeCEAndPEWithEqualStrike(this.tradeList.order_data_list);
             this.brokerList = this.tradeList.brokers;
-            // this.loader.hideLoader();
+            this.loader.hideLoader();
         })
     }
     onBrokerChange(broker: any) {
@@ -3285,7 +3285,7 @@ export class StrategyHomeComponent implements OnInit {
         debugger
         if (data.pe_inst_type == 'PE') {
             data.ce_inst_type = 'CE'
-        } else if(data.ce_inst_type == 'CE') {
+        } else if (data.ce_inst_type == 'CE') {
             data.pe_inst_type = 'PE'
         }
     }
@@ -3342,15 +3342,20 @@ export class StrategyHomeComponent implements OnInit {
         return this.selectedDates.map(date => date.displayValue).join(', ')
     }
     saveIntoDraft() {
+        this.loader.showLoader();
         if (this.validatePayload()) {
             let reqPayload = this.preparedPayload();
             this.http.post(API_ENDPOINTS.STRAGEGY.SAVE_ORDER_TEMPLATE, reqPayload).subscribe((res: any) => {
                 this.toaster.showSuccess("The template has been saved successfully.");
-                this.selectedTrades = [];
-                this.tradeMap = new Map<string, any>();
-
+                this.clearPrevData();
+                this.loader.hideLoader();
             });
         }
+    }
+    clearPrevData() {
+        this.selectedTrades = [];
+        this.tradeMap = new Map<string, any>();
+        this.selectAll = false;
     }
     preparedPayload() {
         const prepareOrders = (data: any[]): any[] => {
@@ -3404,7 +3409,7 @@ export class StrategyHomeComponent implements OnInit {
     }
 
     validatePayload() {
-        let isTradeSelected = this.selectedDates.find((data: any) => data.selected);
+        let isTradeSelected = this.selectedTrades.find((data: any) => data.selected);
         if (!isTradeSelected) {
             this.toaster.showError("Please select at least one trade.");
             return false;
