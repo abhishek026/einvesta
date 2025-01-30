@@ -1,828 +1,303 @@
-    <div class="row outer-div">
-        <!-- First Half -->
-        <div class="col-md-6 ps-1 pe-1">
-            <div class="row m-0 half-section">
-                <div class="col-md-12 p-0">
-                    <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="straddles-tab" data-bs-toggle="tab"
-                                data-bs-target="#straddles" type="button" role="tab" aria-controls="straddles"
-                                aria-selected="true">Straddles</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="strangles-tab" data-bs-toggle="tab" data-bs-target="#strangles"
-                                type="button" role="tab" aria-controls="strangles"
-                                aria-selected="false">Strangles</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="strikes-tab" data-bs-toggle="tab" data-bs-target="#strikes"
-                                type="button" role="tab" aria-controls="strikes" aria-selected="false">Strikes</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features"
-                                type="button" role="tab" aria-controls="features"
-                                aria-selected="false">Features</button>
-                        </li>
-                        <li class="nav-item setting" role="presentation">
-                            <i class="las la-cog me-3"></i>
-                        </li>
-                    </ul> -->
-                    <div class="tab-content p-3" id="myTabContent">
-                        <div class="tab-pane fade show active" id="straddles" role="tabpanel"
-                            aria-labelledby="straddles-tab">
-                            <div class="row m-0">
-                                <div class="col-md-3 pb-3">
-                                    <div class="pills_sec">
+<div class="row outer-div">
+    <!-- First Half -->
+    <div class="col-md-6 ps-1 pe-1">
+        <div class="row m-0 half-section">
+            <div class="col-md-12 p-0">
+                <div class="tab-content p-3" id="myTabContent">
+                    <div class="tab-pane fade show active" id="straddles" role="tabpanel"
+                        aria-labelledby="straddles-tab">
+                        <div class="row m-0">
+                            <div class="col-md-3 pb-3">
+                                <div class="pills_sec">
 
-                                        <div class="dropdown">
-                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                {{displayDate || 'Date' }}
-                                                <i class="las la-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li *ngFor="let date of dateList" (click)="onDateChange(date)"><a
-                                                        class="dropdown-item"> {{ date.displayValue }}</a></li>
-                                            </ul>
-                                        </div>
-
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{displayDate || 'Date' }}
+                                            <i class="las la-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li *ngFor="let date of dateList" (click)="onDateChange(date)"><a
+                                                    class="dropdown-item"> {{ date.displayValue }}</a></li>
+                                        </ul>
                                     </div>
+
                                 </div>
-                                <!-- <div class="col-md-3 pb-3">
-                                    <div class="pills_sec">
-
-                                        <div class="dropdown">
-                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                {{ selectedDates.length > 0 ? getValue() : 'Select Dates' }}
-                                                <i class="las la-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="max-height: 200px; overflow-y: auto;">
-                                                <li *ngFor="let date of dateList1">
-                                                    <div class="form-check">
-                                                        <input
-                                                            type="checkbox"
-                                                            class="form-check-input"
-                                                            [id]="'checkbox_' + date.id"
-                                                            [checked]="isSelected(date)"
-                                                            (change)="toggleSelection(date)">
-                                                        <label class="form-check-label" [for]="'checkbox_' + date.id">
-                                                            {{ date.displayValue }}
-                                                        </label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-
-                                    </div>
-                                </div> -->
-                                <div class="col-md-3 pb-3">
-                                    <div class="pills_sec">
-
-                                        <div class="dropdown">
-                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                {{selected_broker?.broker_name || 'Select Broker' }}
-                                                <i class="las la-angle-down"></i>
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li *ngFor="let broker of brokerList" (click)="onBrokerChange(broker)"><a
-                                                        class="dropdown-item"> {{ broker.broker_name }}</a></li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <!-- <div class="col-md-6 pb-3">
-                                    <section class="form__container">
-                                        <input type="radio" id="choco" name="flavor" value="choco"
-                                            class="toggle-button">
-                                        <label for="choco">LTP
-                                        </label>
-                                        <input type="radio" id="vanilla" name="flavor" value="vanilla"
-                                            class="toggle-button">
-                                        <label for="vanilla">OL
-                                        </label>
-                                        <input type="radio" id="blend" name="flavor" value="blend"
-                                            class="toggle-button">
-                                        <label for="blend">Greeks</label>
-                                    </section>
-                                </div> -->
                             </div>
+                            <div class="col-md-3 pb-3">
+                                <div class="pills_sec">
 
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{selected_broker?.broker_name || 'Select Broker' }}
+                                            <i class="las la-angle-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li *ngFor="let broker of brokerList" (click)="onBrokerChange(broker)"><a
+                                                    class="dropdown-item"> {{ broker.broker_name }}</a></li>
+                                        </ul>
+                                    </div>
 
-                            <div class="table_outer">
-                                <table class="table h-100 mb-0">
-                                    <thead class="table-light">
-                                        <tr>
-                                            <th>Lot</th>
-                                            <th>
-                                                <div class="d-flex align-items-center justify-content-between">
-                                                    <span>Call LTP</span>
-                                                    <!-- <span>Call Ol</span> -->
-                                                </div>
-                                            </th>
-                                            <th class="text-center">Strike</th>
-                                            <!-- <th class="text-center">IV</th> -->
-                                            <th>
-                                                <div class="d-flex align-items-center justify-content-between">
-                                                    <span>Put OL</span>
-                                                    <!-- <span>Lot</span> -->
-                                                </div>
-                                            </th>
-                                            <th class="text-center">Lot</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                      
-                                        <!-- <tr class="no-data">
-                                            <td colspan="7">
-                                                <div class="pt-5 mt-5 d-grid justify-content-center">
-                                                    <img src="../../../assets/images/no-data.png" alt="" class="m-auto pt-5" style="width: 60px;">
-                                                    <h6 class="text-center">Build Strategy</h6>
-                                                </div>
-                                            </td>
-                                        </tr> -->
-                                        <tr *ngFor="let data of orderDataList">
-                                            <td class="yellow-td">{{data.ce_lot_size}}</td>
-                                            <td class="yellow-td" >
-                                                <div class="d-flex align-items-center justify-content-between"> {{data.ce_inst_type}}
-                                                    <div class="table__button-group">
-                                                        <button (click)="selectTrade(data,false,'B')">B</button>
-                                                        <button (click)="selectTrade(data,false,'S')">S</button>
-                                                    </div>
-                                                </div>
-                                                </td>
-                                            <td class="grey-td">
-                                                <div>{{data.strike}}</div>
-                                            </td>
-                                            <!-- <td class="grey-td text-center">{{data.ce_exchange}}</td> -->
-                                            <td>
-
-                                                <div class="d-flex align-items-center justify-content-between">
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <span class="sp1">{{data.pe_inst_type}}</span>
-                                                        <!-- <span class="sp2">{{data.pe_lot_size}}</span> -->
-                                                    </div>
-                                                    <div class="table__button-group">
-                                                        <button (click)="selectTrade(data,true,'B')">B</button>
-                                                        <button (click)="selectTrade(data,true,'S')">S</button>
-                                                    </div>
-                                                </div>
-
-                                            </td>
-                                            <td class="text-center">{{data.pe_lot_size}}</td>
-                                        </tr>
-                                        <tr *ngIf="orderDataList.length==0" class="no-data">
-                                            <td colspan="7">
-                                                <div class="pt-5 mt-5 d-grid justify-content-center">
-                                                    <img src="../../../assets/images/no-data.png" alt="" class="m-auto pt-5" style="width: 60px;">
-                                                    <h6 class="text-center">Build Strategy</h6>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="strangles" role="tabpanel" aria-labelledby="strangles-tab">
-                            <p>Strangles content here.</p>
+                        <div class="table_outer">
+                            <table class="table h-100 mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Lot</th>
+                                        <th>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <span>Call LTP</span>
+                                                <!-- <span>Call Ol</span> -->
+                                            </div>
+                                        </th>
+                                        <th class="text-center">Strike</th>
+                                        <!-- <th class="text-center">IV</th> -->
+                                        <th>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <span>Put OL</span>
+                                                <!-- <span>Lot</span> -->
+                                            </div>
+                                        </th>
+                                        <th class="text-center">Lot</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of orderDataList">
+                                        <td class="yellow-td">{{data.ce_lot_size}}</td>
+                                        <td class="yellow-td">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                {{data.ce_inst_type}}
+                                                <div class="table__button-group">
+                                                    <button (click)="selectTrade(data,false,'B')">B</button>
+                                                    <button (click)="selectTrade(data,false,'S')">S</button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="grey-td">
+                                            <div>{{data.strike}}</div>
+                                        </td>
+                                        <!-- <td class="grey-td text-center">{{data.ce_exchange}}</td> -->
+                                        <td>
+
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="sp1">{{data.pe_inst_type}}</span>
+                                                    <!-- <span class="sp2">{{data.pe_lot_size}}</span> -->
+                                                </div>
+                                                <div class="table__button-group">
+                                                    <button (click)="selectTrade(data,true,'B')">B</button>
+                                                    <button (click)="selectTrade(data,true,'S')">S</button>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                        <td class="text-center">{{data.pe_lot_size}}</td>
+                                    </tr>
+                                    <tr *ngIf="orderDataList.length==0" class="no-data">
+                                        <td colspan="7">
+                                            <div class="pt-5 mt-5 d-grid justify-content-center">
+                                                <img src="../../../assets/images/no-data.png" alt="" class="m-auto pt-5"
+                                                    style="width: 60px;">
+                                                <h6 class="text-center">Build Strategy</h6>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="tab-pane fade" id="strikes" role="tabpanel" aria-labelledby="strikes-tab">
-                            <p>Strikes content here.</p>
-                        </div>
-                        <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
-                            <p>Features content here.</p>
-                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="strangles" role="tabpanel" aria-labelledby="strangles-tab">
+                        <p>Strangles content here.</p>
+                    </div>
+                    <div class="tab-pane fade" id="strikes" role="tabpanel" aria-labelledby="strikes-tab">
+                        <p>Strikes content here.</p>
+                    </div>
+                    <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
+                        <p>Features content here.</p>
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <!-- Second Half -->
-        <div class="col-md-6 ps-1 pe-1">
-            <div class="row m-0 half-section p-3">
-                <div class="col-md-12 p-0">
-                    <!-- <div class="top_sec1 d-flex align-items-center justify-content-between ">
+    </div>
+
+    <!-- Second Half -->
+    <div class="col-md-6 ps-1 pe-1">
+        <div class="row m-0 half-section p-3">
+            <div class="col-md-12 p-0">
+                <!-- <div class="top_sec1 d-flex align-items-center justify-content-between ">
                         <h6>Editor</h6>
                         <h5><i class="las la-angle-double-left me-1"></i>Collapse</h5>
                     </div> -->
-                    <div class="top_sec2 pt-0 pb-0 d-flex align-items-center justify-content-between ">
-                        <h6>New Trade</h6>
-                        <h5 *ngIf="selectedTrades.length>0" style="cursor:pointer" (click)="clearSelectedTrade()">Clear All Trades</h5>
-                    </div>
-                    <div class="top_sec3 pt-0 d-flex align-items-center justify-content-between ">
-                        <h6 class="mb-0" *ngIf="selectedTrades.length>0">{{selectedTrades.length}} Trade Selected</h6>
-                        <h6 class="mb-0" *ngIf="selectedTrades.length==0"></h6>
-                        <h5 class="mb-0" data-bs-toggle="modal" data-bs-target="#strategy-popup"><i
-                                class="las la-sync-alt me-2"></i>Reset Price</h5>
-                    </div>
-                    <div class="editor_tbl1">
-                        <table class="table mb-0 ">
-                            <thead>
-                                <tr>
-                                    <th class="text-center" style="width: 75px;">
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox"  [(ngModel)]="selectAll"
-                                            (change)="toggleSelectAll()">
-                                            <span class="checkbox-box"></span>
-                                        </label>
-                                    </th>
-                                    <th>B/S</th>
-                                    <th>Expiry</th>
-                                    <th>Strike</th>
-                                    <th>Type</th>
-                                    <th>Qty</th>
-                                    <th>SL</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let data of selectedTrades">
+                <div class="top_sec2 pt-0 pb-0 d-flex align-items-center justify-content-between ">
+                    <h6>New Trade</h6>
+                    <h5 *ngIf="selectedTrades.length>0" style="cursor:pointer" (click)="clearSelectedTrade()">Clear All
+                        Trades</h5>
+                </div>
+                <div class="top_sec3 pt-0 d-flex align-items-center justify-content-between ">
+                    <h6 class="mb-0" *ngIf="selectedTrades.length>0">{{selectedTrades.length}} Trade Selected</h6>
+                    <h6 class="mb-0" *ngIf="selectedTrades.length==0"></h6>
+                 <!-- <h5 class="mb-0" data-bs-toggle="modal" data-bs-target="#strategy-popup"><i
+                            class="las la-sync-alt me-2"></i>Reset Price</h5> -->
+                            <h5 class="mb-0"><i
+                                style="margin-top:20px"></i></h5>
+                </div>
+                <div class="editor_tbl1">
+                    <table class="table mb-0 ">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="width: 75px;">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" [(ngModel)]="selectAll" (change)="toggleSelectAll()">
+                                        <span class="checkbox-box"></span>
+                                    </label>
+                                </th>
+                                <th>B/S</th>
+                                <th>Expiry</th>
+                                <th>Strike</th>
+                                <th>Type</th>
+                                <th>Qty</th>
+                                <th>SL</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of selectedTrades">
 
-                                    <td class="text-center" style="width: 75px;">
-                                       <div>
+                                <td class="text-center" style="width: 75px;">
+                                    <div>
                                         <label class="custom-checkbox">
                                             <input type="checkbox" [(ngModel)]="data.selected"
-                                            (change)="toggleItemSelection()">
+                                                (change)="toggleItemSelection()">
                                             <span class="checkbox-box"></span>
                                         </label>
-                                       </div>
-                                    </td>
-                                    <td>
-                                        <div [ngClass]="data.action=='B'?'div_b':'div_s'">{{data.action}}</div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">{{data.ce_expiry_value}}</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <!-- <li><a class="dropdown-item">Action</a></li>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div [ngClass]="data.action=='B'?'div_b':'div_s'">{{data.action}}</div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2">{{data.ce_expiry_value}}</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <!-- <li><a class="dropdown-item">Action</a></li>
                                                     <li><a class="dropdown-item">Another action</a></li>
                                                     <li><a class="dropdown-item">Something else here</a></li> -->
-                                                </ul>
-                                            </div>
+                                            </ul>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" >
-                                            <span class="input-group-text" id="basic-addon2" (click)="updateStrike(data,'Sub')">-</span>
-                                            <span class="input-group-text" id="basic-addon2">{{data.strike}}</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false" (click)="updateStrike(data,'Add')">
-                                                    <b>+</b>
-                                                </button>
-                                                <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon2"
+                                            (click)="updateStrike(data,'Sub')">-</span>
+                                        <span class="input-group-text" id="basic-addon2">{{data.strike}}</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false"
+                                                (click)="updateStrike(data,'Add')">
+                                                <b>+</b>
+                                            </button>
+                                            <!-- <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                     <li><a class="dropdown-item">Action</a></li>
                                                     <li><a class="dropdown-item">Another action</a></li>
                                                     <li><a class="dropdown-item">Something else here</a></li>
                                                 </ul> -->
-                                            </div>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2" style="cursor: pointer;" (click)="updateType(data)">{{data.order_status}}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2"
+                                            style="cursor: pointer;"
+                                            (click)="updateType(data)">{{data.order_status}}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-group">
+                                        <span class="input-group-text"
+                                            id="basic-addon2">{{data.order_status=='PE'?data.pe_lot_size*data.multiplier:data.ce_lot_size*data.multiplier}}</span>
+                                        <div class="dropdown">
+                                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="las la-angle-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" *ngFor="let qty of QTYArr">{{qty}}</a></li>
+                                            </ul>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">{{data.order_status=='PE'?data.pe_lot_size*data.multiplier:data.ce_lot_size*data.multiplier}}</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" *ngFor="let qty of QTYArr">{{qty}}</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
+                                    </div>
+                                </td>
 
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">{{data.strike}}</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div style="white-space: nowrap;">
-                                            <!-- <i class="las la-bars"></i> -->
-                                            <i class="las la-trash-alt" style="color: red;"(click)="deleteTrade(data)"></i>
+                                <td>
+                                    <div class="input-group" style="width:40px;">
+                                        <span class="input-group-text border-0" id="basic-addon2">{{data.strike}}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="white-space: nowrap;">
+                                        <!-- <i class="las la-bars"></i> -->
+                                        <i class="las la-trash-alt" style="color: red;" (click)="deleteTrade(data)" title="Delete"></i>
 
-                                        </div>
-                                    </td>
-                                </tr>
-                                <!-- <tr>
-                                    <td style="display: flex
-                                        ;
-                                            align-items: center;
-                                            height: 54px;">
-                                        <div class="div_b">B</div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" >
-                                            <span class="input-group-text" id="basic-addon2">-</span>
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <b>+</b>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div style="white-space: nowrap;">
-                                            <i class="las la-bars"></i>
-                                            <i class="las la-trash-alt"></i>
-
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="display: flex
-                                        ;
-                                            align-items: center;
-                                            height: 54px;">
-                                        <div class="div_b">B</div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" >
-                                            <span class="input-group-text" id="basic-addon2">-</span>
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <b>+</b>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div style="white-space: nowrap;">
-                                            <i class="las la-bars"></i>
-                                            <i class="las la-trash-alt"></i>
-
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="display: flex
-                                        ;
-                                            align-items: center;
-                                            height: 54px;">
-                                        <div class="div_b">B</div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" >
-                                            <span class="input-group-text" id="basic-addon2">-</span>
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <b>+</b>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div style="white-space: nowrap;">
-                                            <i class="las la-bars"></i>
-                                            <i class="las la-trash-alt"></i>
-
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="display: flex
-                                        ;
-                                            align-items: center;
-                                            height: 54px;">
-                                        <div class="div_b">B</div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" >
-                                            <span class="input-group-text" id="basic-addon2">-</span>
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <b>+</b>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div style="white-space: nowrap;">
-                                            <i class="las la-bars"></i>
-                                            <i class="las la-trash-alt"></i>
-
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="display: flex
-                                        ;
-                                            align-items: center;
-                                            height: 54px;">
-                                        <div class="div_s">S</div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" >
-                                            <span class="input-group-text" id="basic-addon2">-</span>
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <b>+</b>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="input-group">
-                                            <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                            <div class="dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-angle-down"></i>
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item">Action</a></li>
-                                                    <li><a class="dropdown-item">Another action</a></li>
-                                                    <li><a class="dropdown-item">Something else here</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </td>
-
-                                    <td>
-                                        <div class="input-group" style="width:40px;">
-                                            <span class="input-group-text border-0" id="basic-addon2">CE</span>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div style="white-space: nowrap;">
-                                            <i class="las la-bars"></i>
-                                            <i class="las la-trash-alt"></i>
-
-                                        </div>
-                                    </td>
-                                </tr>-->
-                                <tr class="no-data" *ngIf="selectedTrades.length==0">
-                                    <td colspan="7">
-                                        <div class="no-data d-grid justify-content-center mt-5 pt-5">
-                                            <img src="../../../assets/images/no-data.png" alt="" class="m-auto" style="width: 60px;">
-                                            <h6 class="text-center">No Trade Added</h6>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="bottom-sec pt-3 d-flex justify-content-between" *ngIf="selectedTrades.length>0">    
-                        <div class="d-flex align-items-center">
-                            <h6 class="mb-0" for="Multiplier">Multiplier&nbsp;&nbsp;</h6>
-                            <div class="input-group w-auto d-flex align-items-baseline">
-                                <span class="input-group-text" id="basic-addon2">{{selectedMultiplyer}}</span>
-                                <div class="dropdown">
-                                    <button class="dropdown-toggle" type="button"
-                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                        aria-expanded="false" >
-                                        <i class="las la-angle-down"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item" *ngFor="let multiplyer of multiplierArr" (click)="updateQty(multiplyer)">{{multiplyer}}</a></li>
-                                    </ul>
-                                </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="no-data" *ngIf="selectedTrades.length==0">
+                                <td colspan="7">
+                                    <div class="no-data d-grid justify-content-center mt-5 pt-5">
+                                        <img src="../../../assets/images/no-data.png" alt="" class="m-auto"
+                                            style="width: 60px;padding-top: 49px;">
+                                        <h6 class="text-center">No Trade Added</h6>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bottom-sec pt-3 d-flex justify-content-between" *ngIf="selectedTrades.length>0">
+                    <div class="d-flex align-items-center">
+                        <h6 class="mb-0" for="Multiplier">Multiplier&nbsp;&nbsp;</h6>
+                        <div class="input-group w-auto d-flex align-items-baseline">
+                            <span class="input-group-text" id="basic-addon2">{{selectedMultiplyer}}</span>
+                            <div class="dropdown">
+                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="las la-angle-down"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" *ngFor="let multiplyer of multiplierArr"
+                                            (click)="updateQty(multiplyer)">{{multiplyer}}</a></li>
+                                </ul>
                             </div>
                         </div>
-                        <div>
-                            <!-- <div class="d-flex justify-content-between">
+                    </div>
+                    <div>
+                        <!-- <div class="d-flex justify-content-between">
                                 <h6 class="mb-0">Price <span>Get&nbsp;232.22</span></h6>
                                 <h6 class="mb-0">&nbsp;&nbsp;&nbsp;Premium <span>Get&nbsp;232.22</span></h6>
                             </div> -->
-                        </div>
                     </div>
-                   
-                 
-
-                    <!-- <hr> -->
-                    <!-- <h6 class="note">Please Click on ready-made strategy to load it</h6>
-                    <div class="row m-0">
-                        <div class="col-md-2 ps-1 pe-1 mb-2 d-flex align-items-center">
-                            <div class="basic-chip background-sky active">Bullish</div>
-                        </div>
-                        <div class="col-md-2 ps-1 pe-1 mb-2 d-flex align-items-center">
-                            <div class="basic-chip background-sky">Bearish</div>
-                        </div>
-                        <div class="col-md-2 ps-1 pe-1 mb-2 d-flex align-items-center">
-                            <div class="basic-chip background-sky">Neutral</div>
-                        </div>
-                        <div class="col-md-2 ps-1 pe-1 mb-2 d-flex align-items-center">
-                            <div class="basic-chip background-sky">Others</div>
-                        </div>
-                        <div class="col-md-4 ps-1 pe-1 mb-2 d-flex align-items-center justify-content-end">
-                            <div class="d-flex justify-content-end">
-                                <h6 class="exp_label d-flex align-items-center me-3">Expiry</h6>
-                                <div class="input-group">
-                                    <span class="input-group-text" id="basic-addon2">23 Jan</span>
-                                    <div class="dropdown">
-                                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                            data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="las la-angle-down"></i>
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                            <li><a class="dropdown-item">Action</a></li>
-                                            <li><a class="dropdown-item">Another action</a></li>
-                                            <li><a class="dropdown-item">Something else here</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row m-0 card_sec">
-                        <div class="col-md-3 mb-3">
-                            <div class="card">
-
-                                <h6 class="text-center">Buy Sell</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card">
-                                <h6 class="text-center">Sell Put</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card">
-                                <h6 class="text-center">Bull Call Spread</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card">
-                                <h6 class="text-center">Bull Put Spread</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card">
-                                <h6 class="text-center">Buy Sell</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card">
-                                <h6 class="text-center">Sell Put</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card">
-                                <h6 class="text-center">Bull Call Spread</h6>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <div class="card">
-                                <h6 class="text-center">Bull Put Spread</h6>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
-
         </div>
+
     </div>
+</div>
 <div class="row m-0 bottom_sec">
     <div class="col-md-12 ps-0 pe-0 d-flex align-items-center justify-content-between">
         <!-- <span>3 Legs Selected</span> -->
         <span></span>
         <div class="d-flex align-items-center justify-content-end">
-            <button class="draft me-2" data-bs-toggle="modal" data-bs-target="#add_to_draft_popup">Add to Drafts</button>
+            <button class="draft me-2" data-bs-toggle="modal" data-bs-target="#add_to_draft_popup">Add to
+                Drafts</button>
             <button class="done_btn">Trade All</button>
         </div>
     </div>
@@ -893,7 +368,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-group" >
+                                    <div class="input-group">
                                         <span class="input-group-text" id="basic-addon2">-</span>
                                         <span class="input-group-text" id="basic-addon2">23 Jan</span>
                                         <div class="dropdown">
@@ -968,7 +443,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-group" >
+                                    <div class="input-group">
                                         <span class="input-group-text" id="basic-addon2">-</span>
                                         <span class="input-group-text" id="basic-addon2">23 Jan</span>
                                         <div class="dropdown">
@@ -1043,7 +518,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-group" >
+                                    <div class="input-group">
                                         <span class="input-group-text" id="basic-addon2">-</span>
                                         <span class="input-group-text" id="basic-addon2">23 Jan</span>
                                         <div class="dropdown">
@@ -1118,7 +593,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-group" >
+                                    <div class="input-group">
                                         <span class="input-group-text" id="basic-addon2">-</span>
                                         <span class="input-group-text" id="basic-addon2">23 Jan</span>
                                         <div class="dropdown">
@@ -1193,7 +668,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-group" >
+                                    <div class="input-group">
                                         <span class="input-group-text" id="basic-addon2">-</span>
                                         <span class="input-group-text" id="basic-addon2">23 Jan</span>
                                         <div class="dropdown">
@@ -1268,7 +743,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-group" >
+                                    <div class="input-group">
                                         <span class="input-group-text" id="basic-addon2">-</span>
                                         <span class="input-group-text" id="basic-addon2">23 Jan</span>
                                         <div class="dropdown">
@@ -1328,7 +803,8 @@
                         <div class="d-flex align-items-center">
                             <h6 for="Multiplier">Multiplier&nbsp;&nbsp;</h6>
                             <div class="input-group d-flex align-items-baseline">
-                                <span class="input-group-text" id="basic-addon2" style="border-top-left-radius: 6px;border-bottom-left-radius: 6px;">23 Jan</span>
+                                <span class="input-group-text" id="basic-addon2"
+                                    style="border-top-left-radius: 6px;border-bottom-left-radius: 6px;">23 Jan</span>
                                 <div class="dropdown">
                                     <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                         data-bs-toggle="dropdown" aria-expanded="false">
@@ -1352,57 +828,53 @@
                 </div>
             </div>
             <div class="modal-footer row m-0 ps-3 pe-3 justify-content-left">
-                    <div class="col ps-1 pe-1">
-                        <button class="add_btn w-100">Add/Edit</button>
-                    </div>
-                    <div class="col ps-1 pe-1">
-                        <button class="add_btn w-100">Add to Drafts</button>
-                    </div>
-                    <div class="col ps-1 pe-1">
-                        <div class="d-flex align-items-baseline">
-                            <button class="trade_btn w-100">Trade All</button>
-                            <div class="dropdown">
-                                <button style="width: 50px;" class="clear_btn ms-2 dropdown-toggle" type="button"
-                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="las la-ellipsis-v"></i>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
+                <div class="col ps-1 pe-1">
+                    <button class="add_btn w-100">Add/Edit</button>
+                </div>
+                <div class="col ps-1 pe-1">
+                    <button class="add_btn w-100">Add to Drafts</button>
+                </div>
+                <div class="col ps-1 pe-1">
+                    <div class="d-flex align-items-baseline">
+                        <button class="trade_btn w-100">Trade All</button>
+                        <div class="dropdown">
+                            <button style="width: 50px;" class="clear_btn ms-2 dropdown-toggle" type="button"
+                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="las la-ellipsis-v"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Modal Structure -->
+<!-- Modal Structure -->
 <div class="modal fade" id="add_to_draft_popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header custom-modal-header"> 
-            <h5 class="modal-title custom-modal-title" id="exampleModalLabel">Template Name</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-            </button>
-          </div>
-        <div class="modal-body">
-            <div class="form-group">
-              <label for="strategyInput"></label>
-              <input type="text" class="form-control" id="strategyInput"  [(ngModel)]="template_name" name="strategyName" placeholder="Enter Template Name" required>
+        <div class="modal-content">
+            <div class="modal-header custom-modal-header">
+                <h5 class="modal-title custom-modal-title" id="exampleModalLabel">Template Name</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="strategyInput"></label>
+                    <input type="text" class="form-control" id="strategyInput" [(ngModel)]="template_name"
+                        name="strategyName" placeholder="Enter Template Name" required>
+                </div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="d-flex align-items-center justify-content-end modal-footer">
+                <button class="draft1 me-2" data-bs-toggle="modal" (click)="saveIntoDraft()">Add to Drafts</button>
             </div>
         </div>
-        <!-- Modal Footer -->
-        <div class="d-flex align-items-center justify-content-end modal-footer">
-            <button class="draft1 me-2" data-bs-toggle="modal" (click)="saveIntoDraft()">Add to Drafts</button>
-            <!-- <button class="done_btn">Trade All</button> -->
-        </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" >Submit</button>
-        </div> -->
-      </div>
     </div>
-  </div>
+</div>
