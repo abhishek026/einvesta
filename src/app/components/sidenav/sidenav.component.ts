@@ -22,7 +22,7 @@ export class SidenavComponent implements OnInit {
       name: 'Strategy Builder',
       path: '/strategy-builder',
       tooltip: 'Strategy-Builder',
-      icon: 'fa fa-building',
+      icon: 'fa fa-table',
       active: false,
     },
     {
