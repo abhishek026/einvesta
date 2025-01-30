@@ -31,15 +31,15 @@ export class SidenavComponent implements OnInit {
       tooltip: 'Template',
       icon: 'fa fa-building',
       active: false,
-    },
-    {
-      name: 'Strategy',
-      tooltip: 'Strategy',
-      icon: 'fa fa-table',
-      path: '/strategy',
-      active: false,
-      submenu: ['Program No 1', 'Program No 2', 'Program No 3', 'Program No 4'],
     }
+    // {
+    //   name: 'Strategy',
+    //   tooltip: 'Strategy',
+    //   icon: 'fa fa-table',
+    //   path: '/strategy',
+    //   active: false,
+    //   submenu: ['Program No 1', 'Program No 2', 'Program No 3', 'Program No 4'],
+    // }
   ];
   breadcrumb: string = 'Stratergy Builder'
   constructor(private themeService: ThemeService,

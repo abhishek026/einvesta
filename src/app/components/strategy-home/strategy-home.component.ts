@@ -3207,7 +3207,7 @@ export class StrategyHomeComponent implements OnInit {
           "active": true
       }
   ]
-  this.getTradeList("");
+  //this.getTradeList("");
   }
   getDateList() {
     this.loader.showLoader();
@@ -3232,7 +3232,7 @@ export class StrategyHomeComponent implements OnInit {
     this.getTradeList(this.selectedDate);
   }
   getTradeList(selectedDate: string) {
-    this.orderDataList = this.mergeCEAndPEWithEqualStrike(this.resultDdata);
+   // this.orderDataList = this.mergeCEAndPEWithEqualStrike(this.resultDdata);
     this.loader.showLoader();
     this.http.get(API_ENDPOINTS.STRAGEGY.GET_BY_DATE(selectedDate)).subscribe((res: any) => {
       this.tradeList = res.result;

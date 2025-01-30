@@ -21,14 +21,6 @@ export class OrderhistoryComponent implements OnInit {
     this.fetchAllTemplate();
   }
   fetchAllTemplate() {
-    this.templateList = [{
-      "template_name": "Test",
-      "created_date": '26-Jan-2025 3:14 AM'
-    },
-    {
-      "template_name": "Test1",
-      "created_date": '26-Jan-2025 3:14 AM'
-    }]
     this.http.get(API_ENDPOINTS.TEMPLATE.GET_ALL).subscribe((res: any) => {
       this.templateData = res.result;
       this.templateList = this.preparedTemplateList(this.templateData);
