@@ -25,8 +25,6 @@ export class LoginComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.loaderService.showLoader();
-    //this.toastService.showSuccess("I am Abhishek Kumar","Success!")
   }
   onLogin() {
       const username = this.loginForm.get('username')?.value;
