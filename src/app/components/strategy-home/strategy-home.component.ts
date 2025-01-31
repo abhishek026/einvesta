@@ -3230,7 +3230,7 @@ export class StrategyHomeComponent implements OnInit {
             this.toaster.showError('Please select valid Date!!', "Error!");
             return;
         }
-        this.selectedTrades=[];
+        this.selectedTrades = [];
         this.tradeMap = new Map<string, any>();
         this.getTradeList(this.selectedDate);
     }
@@ -3263,8 +3263,8 @@ export class StrategyHomeComponent implements OnInit {
         } else {
             this.tradeMap.set(key_trading_symbol, { ...data });
         }
-        this.selectedTrades.push(this.tradeMap.get(key_trading_symbol));
-       // this.selectedTrades = Array.from(this.tradeMap.values());
+        // this.selectedTrades.push(this.tradeMap.get(key_trading_symbol));
+        this.selectedTrades = Array.from(this.tradeMap.values());
         this.toggleItemSelection();
     }
     getUniqeKey(data: any): string {
@@ -3276,7 +3276,7 @@ export class StrategyHomeComponent implements OnInit {
         data.selected = true;
         data.order_status = is_pe_order ? 'PE' : 'CE'
     }
-    deleteTrade(data: any,index:number) {
+    deleteTrade(data: any, index: number) {
         debugger
         if (confirm("Do you want to delete selected trade?")) {
             let trading_symbol = data.order_status == 'PE' ? data.pe_trading_symbol : data.ce_trading_symbol;
@@ -3284,7 +3284,7 @@ export class StrategyHomeComponent implements OnInit {
                 this.tradeMap.delete(trading_symbol);
                 this.selectedTrades.splice(index, 1);
                 //this.selectedTrades = [...this.selectedTrades]; // Creates a new reference
-               // this.selectedTrades = Array.from(this.tradeMap.values());
+                // this.selectedTrades = Array.from(this.tradeMap.values());
                 this.toggleItemSelection();
             }
         }
@@ -3303,7 +3303,7 @@ export class StrategyHomeComponent implements OnInit {
             data.pe_inst_type = 'PE'
         }
     }
-    updateStrike(data: any, action: string,index:number) {
+    updateStrike(data: any, action: string, index: number) {
         debugger
         let strike: any;
         if (action == 'Add') {
@@ -3318,16 +3318,21 @@ export class StrategyHomeComponent implements OnInit {
                 strikeData.multiplier = data.multiplier;
                 strikeData.order_status = data.order_status;
                 strikeData.selected = data.selected;
-                this.selectedTrades[index]=strikeData;
-                data.action =undefined;
-                data.multiplier =1;
-                data.order_status =undefined;
-                data.selected =false;
+                this.selectedTrades[index] = strikeData;
+                this.clearPrevTread(strikeData, data)
                 //this.selectedDates=[... this.selectedDates];
             }
         } else {
             this.toaster.showError("Strike price " + strike + " is not available. Please select different strike price.");
         }
+    }
+    clearPrevTread(strikeData: any, data: any) {
+        let key = this.getUniqeKey(data);
+        if (this.tradeMap.has(key)) {
+            this.tradeMap.delete(key);
+        }
+        key = this.getUniqeKey(strikeData);
+        this.tradeMap.set(key, { ...strikeData });
     }
     validateDuplicateRecord(strikeData: any, data: any, strike: any) {
         if (strikeData.selected && strikeData.order_status == data.order_status) {
