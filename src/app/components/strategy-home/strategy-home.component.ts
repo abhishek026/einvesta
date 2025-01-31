@@ -18,13 +18,14 @@ export class StrategyHomeComponent implements OnInit {
     brokerList: any = [];
     selected_broker: any;
     tradeMap: Map<string, any> = new Map<string, any>();
-    selectedTrades: any = [];
+    selectedTrades: any[] = [];
     multiplierArr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     QTYArr: number[] = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 425, 450, 475, 500];
     selectedMultiplyer: number = 1;
     template_name: string = ''
     resultDdata: any;
     selectAll: boolean = false;
+    strikePriceMap: Map<string, any> = new Map<string, any>();;
     constructor(
         private http: HttpService,
         private loader: LoaderService,
@@ -3229,17 +3230,26 @@ export class StrategyHomeComponent implements OnInit {
             this.toaster.showError('Please select valid Date!!', "Error!");
             return;
         }
+        this.selectedTrades=[];
+        this.tradeMap = new Map<string, any>();
         this.getTradeList(this.selectedDate);
     }
     getTradeList(selectedDate: string) {
         // this.orderDataList = this.mergeCEAndPEWithEqualStrike(this.resultDdata);
         this.loader.showLoader();
         this.http.get(API_ENDPOINTS.STRAGEGY.GET_BY_DATE(selectedDate)).subscribe((res: any) => {
+            debugger
             this.tradeList = res.result;
             this.orderDataList = this.mergeCEAndPEWithEqualStrike(this.tradeList.order_data_list);
+            this.strikePriceMap = this.preparedStrikePriceMap(this.orderDataList);
             this.brokerList = this.tradeList.brokers;
             this.loader.hideLoader();
         })
+    }
+    preparedStrikePriceMap(orderDataList: any): any {
+        return new Map<string, any>(
+            orderDataList.map((data: any) => [data.strike, data])
+        );
     }
     onBrokerChange(broker: any) {
         this.selected_broker = broker
@@ -3253,7 +3263,8 @@ export class StrategyHomeComponent implements OnInit {
         } else {
             this.tradeMap.set(key_trading_symbol, { ...data });
         }
-        this.selectedTrades = Array.from(this.tradeMap.values());
+        this.selectedTrades.push(this.tradeMap.get(key_trading_symbol));
+       // this.selectedTrades = Array.from(this.tradeMap.values());
         this.toggleItemSelection();
     }
     getUniqeKey(data: any): string {
@@ -3265,12 +3276,15 @@ export class StrategyHomeComponent implements OnInit {
         data.selected = true;
         data.order_status = is_pe_order ? 'PE' : 'CE'
     }
-    deleteTrade(data: any) {
+    deleteTrade(data: any,index:number) {
+        debugger
         if (confirm("Do you want to delete selected trade?")) {
             let trading_symbol = data.order_status == 'PE' ? data.pe_trading_symbol : data.ce_trading_symbol;
             if (this.tradeMap.has(trading_symbol)) {
                 this.tradeMap.delete(trading_symbol);
-                this.selectedTrades = Array.from(this.tradeMap.values());
+                this.selectedTrades.splice(index, 1);
+                //this.selectedTrades = [...this.selectedTrades]; // Creates a new reference
+               // this.selectedTrades = Array.from(this.tradeMap.values());
                 this.toggleItemSelection();
             }
         }
@@ -3289,12 +3303,46 @@ export class StrategyHomeComponent implements OnInit {
             data.pe_inst_type = 'PE'
         }
     }
-    updateStrike(data: any, action: string) {
+    updateStrike(data: any, action: string,index:number) {
+        debugger
+        let strike: any;
         if (action == 'Add') {
-            data.strike = Number(data.strike) + 50;
+            strike = Number(data.strike) + 50;
         } else {
-            data.strike = Number(data.strike) - 50;
+            strike = Number(data.strike) - 50;
         }
+        if (this.strikePriceMap.has(strike)) {
+            let strikeData = this.strikePriceMap.get(strike);
+            if (this.validateDuplicateRecord(strikeData, data, strike)) {
+                strikeData.action = data.action;
+                strikeData.multiplier = data.multiplier;
+                strikeData.order_status = data.order_status;
+                strikeData.selected = data.selected;
+                this.selectedTrades[index]=strikeData;
+                data.action =undefined;
+                data.multiplier =1;
+                data.order_status =undefined;
+                data.selected =false;
+                //this.selectedDates=[... this.selectedDates];
+            }
+        } else {
+            this.toaster.showError("Strike price " + strike + " is not available. Please select different strike price.");
+        }
+    }
+    validateDuplicateRecord(strikeData: any, data: any, strike: any) {
+        if (strikeData.selected && strikeData.order_status == data.order_status) {
+            this.toaster.showError("Strike price " + strike + "" + data.order_status + " is already added!!");
+            return false;
+        }
+        //  else if (strikeData.action && strikeData.action == data.action) {
+        //     this.toaster.showError("Strike price " + strike+""+data.order_status + " is already added!!");
+        //     return false;
+        // }
+        else if (strikeData.order_status && strikeData.order_status == data.order_status) {
+            this.toaster.showError("Strike price " + strike + "" + data.order_status + " is already added!!");
+            return false;
+        }
+        return true;
     }
     mergeCEAndPEWithEqualStrike(data: any) {
         return Object.values(
@@ -3359,7 +3407,7 @@ export class StrategyHomeComponent implements OnInit {
     }
     preparedPayload() {
         const prepareOrders = (data: any[]): any[] => {
-            return data.map((item: any) => {
+            return data.filter((item: any) => item.selected).map((item: any) => {
                 if (item.order_status == 'PE') {
                     return {
                         exchange_token: item.pe_exchange_token,
@@ -3412,9 +3460,11 @@ export class StrategyHomeComponent implements OnInit {
         let isTradeSelected = this.selectedTrades.find((data: any) => data.selected);
         if (!isTradeSelected) {
             this.toaster.showError("Please select at least one trade.");
+            this.loader.hideLoader();
             return false;
         } else if (this.template_name.trim() == '') {
             this.toaster.showError("Please enter valid template name.");
+            this.loader.hideLoader();
             return false;
         }
         return true;
