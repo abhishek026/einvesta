@@ -25,7 +25,7 @@ export class StrategyHomeComponent implements OnInit {
     template_name: string = ''
     resultDdata: any;
     selectAll: boolean = false;
-    strikePriceMap: Map<string, any> = new Map<string, any>();;
+    strikePriceMap: Map<number, any> = new Map<number, any>();;
     constructor(
         private http: HttpService,
         private loader: LoaderService,
@@ -3247,7 +3247,7 @@ export class StrategyHomeComponent implements OnInit {
         })
     }
     preparedStrikePriceMap(orderDataList: any): any {
-        return new Map<string, any>(
+        return new Map<number, any>(
             orderDataList.map((data: any) => [data.strike, data])
         );
     }
@@ -3305,26 +3305,41 @@ export class StrategyHomeComponent implements OnInit {
     }
     updateStrike(data: any, action: string, index: number) {
         debugger
-        let strike: any;
-        if (action == 'Add') {
-            strike = Number(data.strike) + 50;
-        } else {
-            strike = Number(data.strike) - 50;
-        }
+        let strike = this.getNewStrikePrice(data, action);
         if (this.strikePriceMap.has(strike)) {
             let strikeData = this.strikePriceMap.get(strike);
-            if (this.validateDuplicateRecord(strikeData, data, strike)) {
-                strikeData.action = data.action;
-                strikeData.multiplier = data.multiplier;
-                strikeData.order_status = data.order_status;
-                strikeData.selected = data.selected;
-                this.selectedTrades[index] = strikeData;
-                this.clearPrevTread(strikeData, data)
-                //this.selectedDates=[... this.selectedDates];
+            let trd_symbol = this.getTradeSymbol(strikeData, data.order_status);
+            if (this.tradeMap.has(trd_symbol)) {
+                strikeData = this.tradeMap.get(trd_symbol);
+                if (!this.validateDuplicateRecord(strikeData, data, strike)) {
+                    return;
+                }
+
             }
+            this.updateStrikeData(strikeData, data, index);
+            this.clearPrevTread(strikeData, data)
+            //this.selectedDates=[... this.selectedDates]
         } else {
-            this.toaster.showError("Strike price " + strike + " is not available. Please select different strike price.");
+            this.toaster.showError("Strike price " + strike + ""+data.order_status+" is not available. Please select different strike price.");
         }
+    }
+    getNewStrikePrice(data: any, action: any): number {
+        if (action === 'Add') {
+            return (Number(data.strike) + 50);
+        } else {
+            return (Number(data.strike) - 50);
+        }
+    }
+    updateStrikeData(strikeData: any, data: any, index: number) {
+        strikeData.action = data.action;
+        strikeData.multiplier = data.multiplier;
+        strikeData.order_status = data.order_status;
+        strikeData.selected = data.selected;
+        this.selectedTrades[index] = strikeData;
+    }
+    getTradeSymbol(strikeData: any, order_status: any) {
+        return order_status == 'PE' ? strikeData.pe_trading_symbol : strikeData.ce_trading_symbol;
+
     }
     clearPrevTread(strikeData: any, data: any) {
         let key = this.getUniqeKey(data);
