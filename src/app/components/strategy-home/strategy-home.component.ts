@@ -3299,7 +3299,7 @@ export class StrategyHomeComponent implements OnInit {
     }
     updateType(data: any) {
         debugger
-        let trd_symbol = this.getTradeSymbol(data, data.order_status == 'PE' ? 'CE' : 'PE');
+        const trd_symbol = this.getTradeSymbol(data, data.order_status == 'PE' ? 'CE' : 'PE');
         if (this.tradeMap.has(trd_symbol)) {
             this.toaster.showError("Strike price " + data.strike + " " + (data.order_status == "PE" ? "CE" : "PE") + " is already added!!");
             return;
@@ -3316,7 +3316,7 @@ export class StrategyHomeComponent implements OnInit {
     }
     updateStrike(data: any, action: string, index: number) {
         debugger
-        let strike = this.getNewStrikePrice(data, action);
+        const strike = this.getNewStrikePrice(data, action);
         if (this.strikePriceMap.has(strike)) {
             let strikeData = this.strikePriceMap.get(strike);
             let trd_symbol = this.getTradeSymbol(strikeData, data.order_status);
