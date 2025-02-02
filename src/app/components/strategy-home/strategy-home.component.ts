@@ -3331,7 +3331,7 @@ export class StrategyHomeComponent implements OnInit {
             this.clearPrevTread(strikeData, data)
             //this.selectedDates=[... this.selectedDates]
         } else {
-            this.toaster.showError("Strike price " + strike + "" + data.order_status + " is not available. Please select different strike price.");
+            this.toaster.showError("Strike price " + strike + " " + data.order_status + " is not available. Please select different strike price.");
         }
     }
     getNewStrikePrice(data: any, action: any): number {
@@ -3362,11 +3362,11 @@ export class StrategyHomeComponent implements OnInit {
     }
     validateDuplicateRecord(strikeData: any, data: any, strike: any) {
         if (strikeData.selected && strikeData.order_status == data.order_status) {
-            this.toaster.showError("Strike price " + strike + "" + data.order_status + " is already added!!");
+            this.toaster.showError("Strike price " + strike + " " + data.order_status + " is already added!!");
             return false;
         }
         else if (strikeData.order_status && strikeData.order_status == data.order_status) {
-            this.toaster.showError("Strike price " + strike + "" + data.order_status + " is already added!!");
+            this.toaster.showError("Strike price " + strike + " " + data.order_status + " is already added!!");
             return false;
         }
         return true;
