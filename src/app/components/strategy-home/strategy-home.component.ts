@@ -3277,7 +3277,8 @@ export class StrategyHomeComponent implements OnInit {
         data.action = action;
         data.multiplier = 1;
         data.selected = true;
-        data.order_status = is_pe_order ? 'PE' : 'CE'
+        data.order_status = is_pe_order ? 'PE' : 'CE';
+        data.stop_loss=0;
     }
     deleteTrade(data: any, index: number) {
         debugger
@@ -3454,7 +3455,7 @@ export class StrategyHomeComponent implements OnInit {
                         strike: item.strike,
                         inst_type: item.pe_inst_type,
                         lot_size: item.pe_lot_size,
-                        stop_loss: item.pe_stop_loss,
+                        stop_loss: item.stop_loss,
                         broker: this.selected_broker?.broker_id,
                         lots: item.pe_lots,
                         qty: item.pe_qty,
@@ -3474,7 +3475,7 @@ export class StrategyHomeComponent implements OnInit {
                         strike: item.strike,
                         inst_type: item.ce_inst_type,
                         lot_size: item.ce_lot_size,
-                        stop_loss: item.ce_stop_loss,
+                        stop_loss: item.stop_loss,
                         broker: this.selected_broker?.broker_id,
                         lots: item.ce_lots,
                         qty: item.ce_qty,
