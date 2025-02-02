@@ -7,7 +7,7 @@
                     <div class="tab-pane fade show active" id="straddles" role="tabpanel"
                         aria-labelledby="straddles-tab">
                         <div class="row m-0">
-                            <div class="col-md-3 pb-3">
+                            <div class="col-md-3 pb-3" style="width: 35%;">
                                 <div class="pills_sec">
 
                                     <div class="dropdown">
@@ -70,7 +70,7 @@
                                         <td class="yellow-td">
                                             <div class="d-flex align-items-center justify-content-between">
                                                 {{data.ce_inst_type}}
-                                                <div class="table__button-group">
+                                                <div class="table__button-group" *ngIf="data.ce_inst_type">
                                                     <button (click)="selectTrade(data,false,'B')" style="background:#03a9f4;color: white;">B</button>
                                                     <button (click)="selectTrade(data,false,'S')" style="background:rgba(255, 0, 0, 0.2196078431);color: red;">S</button>
                                                 </div>
@@ -87,7 +87,7 @@
                                                     <span class="sp1">{{data.pe_inst_type}}</span>
                                                     <!-- <span class="sp2">{{data.pe_lot_size}}</span> -->
                                                 </div>
-                                                <div class="table__button-group">
+                                                <div class="table__button-group" *ngIf="data.pe_inst_type">
                                                     <button (click)="selectTrade(data,true,'B')" style="background:#03a9f4;color: white;">B</button>
                                                     <button (click)="selectTrade(data,true,'S')" style="background:rgba(255, 0, 0, 0.2196078431);color: red;">S</button>
                                                 </div>
@@ -181,7 +181,7 @@
                                 </td>
                                 <td>
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon2">{{data.ce_expiry_value}}</span>
+                                        <span class="input-group-text" id="basic-addon2">{{data.ce_expiry_value?data.ce_expiry_value:data.pe_expiry_value}}</span>
                                         <div class="dropdown">
                                             <button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
                                                 data-bs-toggle="dropdown" aria-expanded="false">

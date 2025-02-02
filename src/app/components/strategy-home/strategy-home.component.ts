@@ -3302,6 +3302,10 @@ export class StrategyHomeComponent implements OnInit {
     updateType(data: any) {
         debugger
         const trd_symbol = this.getTradeSymbol(data, data.order_status == 'PE' ? 'CE' : 'PE');
+        if(!trd_symbol){
+            this.toaster.showError("Strike price " + data.strike + " " + (data.order_status == "PE" ? "CE" : "PE") + " is not available.");
+            return; 
+        }
         if (this.tradeMap.has(trd_symbol)) {
             this.toaster.showError("Strike price " + data.strike + " " + (data.order_status == "PE" ? "CE" : "PE") + " is already added!!");
             return;
