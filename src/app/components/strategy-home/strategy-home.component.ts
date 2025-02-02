@@ -33,7 +33,7 @@ export class StrategyHomeComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.selected_broker=null;
+        this.selected_broker = null;
         this.getDateList();
         this.resultDdata = [
             {
@@ -3225,7 +3225,7 @@ export class StrategyHomeComponent implements OnInit {
         }));
     }
     onDateChange(obj: any) {
-        this.selected_broker=null;
+        this.selected_broker = null;
         this.selectedDate = obj.key;
         this.displayDate = obj.displayValue;
         if (this.selectedDate == '') {
@@ -3299,11 +3299,20 @@ export class StrategyHomeComponent implements OnInit {
     }
     updateType(data: any) {
         debugger
-        if (data.pe_inst_type == 'PE') {
-            data.ce_inst_type = 'CE'
-        } else if (data.ce_inst_type == 'CE') {
-            data.pe_inst_type = 'PE'
+        let trd_symbol = this.getTradeSymbol(data, data.order_status == 'PE' ? 'CE' : 'PE');
+        if (this.tradeMap.has(trd_symbol)) {
+            this.toaster.showError("Strike price " + data.strike + " " + (data.order_status == "PE" ? "CE" : "PE") + " is already added!!");
+            return;
+        } else {
+            let key = this.getUniqeKey(data);
+            if (this.tradeMap.has(key)) {
+                this.tradeMap.delete(key);
+            }
+            data.order_status = data.order_status == 'PE' ? 'CE' : 'PE';
+            key = this.getUniqeKey(data);
+            this.tradeMap.set(key, { ...data });
         }
+
     }
     updateStrike(data: any, action: string, index: number) {
         debugger
@@ -3322,7 +3331,7 @@ export class StrategyHomeComponent implements OnInit {
             this.clearPrevTread(strikeData, data)
             //this.selectedDates=[... this.selectedDates]
         } else {
-            this.toaster.showError("Strike price " + strike + ""+data.order_status+" is not available. Please select different strike price.");
+            this.toaster.showError("Strike price " + strike + "" + data.order_status + " is not available. Please select different strike price.");
         }
     }
     getNewStrikePrice(data: any, action: any): number {
