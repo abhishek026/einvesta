@@ -3521,10 +3521,10 @@ export class StrategyHomeComponent implements OnInit {
         if (confirm("Do you want to clear all selected trades?")) {
             this.selectedTrades = [];
             this.tradeMap = new Map<string, any>();
+            this.selectAll=false;
         }
     }
     toggleSelectAll() {
-        //this.selectAll = !this.selectAll; // Toggle the selectAll flag
         this.selectedTrades.forEach((item: any) => (item.selected = this.selectAll));
     }
 
