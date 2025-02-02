@@ -3356,10 +3356,6 @@ export class StrategyHomeComponent implements OnInit {
             this.toaster.showError("Strike price " + strike + "" + data.order_status + " is already added!!");
             return false;
         }
-        //  else if (strikeData.action && strikeData.action == data.action) {
-        //     this.toaster.showError("Strike price " + strike+""+data.order_status + " is already added!!");
-        //     return false;
-        // }
         else if (strikeData.order_status && strikeData.order_status == data.order_status) {
             this.toaster.showError("Strike price " + strike + "" + data.order_status + " is already added!!");
             return false;
