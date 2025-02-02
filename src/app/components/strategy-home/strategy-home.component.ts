@@ -3225,7 +3225,6 @@ export class StrategyHomeComponent implements OnInit {
         }));
     }
     onDateChange(obj: any) {
-        this.selected_broker = null;
         this.selectedDate = obj.key;
         this.displayDate = obj.displayValue;
         if (this.selectedDate == '') {
@@ -3233,6 +3232,8 @@ export class StrategyHomeComponent implements OnInit {
             return;
         }
         this.selectedTrades = [];
+        this.selected_broker = null;
+        this.selectAll=false;
         this.tradeMap = new Map<string, any>();
         this.getTradeList(this.selectedDate);
     }
@@ -3339,6 +3340,14 @@ export class StrategyHomeComponent implements OnInit {
             return (Number(data.strike) + 50);
         } else {
             return (Number(data.strike) - 50);
+        }
+    }
+    updateBuyORSale(data: any) {
+        debugger
+        if (data.action == 'B') {
+            data.action = 'S'
+        } else if (data.action == 'S') {
+            data.action = 'B'
         }
     }
     updateStrikeData(strikeData: any, data: any, index: number) {
@@ -3491,6 +3500,11 @@ export class StrategyHomeComponent implements OnInit {
             return false;
         } else if (this.template_name.trim() == '') {
             this.toaster.showError("Please enter valid template name.");
+            this.loader.hideLoader();
+            return false;
+        }
+        else if (!this.selected_broker) {
+            this.toaster.showError("Please select broker.");
             this.loader.hideLoader();
             return false;
         }

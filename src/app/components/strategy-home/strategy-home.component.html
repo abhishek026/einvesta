@@ -177,7 +177,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div [ngClass]="data.action=='B'?'div_b':'div_s'">{{data.action}}</div>
+                                    <div [ngClass]="data.action=='B'?'div_b':'div_s'" (click)="updateBuyORSale(data)">{{data.action}}</div>
                                 </td>
                                 <td>
                                     <div class="input-group">
