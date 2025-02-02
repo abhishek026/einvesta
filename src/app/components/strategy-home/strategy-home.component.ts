@@ -33,6 +33,7 @@ export class StrategyHomeComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this.selected_broker=null;
         this.getDateList();
         this.resultDdata = [
             {
@@ -3224,6 +3225,7 @@ export class StrategyHomeComponent implements OnInit {
         }));
     }
     onDateChange(obj: any) {
+        this.selected_broker=null;
         this.selectedDate = obj.key;
         this.displayDate = obj.displayValue;
         if (this.selectedDate == '') {
@@ -3439,7 +3441,7 @@ export class StrategyHomeComponent implements OnInit {
                         inst_type: item.pe_inst_type,
                         lot_size: item.pe_lot_size,
                         stop_loss: item.pe_stop_loss,
-                        broker: item.broker,
+                        broker: this.selected_broker?.broker_id,
                         lots: item.pe_lots,
                         qty: item.pe_qty,
                         exchange: item.pe_exchange,
@@ -3459,7 +3461,7 @@ export class StrategyHomeComponent implements OnInit {
                         inst_type: item.ce_inst_type,
                         lot_size: item.ce_lot_size,
                         stop_loss: item.ce_stop_loss,
-                        broker: item.ce_broker,
+                        broker: this.selected_broker?.broker_id,
                         lots: item.ce_lots,
                         qty: item.ce_qty,
                         exchange: item.ce_exchange,
