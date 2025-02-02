@@ -84,7 +84,7 @@
 
                                             <div class="d-flex align-items-center justify-content-between">
                                                 <div class="d-flex justify-content-between align-items-center">
-                                                    <span class="sp1">{{data.pe_inst_type}}</span>
+                                                    <span class="sp1">{{data.pe_inst_type?data.pe_inst_type:'NA'}}</span>
                                                     <!-- <span class="sp2">{{data.pe_lot_size}}</span> -->
                                                 </div>
                                                 <div class="table__button-group" *ngIf="data.pe_inst_type">
